@@ -6,7 +6,7 @@ pipeline:
             - ls
             - echo '>>>>>>> copying.. <<<<<<<<<<<'
             - echo ${DRONE_TAG}
-            - s3cmd --access_key=`echo $${ACCESS_KEY}` --secret_key=`echo $${SECRET_KEY}` sync --exclude="\.\/\.git" --recursive . s3://`echo $${BUCKET_NAME}`/dsin100days/
+            - s3cmd --access_key=`echo $${ACCESS_KEY}` --secret_key=`echo $${SECRET_KEY}` sync --rexclude='./.git/*' --recursive . s3://`echo $${BUCKET_NAME}`/dsin100days/
             - echo '>>>>>>> copied <<<<<<<<<<<'
         secrets: [ access_key, secret_key, bucket_name ]
         when:
