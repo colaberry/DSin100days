@@ -3,7 +3,7 @@ pipeline:
         image: druuu/dsin100days:0.1
         pull: true
         commands:
-            - echo '>>>>>>> copying <<<<<<<<<<<'
+            - echo '>>>>>>> copying.. <<<<<<<<<<<'
             - echo ${DRONE_TAG}
             - s3cmd --access_key=$ACCESS_KEY --secret_key=$SECRET_KEY sync --recursive s3://${BUCKET_NAME}
             - echo '>>>>>>> copied <<<<<<<<<<<'
