@@ -5,7 +5,7 @@ pipeline:
         commands:
             - echo '>>>>>>> copying.. <<<<<<<<<<<'
             - echo ${DRONE_TAG}
-            - s3cmd --access_key=$ACCESS_KEY --secret_key=$SECRET_KEY sync --recursive s3://${BUCKET_NAME}
+            - s3cmd --access_key=$ACCESS_KEY --secret_key=$SECRET_KEY sync --recursive s3://$BUCKET_NAME
             - echo '>>>>>>> copied <<<<<<<<<<<'
         secrets: [ access_key, secret_key ]
         when:
