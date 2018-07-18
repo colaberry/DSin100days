@@ -1,0 +1,11 @@
+pipeline:
+    deploy:
+        image: druuu/dsin100days:0.1
+        pull: true
+        commands:
+            - echo '>>>>>>> copying <<<<<<<<<<<'
+            - echo ${DRONE_TAG}
+            - s3cmd --access_key=$${ACCESS_KEY} --secret_key=$${SECRET_KEY} sync --recursive a s3://${BUCKET_NAME}
+            - echo '>>>>>>> copied <<<<<<<<<<<'
+        when:
+            event: tag
