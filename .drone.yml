@@ -3,9 +3,11 @@ pipeline:
         image: druuu/dsin100days:0.1
         pull: true
         commands:
-            - echo '>>>>>>> copying <<<<<<<<<<<'
+            - ls
+            - echo '>>>>>>> copying.. <<<<<<<<<<<'
             - echo ${DRONE_TAG}
-            - s3cmd --access_key=$${ACCESS_KEY} --secret_key=$${SECRET_KEY} sync --recursive a s3://${BUCKET_NAME}
+            - s3cmd --access_key=`echo $${ACCESS_KEY}` --secret_key=`echo $${SECRET_KEY}` sync --rexclude='.git/*' --recursive . s3://`echo $${BUCKET_NAME}`/dsin100days/
             - echo '>>>>>>> copied <<<<<<<<<<<'
+        secrets: [ access_key, secret_key, bucket_name ]
         when:
-            event: tag
+            event: [tag]
