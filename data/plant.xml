@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CATALOG>
 <PLANT>
-Sanguinaria Bloodroot
 <COMMON>Bloodroot</COMMON>
 <BOTANICAL>Sanguinaria canadensis</BOTANICAL>
 <ZONE>4</ZONE>
@@ -18,7 +17,6 @@ Sanguinaria Bloodroot
 <AVAILABILITY>030699</AVAILABILITY>
 </PLANT>
 <PLANT>
-Marsh
 <COMMON>Marsh Marigold</COMMON>
 <BOTANICAL>Caltha palustris</BOTANICAL>
 <ZONE>4</ZONE>
