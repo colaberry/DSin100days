@@ -81,16 +81,20 @@ def pie_le_plot(sliced_df, yr):
     
     sliced_df2 = sliced_df.loc[sliced_df['year']==yr].copy()
     
-    sliced_df2['GDP']=sliced_df2['gdpPercap']*sliced_df2['pop']
+    sliced_df2['GDP_in_bn']=(sliced_df2['gdpPercap']*sliced_df2['pop'])/1000000000
+    
+    temp_df = sliced_df2.groupby(['continent']).sum()
+    
+    temp_df = temp_df.sort_values(['continent'])
     
     # Creating labels
-    labels = list(sliced_df2['continent'])
+    labels = list(temp_df.index.values)
 
     # Creating values
-    values = list(sliced_df2['GDP'])
+    values = list(temp_df['GDP_in_bn'])
 
     # Creating the Pie plot object using the labels and values
-    trace = go.Pie(labels=labels, values=values)
+    trace = go.Pie(labels=labels, values=values, marker={'colors': ['#EF963B', '#C93277', '#349600', '#EF533B', '#57D4F1']})
 
     # Visualizing the plot
     ofl.iplot([trace], filename='basic_pie_chart')
