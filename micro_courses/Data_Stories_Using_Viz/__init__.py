@@ -1,0 +1,3 @@
+import pyvizwizards
+from pyvizwizards import pyvizwizards
+from pyvizwizards.pyvizwizards import load_mr_data,load_le_data,mr_data_selector,le_data_selector,animated_le_plot,gdptrend_mr_plot,pie_le_plot,bar_le_plot,map_le_plot,animated_mr_plot,animated_le_plot_grid
