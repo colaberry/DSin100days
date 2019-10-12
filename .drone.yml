@@ -1,17 +1,9 @@
 pipeline:
-  convert:
+  deploy:
     image: 'druuu/dsin100days:0.3'
     pull: true
     commands:
-      - 'sshpass -p $${SSHPASSWD} ssh -o StrictHostKeyChecking=no root@stage.refactored.ai /bin/bash /home/ubuntu/refactored/backend/tools/convert.sh'
-    secrets:
-      - sshpasswd
-
-  move:
-    image: 'druuu/dsin100days:0.3'
-    pull: true
-    commands:
-      - 'sshpass -p $${SSHPASSWD} ssh -o StrictHostKeyChecking=no root@stage.refactored.ai /bin/bash /home/ubuntu/refactored/backend/tools/convertandmove.sh'
+      - 'sshpass -p $${SSHPASSWD} ssh -o StrictHostKeyChecking=no root@stage.refactored.ai /bin/bash /home/ubuntu/refactored/backend/tools/syncfiles.sh'
     branches:
       include:
         - master
