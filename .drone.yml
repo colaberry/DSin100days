@@ -7,5 +7,6 @@ pipeline:
       - 'sshpass -p $${SSHPASSWDLIVE} ssh -o StrictHostKeyChecking=no root@refactored.ai /bin/bash /home/ubuntu/refactored/backend/tools/syncfiles.sh'
     secrets:
       - sshpasswd
+      - sshpasswdlive
     when:
       event: tag
