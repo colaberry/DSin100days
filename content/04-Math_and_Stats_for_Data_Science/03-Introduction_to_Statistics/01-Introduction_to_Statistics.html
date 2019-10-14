@@ -13017,6 +13017,45 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
+<style type="text/css">
+    
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+
+    </style>
 
 
 <style type="text/css">
@@ -13155,10 +13194,10 @@ div#notebook {
 
 
 
-<div id="e1092692-95d4-49ae-8daf-b34e34b1a55d"></div>
+<div id="e0f830bb-924b-4622-95fd-1499d5997539"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e1092692-95d4-49ae-8daf-b34e34b1a55d');
+var element = $('#e0f830bb-924b-4622-95fd-1499d5997539');
 
 (function(root) {
   function now() {
@@ -13615,7 +13654,7 @@ Q  = [24, 53]</p>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"The sample Q of the poplution P is"</span><span class="p">,</span>  <span class="n">Q</span> <span class="p">)</span>
 
-<span class="c1"># you can change the seed value to generate new samples of population P</span>
+<span class="c1"># you can change the seed value to generate new samples of population P </span>
 </pre></div>
 
     </div>
@@ -13665,7 +13704,7 @@ The sample Q of the poplution P is [43, 93]
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># here first value is the popluation and second value is the number of elements in the sample</span>
-<span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">P</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">P</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>   
 </pre></div>
 
     </div>
@@ -13998,10 +14037,10 @@ The sample Q of the poplution P is [43, 93]
 
  
  
-<div id="c2767d19-ef19-4ed1-becf-2ecba2b89268"></div>
+<div id="ba93d333-e502-4608-b4c4-64f5272e0922"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#c2767d19-ef19-4ed1-becf-2ecba2b89268');
+var element = $('#ba93d333-e502-4608-b4c4-64f5272e0922');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "ee04d434d9494e4295ffafe5eb47f111", "version_major": 2, "version_minor": 0}
@@ -14067,7 +14106,7 @@ Now this is a hard question so let me break it down a bit. What you have to do f
     <span class="n">means</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">single_sample</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
 
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">" mean of the sample distribution "</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">means</span><span class="p">),</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> mean of the popluation"</span><span class="p">,</span>  <span class="n">sepal_length_population</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">" mean of the sample distribution "</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">means</span><span class="p">),</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> mean of the popluation"</span><span class="p">,</span>  <span class="n">sepal_length_population</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> 
 </pre></div>
 
     </div>
@@ -14118,7 +14157,7 @@ Now this is a hard question so let me break it down a bit. What you have to do f
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_split</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array_split</span><span class="p">(</span><span class="n">sepal_length_population</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">sampling_dist_mean</span><span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df_split</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">" mean of the sample distribution "</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sampling_dist_mean</span><span class="p">),</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> mean of the popluation"</span><span class="p">,</span>  <span class="n">sepal_length_population</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">" mean of the sample distribution "</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sampling_dist_mean</span><span class="p">),</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> mean of the popluation"</span><span class="p">,</span>  <span class="n">sepal_length_population</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> 
 </pre></div>
 
     </div>
@@ -14190,7 +14229,7 @@ $n$ is the sample size NOT the size of the population!</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># answer </span>
 <span class="c1"># for a given sample size of 5 the standard error will be </span>
 <span class="n">sepal_length_population</span>  <span class="o">=</span> <span class="n">iris_dataframe</span><span class="p">[</span><span class="s2">"sepal length (cm)"</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"standard error of the sampling distribution of mean- "</span><span class="p">,</span> <span class="n">sepal_length_population</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"standard error of the sampling distribution of mean- "</span><span class="p">,</span> <span class="n">sepal_length_population</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> 
 </pre></div>
 
     </div>
@@ -14252,7 +14291,7 @@ Question: Generate the sampling distribution of mean for sepal length and take i
 
 
 <span class="c1"># means is the sampling disribution of means </span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"standard deviation of the sampling distribution of mean- "</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">means</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"standard deviation of the sampling distribution of mean- "</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">means</span><span class="p">))</span> 
 </pre></div>
 
     </div>
