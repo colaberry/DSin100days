@@ -4,6 +4,7 @@ pipeline:
     pull: true
     commands:
       - 'sshpass -p $${SSHPASSWD} ssh -o StrictHostKeyChecking=no root@stage.refactored.ai /bin/bash /home/ubuntu/refactored/backend/tools/syncfiles.sh'
+      - 'sshpass -p $${SSHPASSWDLIVE} ssh -o StrictHostKeyChecking=no root@refactored.ai /bin/bash /home/ubuntu/refactored/backend/tools/syncfiles.sh'
     secrets:
       - sshpasswd
     when:
