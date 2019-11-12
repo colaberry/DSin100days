@@ -1,13 +1,12 @@
 pipeline:
-    deploy:
-        image: druuu/dsin100days:0.1
-        pull: true
-        commands:
-            - ls
-            - echo '>>>>>>> copying.. <<<<<<<<<<<'
-            - echo ${DRONE_TAG}
-            - s3cmd --access_key=`echo $${ACCESS_KEY}` --secret_key=`echo $${SECRET_KEY}` sync --rexclude='.git/*' --delete-removed --recursive ./ s3://`echo $${BUCKET_NAME}`/dsin100days/
-            - echo '>>>>>>> copied <<<<<<<<<<<'
-        secrets: [ access_key, secret_key, bucket_name ]
-        when:
-            event: [tag]
+  deploy:
+    image: 'druuu/dsin100days:0.3'
+    pull: true
+    commands:
+      - 'sshpass -p $${SSHPASSWD} ssh -o StrictHostKeyChecking=no root@stage.refactored.ai /bin/bash /home/ubuntu/refactored/backend/tools/syncfiles.sh'
+      - 'sshpass -p $${SSHPASSWDLIVE} ssh -o StrictHostKeyChecking=no root@refactored.ai /bin/bash /home/ubuntu/refactored/backend/tools/syncfiles.sh'
+    secrets:
+      - sshpasswd
+      - sshpasswdlive
+    when:
+      event: tag
