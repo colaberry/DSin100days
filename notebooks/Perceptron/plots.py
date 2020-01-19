@@ -118,7 +118,7 @@ def decision_boundary(inputs):
 
     fig.update_xaxes(title_text="Feature 1", range=[-5, 5], row=1, col=2)
     fig.update_yaxes(title_text="Feature 2", row=1, col=2)
-
+    fig.update_layout(title_text="Figure 11")
     fig.show()
 
 
