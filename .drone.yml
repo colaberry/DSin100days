@@ -1,7 +1,6 @@
 pipeline:
   build:
     image: 'karrug/dsin100dayscicd:0.1'
-    pull: true
     commands:
       - /root/env/bin/python tools/buildhtmlpages.py
     branch: master
@@ -10,7 +9,6 @@ pipeline:
 
   deploy:
     image: 'druuu/dsin100days:0.3'
-    pull: true
     commands:
       - pwd
       - ls
