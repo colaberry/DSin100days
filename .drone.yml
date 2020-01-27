@@ -13,6 +13,7 @@ pipeline:
     image: 'druuu/dsin100days:0.3'
     pull: true
     commands:
-      - true
+      - pwd
+      - ls
     when:
       event: tag
