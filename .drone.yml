@@ -1,12 +1,18 @@
 pipeline:
+  build:
+    image: 'karrug/dsin100dayscicd:0.1'
+    pull: true
+    commands:
+      - pwd
+      - ls
+    branch: master
+    when:
+      event: push
+
   deploy:
     image: 'druuu/dsin100days:0.3'
     pull: true
     commands:
-      - 'sshpass -p $${SSHPASSWD} ssh -o StrictHostKeyChecking=no root@stage.refactored.ai /bin/bash /home/ubuntu/refactored/backend/tools/syncfiles.sh'
-      - 'sshpass -p $${SSHPASSWDLIVE} ssh -o StrictHostKeyChecking=no root@refactored.ai /bin/bash /home/ubuntu/refactored/backend/tools/syncfiles.sh'
-    secrets:
-      - sshpasswd
-      - sshpasswdlive
+      - true
     when:
       event: tag
