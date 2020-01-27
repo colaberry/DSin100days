@@ -7,7 +7,6 @@ pip install nbformat ds100nbconvert
 import warnings
 import glob
 import nbformat
-from traitlets.config import Config
 from ds100nbconvert import EmbedHTMLExporter
 
 
@@ -28,15 +27,11 @@ def build(p):
         d = f.read()
     e = EmbedHTMLExporter()
     n = nbformat.reads(d, as_version=4)
-    try:
-        b, r = e.from_notebook_node(n)
-    except FileNotFoundError as e:
-        print('>>>', p)
-        print(e, '\n')
-    else:
-        hp = p.replace('.ipynb', '.html')
-        with open(hp, 'w') as f:
-            f.write(b)
+    print('>>>', p)
+    b, r = e.from_notebook_node(n)
+    hp = p.replace('.ipynb', '.html')
+    with open(hp, 'w') as f:
+        f.write(b)
 
 
 warnings.filterwarnings("ignore")
