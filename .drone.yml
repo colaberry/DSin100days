@@ -1,12 +1,15 @@
 pipeline:
+  build:
+    image: 'karrug/dsin100dayscicd:0.1'
+    commands:
+      - /root/env/bin/python tools/buildhtmlpages.py
+    when:
+      event: [push, pull_request, tag, deployment]
+
   deploy:
     image: 'druuu/dsin100days:0.3'
-    pull: true
     commands:
-      - 'sshpass -p $${SSHPASSWD} ssh -o StrictHostKeyChecking=no root@stage.refactored.ai /bin/bash /home/ubuntu/refactored/backend/tools/syncfiles.sh'
-      - 'sshpass -p $${SSHPASSWDLIVE} ssh -o StrictHostKeyChecking=no root@refactored.ai /bin/bash /home/ubuntu/refactored/backend/tools/syncfiles.sh'
-    secrets:
-      - sshpasswd
-      - sshpasswdlive
+      - pwd
+      - ls
     when:
       event: tag
