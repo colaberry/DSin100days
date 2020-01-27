@@ -3,9 +3,8 @@ pipeline:
     image: 'karrug/dsin100dayscicd:0.1'
     commands:
       - /root/env/bin/python tools/buildhtmlpages.py
-    branch: master
     when:
-      event: push
+      event: [push, pull_request, tag, deployment]
 
   deploy:
     image: 'druuu/dsin100days:0.3'
