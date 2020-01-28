@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8">
 
-<title>Notebook</title>
+<title>decision-statements-and-loops</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13113,7 +13074,7 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered celltag_l3 celltag_s3 celltag_content"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Decision-statements-and-Loops-in-Python">Decision statements and Loops in Python<a class="anchor-link" href="#Decision-statements-and-Loops-in-Python">¶</a></h1><p>As a continuation of the previous lessons, here we introduce decision statements and loops.</p>
@@ -13127,7 +13088,7 @@ div#notebook {
 <span class="n">b</span> <span class="o">=</span> <span class="s1">'5'</span>
 
 <span class="k">if</span> <span class="n">a</span><span class="o">&lt;</span><span class="n">b</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"a and b are not really numbers"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a and b are not really numbers"</span><span class="p">)</span>
 
 <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="ow">and</span> <span class="n">b</span> <span class="n">are</span> <span class="ow">not</span> <span class="n">really</span> <span class="n">numbers</span>
@@ -13142,7 +13103,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered celltag_l3 celltag_s3 celltag_ce">
 <div class="input">
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
@@ -13159,13 +13120,13 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered celltag_l3 celltag_s3 celltag_hint"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">a</span><span class="o">==</span><span class="n">b</span> <span class="ow">and</span> <span class="n">b</span><span class="o">==</span><span class="n">c</span><span class="p">:</span> <span class="c1"># two conditions using and operator</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"a, b and c are all similar"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a, b and c are all similar"</span><span class="p">)</span>
 <span class="k">if</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">==</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">==</span><span class="nb">id</span><span class="p">(</span><span class="n">c</span><span class="p">):</span> <span class="c1"># two conditions without using and operator</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"a, b and c are all referring to the same object"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a, b and c are all referring to the same object"</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13218,19 +13179,19 @@ else:
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"a is equal to 1"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a is equal to 1"</span><span class="p">)</span>
 <span class="k">elif</span><span class="p">(</span><span class="n">a</span><span class="o">%</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"a is an even number"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a is an even number"</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">a</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"a is a negative number"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a is a negative number"</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"a is a positive odd number other than 1"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a is a positive odd number other than 1"</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered celltag_l2 celltag_content celltag_s2"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Loops">Loops<a class="anchor-link" href="#Loops">¶</a></h3><p>In general, statements are executed sequentially: The first statement in a function is executed first, followed by the second, and so on. 
@@ -13254,7 +13215,7 @@ while i &lt; 5:
 <span class="c1"># Iterating 8 times and then Printing ints 2-10</span>
 <span class="k">while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
     <span class="n">a</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 
 
 <span class="c1"># Output</span>
@@ -13278,7 +13239,7 @@ while i &lt; 5:
 <p>Example:</p>
 <div class="highlight"><pre><span></span><span class="c1"># iterating 10 times and then print ints 1-10</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 
 
 <span class="c1"># Output</span>
@@ -13306,7 +13267,7 @@ while i &lt; 5:
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered celltag_l2 celltag_ce celltag_s2">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
@@ -13321,20 +13282,20 @@ while i &lt; 5:
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered celltag_l2 celltag_s2 celltag_ans"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution-Code">Solution Code<a class="anchor-link" href="#Solution-Code">¶</a></h3><div class="highlight"><pre><span></span><span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="s1">'a'</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'3'</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 <span class="n">array2</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">array</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">array2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-<span class="k">print</span><span class="p">(</span><span class="n">array2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">array2</span><span class="p">)</span>
 <span class="n">array</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">array2</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span> 
 <span class="k">while</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="p">:</span>
     <span class="n">array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">array2</span><span class="p">)</span>
     <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
-<span class="k">print</span><span class="p">(</span><span class="n">array2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">array2</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13413,7 +13374,7 @@ for i in range():
 <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="s1">'Python'</span><span class="p">:</span>     <span class="c1"># First Example</span>
     <span class="k">if</span><span class="p">(</span><span class="n">letter</span> <span class="o">==</span> <span class="s1">'h'</span><span class="p">):</span>
         <span class="k">break</span>
-    <span class="k">print</span> <span class="p">(</span><span class="s1">'Current Letter:'</span><span class="p">,</span> <span class="n">letter</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">'Current Letter:'</span><span class="p">,</span> <span class="n">letter</span><span class="p">)</span>
 
 
 <span class="c1"># Output</span>
@@ -13424,11 +13385,11 @@ for i in range():
 <span class="c1"># The loop breaks when var = 5</span>
 <span class="n">var</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="k">while</span> <span class="n">var</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">'Current variable value: '</span><span class="p">,</span> <span class="n">var</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Current variable value: '</span><span class="p">,</span> <span class="n">var</span><span class="p">)</span>
     <span class="n">var</span> <span class="o">=</span> <span class="n">var</span><span class="o">-</span><span class="mi">1</span>
     <span class="k">if</span> <span class="n">var</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
         <span class="k">break</span> 
-<span class="k">print</span><span class="p">(</span><span class="s1">'Good bye!'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Good bye!'</span><span class="p">)</span>
 
 <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">Current</span> <span class="n">variable</span> <span class="n">value</span><span class="p">:</span>  <span class="mi">10</span>
@@ -13454,7 +13415,7 @@ for i in range():
 <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="s1">'Python'</span> <span class="p">:</span> <span class="c1"># First Example</span>
     <span class="k">if</span> <span class="n">letter</span> <span class="o">==</span> <span class="s1">'h'</span> <span class="p">:</span>
         <span class="k">continue</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
 
 
 <span class="c1"># Output</span>
@@ -13470,8 +13431,8 @@ for i in range():
     <span class="n">var</span> <span class="o">=</span> <span class="n">var</span> <span class="o">-</span> <span class="mi">1</span>
     <span class="k">if</span> <span class="n">var</span> <span class="o">==</span> <span class="mi">5</span> <span class="p">:</span>
         <span class="k">continue</span>
-    <span class="k">print</span> <span class="p">(</span><span class="s1">'Current variable value:'</span> <span class="p">,</span> <span class="n">var</span><span class="p">)</span>
-<span class="k">print</span> <span class="p">(</span><span class="s2">"Good bye!"</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">'Current variable value:'</span> <span class="p">,</span> <span class="n">var</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">"Good bye!"</span><span class="p">)</span>
 
 <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">Current</span> <span class="n">variable</span> <span class="n">value</span><span class="p">:</span> <span class="mi">9</span>
@@ -13491,9 +13452,9 @@ syntactically but you do not want any command or code to execute.</p>
 <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="s1">'Python'</span> <span class="p">:</span>
     <span class="k">if</span> <span class="n">letter</span> <span class="o">==</span> <span class="s1">'h'</span> <span class="p">:</span>
         <span class="k">pass</span>
-        <span class="k">print</span> <span class="p">(</span><span class="s1">'This is pass block'</span><span class="p">)</span>
-    <span class="k">print</span> <span class="p">(</span><span class="s1">'Current Letter :'</span> <span class="p">,</span> <span class="n">letter</span><span class="p">)</span>
-<span class="k">print</span> <span class="p">(</span><span class="s2">"Good bye!"</span><span class="p">)</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s1">'This is pass block'</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">'Current Letter :'</span> <span class="p">,</span> <span class="n">letter</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">"Good bye!"</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">Current</span> <span class="n">Letter</span> <span class="p">:</span> <span class="n">P</span>
     <span class="n">Current</span> <span class="n">Letter</span> <span class="p">:</span> <span class="n">y</span>
