@@ -23,12 +23,9 @@ def get_notebook_paths():
 
 
 def build(p):
-    with open(p, 'r') as f:
-        d = f.read()
     e = EmbedHTMLExporter()
-    n = nbformat.reads(d, as_version=4)
     print('>>>', p)
-    b, r = e.from_notebook_node(n)
+    b, r = e.from_filename(p)
     hp = p.replace('.ipynb', '.html')
     with open(hp, 'w') as f:
         f.write(b)
