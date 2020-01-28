@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8">
 
-<title>Notebook</title>
+<title>02-Hypothesis_testing</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13128,23 +13089,23 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Just run the below code</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
-<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="k">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">interact_manual</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">interact_manual</span>
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
  
-<span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="k">import</span> <span class="n">download_plotlyjs</span><span class="p">,</span> <span class="n">init_notebook_mode</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">iplot</span>
-<span class="kn">from</span> <span class="nn">plotly</span> <span class="k">import</span> <span class="n">graph_objs</span> <span class="k">as</span> <span class="n">go</span>
+<span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="kn">import</span> <span class="n">download_plotlyjs</span><span class="p">,</span> <span class="n">init_notebook_mode</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">iplot</span>
+<span class="kn">from</span> <span class="nn">plotly</span> <span class="kn">import</span> <span class="n">graph_objs</span> <span class="k">as</span> <span class="n">go</span>
 <span class="n">init_notebook_mode</span><span class="p">(</span><span class="n">connected</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="kn">import</span> <span class="nn">random</span>
 
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Math</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Math</span>
 
-<span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="k">import</span> <span class="n">show</span><span class="p">,</span> <span class="n">output_notebook</span>
-<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="k">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="k">import</span> <span class="n">norm</span> 
-<span class="kn">from</span> <span class="nn">bokeh</span> <span class="k">import</span> <span class="n">plotting</span> <span class="k">as</span> <span class="n">pl</span>
-<span class="kn">from</span> <span class="nn">bokeh.models</span> <span class="k">import</span> <span class="n">HoverTool</span><span class="p">,</span> <span class="n">Arrow</span><span class="p">,</span> <span class="n">OpenHead</span><span class="p">,</span> <span class="n">NormalHead</span><span class="p">,</span> <span class="n">VeeHead</span>
+<span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="kn">import</span> <span class="n">show</span><span class="p">,</span> <span class="n">output_notebook</span>
+<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span> 
+<span class="kn">from</span> <span class="nn">bokeh</span> <span class="kn">import</span> <span class="n">plotting</span> <span class="k">as</span> <span class="n">pl</span>
+<span class="kn">from</span> <span class="nn">bokeh.models</span> <span class="kn">import</span> <span class="n">HoverTool</span><span class="p">,</span> <span class="n">Arrow</span><span class="p">,</span> <span class="n">OpenHead</span><span class="p">,</span> <span class="n">NormalHead</span><span class="p">,</span> <span class="n">VeeHead</span>
 
 
 <span class="n">output_notebook</span><span class="p">()</span>
@@ -13194,10 +13155,10 @@ div#notebook {
 
 
 
-<div id="54644d47-173a-4a99-a7e3-9d5214aed8fd"></div>
+<div id="0f8f8d15-6335-4224-b5e3-fc0eb3e0f99d"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#54644d47-173a-4a99-a7e3-9d5214aed8fd');
+var element = $('#0f8f8d15-6335-4224-b5e3-fc0eb3e0f99d');
 
 (function(root) {
   function now() {
@@ -13683,10 +13644,10 @@ $n$ is the sample size. In our case $n =10$</p>
 
  
  
-<div id="306eb0ee-eddb-4098-94ea-fdb54036b1a3"></div>
+<div id="8ff56c05-0490-42bb-848e-eaf86f9b35fb"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#306eb0ee-eddb-4098-94ea-fdb54036b1a3');
+var element = $('#8ff56c05-0490-42bb-848e-eaf86f9b35fb');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "40e45c8dba1b477887650b6bf4d69cde", "version_major": 2, "version_minor": 0}
@@ -13938,10 +13899,10 @@ $z_{\alpha} &lt; z_c$</p>
 
  
  
-<div id="f1fb1377-b8b6-404a-8b0c-b7f6fa370145"></div>
+<div id="64f28e1b-f31f-43a3-b181-da761daf8f22"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#f1fb1377-b8b6-404a-8b0c-b7f6fa370145');
+var element = $('#64f28e1b-f31f-43a3-b181-da761daf8f22');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "0cb8cae90f544856a89c13c945c3c08c", "version_major": 2, "version_minor": 0}
@@ -14211,10 +14172,10 @@ neither $z_{\alpha_{tt}} &lt; z_c$ nor $z_{\alpha_{tt}} &gt; z_c$</p>
 
  
  
-<div id="bd716e13-800a-4fc0-ba2c-99c20bd51897"></div>
+<div id="01c18b15-2e4f-4e8a-9e0a-4a969382aee4"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#bd716e13-800a-4fc0-ba2c-99c20bd51897');
+var element = $('#01c18b15-2e4f-4e8a-9e0a-4a969382aee4');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "40d1f009d7d6436faec61563660fb19a", "version_major": 2, "version_minor": 0}
@@ -14509,10 +14470,10 @@ $z_\alpha  =  1.65$<br></p>
 
  
  
-<div id="982b9f33-8a28-4428-a26d-2ed95f8fea1f"></div>
+<div id="f6348a5c-3136-46d6-858b-0cb10c73988b"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#982b9f33-8a28-4428-a26d-2ed95f8fea1f');
+var element = $('#f6348a5c-3136-46d6-858b-0cb10c73988b');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "67fa61a29c284d23b507366c11c5d815", "version_major": 2, "version_minor": 0}
