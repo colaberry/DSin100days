@@ -1,4 +1,4 @@
-q1:
+q0:
     question: "What are the three components of a data story?"
     options: 
         a: "Questions, Answers, Visualizations"
@@ -7,7 +7,7 @@ q1:
     question_type: "0" 
     answer: "Questions, Data, and Visualizations"
       
-q2:  
+q1:  
     question: "what pandas command would you use to view the first 10 entries in a dataframe?"
     options: 
         a: "my_dataframe.tail()"
@@ -16,7 +16,7 @@ q2:
     question_type: "0"
     answer: "my_dataframe.head(10)"
 
-q3:  
+q2:  
     question: "How much did Europe contribute to the World GDP in the 2007?"
     options: 
         a: "33.4%"
@@ -26,7 +26,7 @@ q3:
     question_type: "0"
     answer: "25.5%"
 
-q4:  
+q3:  
     question: "What was the life expectancy of Swiss person in the year 1962 according to the animated plot. Pausing the animated plot may help?"
     options:  
         a: "71.32 years"
@@ -34,6 +34,20 @@ q4:
         c: "44.50 years"
     question_type: "0"
     answer: "71.32 years"
+
+q4: 
+    question: what are some important points to remember when visualizing data?" 
+    options: 
+        a: "Stories are extremely effective when told using appropriate data and intuitive visualizations."
+        b: "Modelling the data first is a nessecary to build proper visualizations"
+        c: "Choosing the right visualization and selecting and filtering the right data for the visualization, are both crucial."
+        d: "visualizations should use lots of colors to make an impact"
+    question_type: "1"
+    answer: 
+        - "Stories are extremely effective when told using appropriate data and intuitive visualizations."
+        - "Choosing the right visualization and selecting and filtering the right data for the visualization, are both crucial."
+        - "visualizations should use lots of colors to make an impact"
+
 
 q5: 
     question: what are some important points to remember when visualizing data?" 
@@ -45,6 +59,5 @@ q5:
     question_type: "1"
     answer: 
         - "Stories are extremely effective when told using appropriate data and intuitive visualizations."
-        - "Choosing the right visualization and selecting and filtering the right data for the visualization, are both crucial."
-
-
+        
+        
