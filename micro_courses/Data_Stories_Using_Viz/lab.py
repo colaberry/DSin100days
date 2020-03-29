@@ -164,28 +164,30 @@ def grade_answers(store_data, all_answers, lab_dict ):
                 
                 # if answer is in all_answers then give a score of 1
                 # else score of -0.25
-                for ans in store_data[q_num]: 
-                    if ans in all_answers[q_num]: 
+
+                for ans in all_answers[q_num]: 
+                    if ans in store_data[q_num]: 
+                        temp = None 
                         temp = score_assigned[q_num].copy()
                         temp.append(1.0)
                         score_assigned[q_num] = temp 
                     else: 
+                        temp = None
                         temp = score_assigned[q_num].copy()
                         temp.append(-0.25)
                         score_assigned[q_num] = temp 
                 
              
-                     
 
     return score_assigned
 
-def calcuate_score(score_assigned): 
+def calcuate_score(score_assigned, all_answers): 
     score_calcuated = 0 
     for key in score_assigned.keys(): 
         if type(score_assigned[key]) is float: 
             score_calcuated += score_assigned[key]
         if type(score_assigned[key]) is list: 
-            score_calcuated += sum(score_assigned[key])
+            score_calcuated +=  sum(score_assigned[key])/len(all_answers[key])
     
     return score_calcuated
 
@@ -220,7 +222,7 @@ def  run_lab():
         with output:
             store_data = store_answers(all_answers, new_widgets)
             score_assigned = grade_answers(store_data, all_answers, lab_dict)
-            calcuated_score = calcuate_score(score_assigned)
+            calcuated_score = calcuate_score(score_assigned, all_answers)
 
             print("your Scores: {} \n  Calculated score = {}".format(score_assigned, calcuated_score ) )
     submit_button.on_click(on_button_clicked)
