@@ -166,10 +166,15 @@ def grade_answers(store_data, all_answers, lab_dict ):
                 # else score of -0.25
                 for ans in store_data[q_num]: 
                     if ans in all_answers[q_num]: 
-                      
-                        score_assigned[q_num].append(1.0)
+                        temp = score_assigned[q_num].copy()
+                        temp.append(1.0)
+                        score_assigned[q_num] = temp 
                     else: 
-                        score_assigned[q_num].append(-0.25)
+                        temp = score_assigned[q_num].copy()
+                        temp.append(-0.25)
+                        score_assigned[q_num] = temp 
+                
+             
                      
 
     return score_assigned
