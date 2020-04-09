@@ -2,12 +2,6 @@ import ipywidgets as widgets
 from ipywidgets import interact, interactive_output, interactive 
 import yaml 
 
-def get_data():
-    with open('dataviz_lab.yml') as file:
-        # The FullLoader parameter handles the conversion from YAML
-        # scalar values to Python the dictionary format
-        lab_dict = yaml.load(file, Loader=yaml.FullLoader)
-        return lab_dict
 
 
 
@@ -40,19 +34,19 @@ def qtype2(single_options, qnum2):
 def options_widgets(options, qnum, qtype): 
     
     all_ouput_widgets = {}
-    if qtype == 0: 
+    if qtype == "single": 
         output_widget = qtype2(options, qnum)
         all_ouput_widgets.update(output_widget)
-    elif qtype ==1: 
+    elif qtype =="multiple": 
         output_widgets = qtype1(options, qnum)
         all_ouput_widgets.update(output_widgets)
     return all_ouput_widgets
 
 
 def question_widget(question, select_crit): 
-    if select_crit == 0: 
+    if select_crit == "single": 
         select_text = ""
-    elif select_crit == 1: 
+    elif select_crit == "multiple": 
         select_text = "(Choose all correct options)"
     
     question_string = "{}  {}".format(question, select_text)
@@ -61,9 +55,9 @@ def question_widget(question, select_crit):
 
 
 
-def get_widgets(): 
+def get_widgets(lab_dict): 
     # get data 
-    lab_dict  = get_data()
+  
 
     qkeys = list(lab_dict.keys())
 
@@ -76,7 +70,7 @@ def get_widgets():
             
             question = single_question["question"]
             options = single_question["options"]
-            qtype = int(single_question["question_type"])
+            qtype = single_question["question_type"]
             all_answers[x] = single_question["answer"]
 
             opt_widgets = options_widgets(options, x, qtype)
@@ -153,14 +147,14 @@ def grade_answers(store_data, all_answers, lab_dict ):
 
             # type 0 is just single answer mcq 
             qkey = "q"+str(q_num)
-            if lab_dict[qkey]["question_type"] == "0": 
+            if lab_dict[qkey]["question_type"] == "single": 
                 if store_data[q_num] == all_answers[q_num]: 
                         score_assigned[q_num] = 1.0
                 else: 
                         score_assigned[q_num] = -0.25
 
             # type 1 which mean has multiple answers
-            if lab_dict[qkey]["question_type"] == "1": 
+            if lab_dict[qkey]["question_type"] == "multiple": 
                 
                 # if answer is in all_answers then give a score of 1
                 # else score of -0.25
@@ -195,9 +189,16 @@ def calcuate_score(score_assigned, all_answers):
     # MAIN FUNCTION 
 
 
-def  run_lab(): 
+def  run_lab(file_name): 
     
-    all_outputs = get_widgets()
+    with open(file_name) as file:
+        # The FullLoader parameter handles the conversion from YAML
+        # scalar values to Python the dictionary format
+        lab_dict = yaml.load(file, Loader=yaml.FullLoader)
+        
+    
+    
+    all_outputs = get_widgets(lab_dict)
 
     submit_button = all_outputs['submit_button'] 
     all_widgets = all_outputs['all_widgets'] 
