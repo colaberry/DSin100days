@@ -1,0 +1,45 @@
+q0:
+    question: "What is Pandas used for ?"
+    options: 
+        a: "String manipulation"
+        b: "Basic numerical operations"
+        c: "Data handling and transformation"
+    question_type: "single" 
+    answer: "Data handling and transformation"
+      
+q1:  
+    question: "Given a numpy array 'a'; How do you convert it to a DataFrame?"
+    options: 
+        a: "a.DataFrame()"
+        b: "pandas.DataFrame(a)"
+        c: "pandas.to_DataFrame(a)"
+        d: "a.pandas.DataFrame()" 
+    question_type: "single"
+    answer: "pandas.DataFrame(a)"
+
+q2:  
+    question: "How would you view the first and last 10 records in a dataframe?"
+    options: 
+        a: "dataframe.head(10) and dataframe.tail(10)"
+        b: "dataframe.top(10) and dataframe.bottom(10)"
+        c: "pandas.head(dataframe,10) and pandas.tail(dataframe, 10)"
+    question_type: "single"
+    answer: "dataframe.head(10) and dataframe.tail(10)"
+
+q3:  
+    question: "Which statement best represents describes the pandas code snippet grad_students['Major'][1:4]"
+    options:  
+        a: "We are selecting the row Major and slicing out the first to 4 th row"
+        b: "We are selecting the column Major and slicing out rows from 1 to 4" 
+        c: "We are selecting the column Major and slicing out rows from 2 to 4" 
+    question_type: "single"
+    answer: "We are selecting the column Major and slicing out rows from 2 to 4" 
+
+q4: 
+    question: "What is a syntax to rename a column in a dataframe?" 
+    options: 
+        a: "grad_students.rename(columns={'Major_category': 'Major_Category'})"
+        b: "pandas.rename(grad_students['Major_category'],grad_students['Major_Category']) "
+        c: "grad_students.pandas.rename(columns={'Major_category': 'Major_Category'})"
+    question_type: "single"
+    answer:  "grad_students.rename(columns={'Major_category': 'Major_Category'})"
