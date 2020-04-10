@@ -1,5 +1,5 @@
 q0:
-    question: "What is Pandas used for ?"
+    question: "What is Pandas used for?"
     options: 
         a: "String manipulation"
         b: "Basic numerical operations"
@@ -36,7 +36,7 @@ q3:
     answer: "We are selecting the column Major and slicing out rows from 2 to 4" 
 
 q4: 
-    question: "What is a syntax to rename a column in a dataframe?" 
+    question: "What is the correct syntax to rename a column in a dataframe?" 
     options: 
         a: "grad_students.rename(columns={'Major_category': 'Major_Category'})"
         b: "pandas.rename(grad_students['Major_category'],grad_students['Major_Category']) "
