@@ -13017,6 +13017,45 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
+<style type="text/css">
+    
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+
+    </style>
 
 
 <style type="text/css">
@@ -13074,7 +13113,7 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered celltag_s1 celltag_content celltag_l1"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Support-Vector-Machines-(SVMs)">Support Vector Machines (SVMs)<a class="anchor-link" href="#Support-Vector-Machines-(SVMs)">¶</a></h1><h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">¶</a></h2><p>Support Vector Machines are classifiers that can classify datasets by a introducing an optimal hyperplane between the multi-dimensional data points. An hyperplane is a multi-dimensional structure that extends a two-dimensional plane. If the datasets consists of two dimensional dataset, then an estimate line is fit that provides the best classification on the  dataset. By "best classification", it is to be noted that a plane that not necessarily provides perfect classification of all points in the training dataset but fits a criterion such that the line is farthest from all points. You can see from the figure below that a hyperplane classifies the dataset as shown.</p>
@@ -13091,7 +13130,7 @@ ref: <a href="http://scikit-learn.org/stable/auto_examples/model_selection/plot_
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_s1 celltag_ce celltag_l1">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
@@ -13099,12 +13138,12 @@ ref: <a href="http://scikit-learn.org/stable/auto_examples/model_selection/plot_
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">model_selection</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
-<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
-<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">KFold</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">model_selection</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">classification_report</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">confusion_matrix</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">accuracy_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="k">import</span> <span class="n">SVC</span>
+<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="k">import</span> <span class="n">KFold</span>
 
 <span class="n">train_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"https://raw.githubusercontent.com/colaberry/data/master/Titanic/train_data.csv"</span><span class="p">)</span>
 <span class="n">test_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"https://raw.githubusercontent.com/colaberry/data/master/Titanic/test_data.csv"</span><span class="p">)</span>
@@ -13142,13 +13181,13 @@ ref: <a href="http://scikit-learn.org/stable/auto_examples/model_selection/plot_
 <span class="n">cv_results</span> <span class="o">=</span> <span class="n">model_selection</span><span class="o">.</span><span class="n">cross_val_score</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">kfold</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span>
 <span class="n">results</span><span class="o">=</span><span class="p">(</span><span class="n">cv_results</span><span class="p">)</span>
 <span class="n">accuracy_train</span> <span class="o">=</span> <span class="n">cv_results</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">accuracy_train</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">accuracy_train</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_l2 celltag_content celltag_s2"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We should now predict the model on our test data.</p>
@@ -13159,7 +13198,7 @@ ref: <a href="http://scikit-learn.org/stable/auto_examples/model_selection/plot_
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_l2 celltag_ce celltag_s2">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
@@ -13179,7 +13218,7 @@ ref: <a href="http://scikit-learn.org/stable/auto_examples/model_selection/plot_
 <div class="highlight"><pre><span></span><span class="n">svm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
 <span class="n">predictions</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 <span class="n">accuracy_test</span><span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">accuracy_test</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">accuracy_test</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13203,16 +13242,16 @@ ref: <a href="http://scikit-learn.org/stable/auto_examples/model_selection/plot_
 </li></div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_l2 celltag_ce celltag_s2">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Make predictions on test dataset</span>
 <span class="c1"># Make predictions on test dataset</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span><span class="p">,</span><span class="n">metrics</span>
-<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
-<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">LinearSVC</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">datasets</span><span class="p">,</span><span class="n">metrics</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="k">import</span> <span class="n">SVC</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="k">import</span> <span class="n">LinearSVC</span>
 
 <span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
 <span class="n">iris_data</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
@@ -13239,13 +13278,13 @@ ref: <a href="http://scikit-learn.org/stable/auto_examples/model_selection/plot_
 <span class="n">lsvm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
 <span class="n">predictions</span> <span class="o">=</span> <span class="n">lsvm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 <span class="n">accuracy_test</span><span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Accuracy of LinearSVC'</span><span class="p">,</span><span class="n">accuracy_test</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'Accuracy of LinearSVC'</span><span class="p">,</span><span class="n">accuracy_test</span><span class="p">)</span>
 
 <span class="n">l_svc</span><span class="o">=</span><span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">'linear'</span><span class="p">)</span>
 <span class="n">l_svc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
 <span class="n">predictions</span> <span class="o">=</span> <span class="n">l_svc</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 <span class="n">accuracy_test</span><span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Accuracy of SVC with Linear kernel'</span><span class="p">,</span><span class="n">accuracy_test</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'Accuracy of SVC with Linear kernel'</span><span class="p">,</span><span class="n">accuracy_test</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13263,7 +13302,7 @@ ref: <a href="http://scikit-learn.org/stable/auto_examples/model_selection/plot_
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_l2 celltag_ce celltag_s2">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
@@ -13283,13 +13322,13 @@ ref: <a href="http://scikit-learn.org/stable/auto_examples/model_selection/plot_
 <span class="n">p_svc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
 <span class="n">predictions</span> <span class="o">=</span> <span class="n">p_svc</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 <span class="n">accuracy_test</span><span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Accuracy of SVC with Poly kernel'</span><span class="p">,</span><span class="n">accuracy_test</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'Accuracy of SVC with Poly kernel'</span><span class="p">,</span><span class="n">accuracy_test</span><span class="p">)</span>
 
 <span class="n">r_svc</span><span class="o">=</span><span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">'rbf'</span><span class="p">)</span>
 <span class="n">r_svc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
 <span class="n">predictions</span> <span class="o">=</span> <span class="n">r_svc</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 <span class="n">accuracy_test</span><span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Accuracy of SVC with Poly kernel'</span><span class="p">,</span><span class="n">accuracy_test</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'Accuracy of SVC with Poly kernel'</span><span class="p">,</span><span class="n">accuracy_test</span><span class="p">)</span>
 </pre></div>
 
 </div>

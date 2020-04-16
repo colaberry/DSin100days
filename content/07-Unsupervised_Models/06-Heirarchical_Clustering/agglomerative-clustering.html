@@ -13017,6 +13017,45 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
+<style type="text/css">
+    
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+
+    </style>
 
 
 <style type="text/css">
@@ -13074,7 +13113,7 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered celltag_s1 celltag_content celltag_l1"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Hierarchical-Clustering">Hierarchical Clustering<a class="anchor-link" href="#Hierarchical-Clustering">¶</a></h1><h2 id="Agglomerative-Clustering">Agglomerative Clustering<a class="anchor-link" href="#Agglomerative-Clustering">¶</a></h2><p>Agglomerative Clustering is a type of hierarchical clustering. It's a bottom up approach to clustering data. Initially n datapoints are created as n clusters with each data point in a cluster of it's own. Then for each cluster, say $C_i$, the data point is compared with the nearest point. Pairs of data points which are nearest to each other are grouped together to form clusters. They are then combined in to one cluster. This process is done iteratively, thus the clusters are grouped together one by one based on nearness criterion. This method is followed until a heirarchy or a tree of clusters is formed and we get back all the data merged to form a root. Then a cut is taken at any point to visualize the groupings or cluster associations of each data point.</p>
@@ -13106,14 +13145,14 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_s1 celltag_ce celltag_l1">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [42]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_moons</span>
-<span class="kn">from</span> <span class="nn">scipy.cluster.hierarchy</span> <span class="kn">import</span> <span class="n">dendrogram</span><span class="p">,</span> <span class="n">linkage</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="k">import</span> <span class="n">make_moons</span>
+<span class="kn">from</span> <span class="nn">scipy.cluster.hierarchy</span> <span class="k">import</span> <span class="n">dendrogram</span><span class="p">,</span> <span class="n">linkage</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
@@ -13185,17 +13224,17 @@ div#notebook {
 <span class="n">clust_dist</span><span class="p">,</span>
 <span class="n">truncate_mode</span><span class="o">=</span><span class="s1">'lastp'</span><span class="p">,</span> <span class="c1"># show only the last p merged clusters</span>
 <span class="n">p</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="c1"># show only the last p merged clusters</span>
-<span class="n">show_leaf_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="c1"># otherwise numbers in brackets are counts</span>
+<span class="n">show_leaf_counts</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="c1"># otherwise numbers in brackets are counts</span>
 <span class="n">leaf_rotation</span><span class="o">=</span><span class="mf">90.</span><span class="p">,</span>
 <span class="n">leaf_font_size</span><span class="o">=</span><span class="mf">12.</span><span class="p">,</span>
-<span class="n">show_contracted</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="c1"># to get a distribution impression in truncated branches</span>
+<span class="n">show_contracted</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="c1"># to get a distribution impression in truncated branches</span>
 <span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_l2 celltag_content celltag_s2"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><br><br><br></p>
@@ -13216,12 +13255,12 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_l2 celltag_ce celltag_s2">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [43]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.cluster.hierarchy</span> <span class="kn">import</span> <span class="n">fcluster</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.cluster.hierarchy</span> <span class="k">import</span> <span class="n">fcluster</span>
 
 <span class="c1"># Calculating linkages among data points</span>
 <span class="n">clust_dist</span> <span class="o">=</span> <span class="n">linkage</span><span class="p">(</span><span class="n">moon_df</span><span class="p">,</span> <span class="s1">'average'</span><span class="p">,</span> <span class="s1">'euclidean'</span><span class="p">)</span>
@@ -13254,14 +13293,14 @@ div#notebook {
 <p>This provides options for n_clusters and linkage methods to be specified.</p>
 <p>Here is the sample code to use for clustering make_moons dataset.</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">AgglomerativeClustering</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="n">noisy_moons</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">make_moons</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="n">n_samples</span><span class="p">,</span> <span class="n">noise</span><span class="o">=.</span><span class="mi">05</span><span class="p">)</span>
+<span class="n">noisy_moons</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">make_moons</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="n">n_samples</span><span class="p">,</span> <span class="n">noise</span><span class="o">=.</span><span class="mo">05</span><span class="p">)</span>
 
 
 <span class="n">clustering</span> <span class="o">=</span> <span class="n">AgglomerativeClustering</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">noisy_moons</span><span class="p">)</span>
@@ -13285,8 +13324,8 @@ div#notebook {
 <div class="prompt input_prompt">In [44]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">AgglomerativeClustering</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="k">import</span> <span class="n">AgglomerativeClustering</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">datasets</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
@@ -13358,7 +13397,7 @@ Let us try AgglomerativeClustering for IRIS dataset.</p>
 <div class="prompt input_prompt">In [45]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="k">import</span> <span class="n">train_test_split</span>
 
 <span class="n">iris</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'https://raw.githubusercontent.com/plotly/datasets/master/iris.csv'</span><span class="p">)</span>
 

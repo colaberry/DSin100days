@@ -13017,6 +13017,45 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
+<style type="text/css">
+    
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+
+    </style>
 
 
 <style type="text/css">
@@ -13074,7 +13113,7 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered celltag_s1 celltag_content celltag_l1"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Advanced-Linear-Regression">Advanced Linear Regression<a class="anchor-link" href="#Advanced-Linear-Regression">¶</a></h1><p><br></p>
@@ -13084,14 +13123,14 @@ div#notebook {
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <h2 id="Cross-Validation-using-sklearn">Cross Validation using sklearn<a class="anchor-link" href="#Cross-Validation-using-sklearn">¶</a></h2><p>cross validation is available in sklearn. Let us perform a 5-fold cross_validation on the Boston Housing dataset.</p>
 <h2 id="Crosss-Validation-(CV)-using-Scikit-Learn">Crosss Validation (CV) using Scikit-Learn<a class="anchor-link" href="#Crosss-Validation-(CV)-using-Scikit-Learn">¶</a></h2><p>Import cross_validation and metrics function from sklearn. cross_validation is to perform CV on the dataset and metrics is used to evaluate the performance using the mean_squared_error function that it offers.</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">cross_validation</span><span class="p">,</span> <span class="n">metrics</span>
 </pre></div>
 <p>The target is the Housing Price variable 'MEDV' which we shall assign to the variable y.</p>
 <div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">boston_data</span><span class="p">[</span><span class="s1">'MEDV'</span><span class="p">]</span>
 </pre></div>
 <p>Instantiate a 5 fold split using the KFold function on the boston_data:</p>
-<div class="highlight"><pre><span></span><span class="n">k_folds</span> <span class="o">=</span> <span class="n">cross_validation</span><span class="o">.</span><span class="n">KFold</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">boston_data</span><span class="p">),</span> <span class="n">n_folds</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">k_folds</span> <span class="o">=</span> <span class="n">cross_validation</span><span class="o">.</span><span class="n">KFold</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">boston_data</span><span class="p">),</span> <span class="n">n_folds</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 <p>What the above command does is that it creates pairs of train and test indices that splits the dataset as explained in the illustration above. Hence we have 5 pairs of such splits of training and testing data over various parts. We can now iterate over all the parts and evaluate the Mean Squared Error (MSE) over each such split. We shall use a scores list to append all the MSEs for each such split. The iloc function over the dataframe can reference the values by index. Therefore, the part of the dataset where testing data or 'unseen' data is provided by KFold function can be accessed.</p>
 <div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="p">[]</span>
@@ -13101,7 +13140,7 @@ div#notebook {
     <span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">test_index</span><span class="p">],</span> <span class="n">y_hat</span><span class="p">))</span>
 </pre></div>
 <p>Taking the mean of all such MSEs over all splits will give us a value that we can use to 'honestly' evaluate our model:</p>
-<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">))</span>
 </pre></div>
 <p><br></p>
 <h3 id="Instructions">Instructions<a class="anchor-link" href="#Instructions">¶</a></h3><p>Peform k-fold cross validation where k=3 without randomizing the dataset and determine:</p>
@@ -13113,14 +13152,14 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_s1 celltag_ce celltag_l1">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">feature_selection</span><span class="p">,</span> <span class="n">cross_validation</span><span class="p">,</span> <span class="n">metrics</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">linear_model</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">rcParams</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">feature_selection</span><span class="p">,</span> <span class="n">cross_validation</span><span class="p">,</span> <span class="n">metrics</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">linear_model</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">rcParams</span>
 <span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">sm</span>
 
 
@@ -13138,7 +13177,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_s1 celltag_l1 celltag_ans"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h2><div class="highlight"><pre><span></span><span class="c1"># Perform linear regression using sklearn</span>
@@ -13148,7 +13187,7 @@ div#notebook {
 <span class="n">reg_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
 <span class="n">n_fold_var</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">shuffle_var</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">shuffle_var</span> <span class="o">=</span> <span class="bp">False</span>
 
 <span class="n">k_folds</span> <span class="o">=</span> <span class="n">cross_validation</span><span class="o">.</span><span class="n">KFold</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">boston_data</span><span class="p">),</span> <span class="n">n_folds</span><span class="o">=</span> <span class="n">n_fold_var</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span> <span class="n">shuffle_var</span><span class="p">)</span>
 <span class="n">scores</span> <span class="o">=</span> <span class="p">[]</span>
@@ -13158,13 +13197,13 @@ div#notebook {
     <span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">test_index</span><span class="p">],</span> <span class="n">y_hat</span><span class="p">))</span>
 
 <span class="n">mean_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mean_scores</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">mean_scores</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_l2 celltag_content celltag_s2"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><br><br><br></p>
@@ -13203,13 +13242,13 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_l2 celltag_ce celltag_s2">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span><span class="p">,</span> <span class="n">feature_selection</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">linear_model</span><span class="p">,</span> <span class="n">feature_selection</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">mean_squared_error</span>
 
 <span class="c1"># Modify the code below to predict housing prices for LSTAT</span>
 </pre></div>
@@ -13219,7 +13258,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_l2 celltag_s2 celltag_ans"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h3><div class="highlight"><pre><span></span><span class="n">reg_model</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">()</span>
