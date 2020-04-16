@@ -1,6 +1,6 @@
 pipeline:
   build:
-    image: 'karrug/dsin100dayscicd:0.1'
+    image: 'karrug/dsin100dayscicd:0.2'
     commands:
       - /root/env/bin/python tools/buildhtmlpages.py
     when:
