@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8">
 
-<title>Notebook</title>
+<title>01-Data_Imports_using_API</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13207,7 +13168,7 @@ for more info. <a href="https://docs.python.org/3/library/json.html">https://doc
 <p>Step - 1
 Get authentication key(s)</p>
 <div class="highlight"><pre><span></span><span class="c1"># Import Library</span>
-<span class="kn">import</span> <span class="nn">requests</span> <span class="kn">as</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">requests</span> <span class="k">as</span> <span class="nn">re</span>
 
 <span class="c1"># Instantiate the app id</span>
 <span class="n">appid</span> <span class="o">=</span> <span class="s1">'2ccdd152f1329726e81ae3cefaa0386e'</span>
@@ -13230,7 +13191,7 @@ From the API reference get the authentication mechanism</p>
 <span class="c1"># q = city, country</span>
 <span class="c1"># appid = api key</span>
 <span class="c1"># units = measure of temperature</span>
-<span class="n">empty_url</span> <span class="o">=</span> <span class="s1">'https://api.openweathermap.org/data/2.5/weather?q={}&amp;appid={}&amp;units={}'</span>
+<span class="n">empty_url</span> <span class="o">=</span> <span class="s1">'https://api.openweathermap.org/data/2.5/weather?q=</span><span class="si">{}</span><span class="s1">&amp;appid=</span><span class="si">{}</span><span class="s1">&amp;units=</span><span class="si">{}</span><span class="s1">'</span>
 
 <span class="c1"># the temperature for the cities we will be in metric system</span>
 <span class="n">units</span> <span class="o">=</span> <span class="s1">'metric'</span>
@@ -13268,9 +13229,9 @@ Authenticate</p>
 <p>Step - 4
 Process with the Data retrieved</p>
 <div class="highlight"><pre><span></span><span class="c1"># Latitude and Longitude of all the cities</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">'Longitude and Latitude Coordinates of London, UK:'</span><span class="p">,</span> <span class="n">city_info1</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'coord'</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">'Longitude and Latitude Coordinates of Delhi, IN:'</span><span class="p">,</span> <span class="n">city_info2</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'coord'</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">'Longitude and Latitude Coordinates of New York, US:'</span><span class="p">,</span> <span class="n">city_info3</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'coord'</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Longitude and Latitude Coordinates of London, UK:'</span><span class="p">,</span> <span class="n">city_info1</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'coord'</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Longitude and Latitude Coordinates of Delhi, IN:'</span><span class="p">,</span> <span class="n">city_info2</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'coord'</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Longitude and Latitude Coordinates of New York, US:'</span><span class="p">,</span> <span class="n">city_info3</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'coord'</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -13327,7 +13288,7 @@ Process with the Data retrieved</p>
 <span class="c1"># for metric system</span>
 <span class="n">units</span> <span class="o">=</span> <span class="s1">'metric'</span>
 <span class="c1"># empty_url </span>
-<span class="n">empty_url</span> <span class="o">=</span> <span class="s1">'https://api.openweathermap.org/data/2.5/weather?q={}&amp;appid={}&amp;units={}'</span>
+<span class="n">empty_url</span> <span class="o">=</span> <span class="s1">'https://api.openweathermap.org/data/2.5/weather?q=</span><span class="si">{}</span><span class="s1">&amp;appid=</span><span class="si">{}</span><span class="s1">&amp;units=</span><span class="si">{}</span><span class="s1">'</span>
 <span class="c1"># creating the api url</span>
 <span class="n">url</span> <span class="o">=</span> <span class="n">empty_url</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">appid</span><span class="p">,</span> <span class="n">units</span><span class="p">)</span>
 
@@ -13343,7 +13304,7 @@ Process with the Data retrieved</p>
 <span class="c1"># converting data to json format</span>
 <span class="n">data_json</span> <span class="o">=</span> <span class="n">api_call</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="c1"># printing the answer</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">'Temperature in '</span><span class="p">,</span><span class="n">city</span><span class="p">,</span> <span class="s1">' is'</span><span class="p">,</span> <span class="n">data_json</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'main'</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'temp'</span><span class="p">),</span> <span class="s1">'Celsius'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Temperature in '</span><span class="p">,</span><span class="n">city</span><span class="p">,</span> <span class="s1">' is'</span><span class="p">,</span> <span class="n">data_json</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'main'</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'temp'</span><span class="p">),</span> <span class="s1">'Celsius'</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13389,7 +13350,7 @@ Process with the Data retrieved</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Step - 2</p>
 <div class="highlight"><pre><span></span><span class="c1"># Import Libraries and authenticate </span>
-<span class="kn">import</span> <span class="nn">tweepy</span> <span class="kn">as</span> <span class="nn">t</span> 
+<span class="kn">import</span> <span class="nn">tweepy</span> <span class="k">as</span> <span class="nn">t</span> 
 <span class="kn">from</span> <span class="nn">tweepy</span> <span class="kn">import</span> <span class="n">OAuthHandler</span>
 
 <span class="c1"># Authenticating twitter API with OAuthHandler&lt;br&gt; with keys we found on the developer account in twitter</span>
@@ -13412,7 +13373,7 @@ Process with the Data retrieved</p>
 <div class="highlight"><pre><span></span><span class="c1"># .home_timeline() allows the user to get all the tweets in a list</span>
 <span class="k">for</span> <span class="n">tweets</span> <span class="ow">in</span> <span class="n">api</span><span class="o">.</span><span class="n">home_timeline</span><span class="p">():</span>
 <span class="c1"># Each tweet in this list are stored in a special type of object which contain a set of properties. One ofthose properties is text, which contains the tweet in string value. therefore we are going to access that feature</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">tweets</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tweets</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 <span class="c1"># Note: In the twitter api, the data recived in not usually all the data for instance which above function used .home_timeline() we can only see the most recent tweets which means that tweets that are more than 3 weeks old cannot be accessed.Therefore, before a wrapper please read its documentation for its limitations</span>
 </pre></div>
 
@@ -13425,9 +13386,9 @@ Process with the Data retrieved</p>
 <p>Step - 4</p>
 <div class="highlight"><pre><span></span><span class="c1"># .get_user allows us get information for a different twitter account</span>
 <span class="n">different_user</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_user</span><span class="p">(</span><span class="s1">'pycon'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">'@pycon followers: '</span><span class="p">,</span><span class="n">different_user</span><span class="o">.</span><span class="n">followers_count</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'@pycon followers: '</span><span class="p">,</span><span class="n">different_user</span><span class="o">.</span><span class="n">followers_count</span><span class="p">)</span>
 <span class="n">different_user1</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_user</span><span class="p">(</span><span class="s1">'gvanrossum'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">'@gvanrossum followers: '</span><span class="p">,</span> <span class="n">different_user1</span><span class="o">.</span><span class="n">followers_count</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'@gvanrossum followers: '</span><span class="p">,</span> <span class="n">different_user1</span><span class="o">.</span><span class="n">followers_count</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13464,21 +13425,21 @@ The process in the example gives us an understanding of how Cursor() works</p>
 <span class="n">access_token_secret</span> <span class="o">=</span> <span class="s1">'f1qws5jnISkKA0PnzjH6A96QMdZeaPYc3Hz7cp1mDNHtw'</span>
 
 <span class="c1"># Import tweepy</span>
-<span class="kn">import</span> <span class="nn">tweepy</span> <span class="kn">as</span> <span class="nn">t</span>
+<span class="kn">import</span> <span class="nn">tweepy</span> <span class="k">as</span> <span class="nn">t</span>
 <span class="kn">from</span> <span class="nn">tweepy</span> <span class="kn">import</span> <span class="n">OAuthHandler</span>
 <span class="kn">from</span> <span class="nn">tweepy</span> <span class="kn">import</span> <span class="n">Cursor</span>
 
 <span class="c1"># Authenticate the API</span>
 <span class="n">auth</span> <span class="o">=</span> <span class="n">OAuthHandler</span><span class="p">(</span><span class="n">consumer_key</span><span class="p">,</span> <span class="n">consumer_secret</span><span class="p">)</span>
 <span class="n">auth</span><span class="o">.</span><span class="n">set_access_token</span><span class="p">(</span><span class="n">access_token</span><span class="p">,</span> <span class="n">access_token_secret</span><span class="p">)</span>
-<span class="n">api</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">auth</span><span class="p">,</span> <span class="n">wait_on_rate_limit</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">wait_on_rate_limit_notify</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">auth</span><span class="p">,</span> <span class="n">wait_on_rate_limit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">wait_on_rate_limit_notify</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># Create pycon as an Object</span>
 <span class="n">different_user</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_user</span><span class="p">(</span><span class="s1">'ColaberrySODA'</span><span class="p">)</span>
 
 <span class="c1"># Print the friends</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">Cursor</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">friends</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s1">'ColaberrySODA'</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">(</span><span class="n">different_user</span><span class="o">.</span><span class="n">friends_count</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13511,8 +13472,8 @@ The process in the example gives us an understanding of how Cursor() works</p>
 
 <span class="c1"># Import Libraries</span>
 <span class="kn">import</span> <span class="nn">tweepy</span>
-<span class="kn">from</span> <span class="nn">tweepy</span> <span class="k">import</span> <span class="n">OAuthHandler</span>
-<span class="kn">from</span> <span class="nn">tweepy</span> <span class="k">import</span> <span class="n">Cursor</span>
+<span class="kn">from</span> <span class="nn">tweepy</span> <span class="kn">import</span> <span class="n">OAuthHandler</span>
+<span class="kn">from</span> <span class="nn">tweepy</span> <span class="kn">import</span> <span class="n">Cursor</span>
 </pre></div>
 
     </div>
@@ -13537,7 +13498,7 @@ The process in the example gives us an understanding of how Cursor() works</p>
 <span class="c1"># Third we instantiate an api object with the help of an authentication mechanism</span>
 <span class="n">auth</span> <span class="o">=</span> <span class="n">OAuthHandler</span><span class="p">(</span><span class="n">consumer_key</span><span class="p">,</span> <span class="n">consumer_secret</span><span class="p">)</span>
 <span class="n">auth</span><span class="o">.</span><span class="n">set_access_token</span><span class="p">(</span><span class="n">access_token</span><span class="p">,</span> <span class="n">access_token_secret</span><span class="p">)</span>
-<span class="n">api</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">auth</span><span class="p">,</span> <span class="n">wait_on_rate_limit</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">wait_on_rate_limit_notify</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">auth</span><span class="p">,</span> <span class="n">wait_on_rate_limit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">wait_on_rate_limit_notify</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># Fourth we get the users with the help of .get_user()</span>
 <span class="n">ColaberryInc</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_user</span><span class="p">(</span><span class="s1">'ColaberryInc'</span><span class="p">)</span>
@@ -13565,13 +13526,13 @@ The process in the example gives us an understanding of how Cursor() works</p>
 
 <span class="c1"># Here we compare if they both are similar with a bunch of if else statements</span>
 <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">Common_ppl</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">'Not Similar'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Not Similar'</span><span class="p">)</span>
 <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">Common_ppl</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">5</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">Common_ppl</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">'Somewhat Similar'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Somewhat Similar'</span><span class="p">)</span>
 <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">Common_ppl</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">10</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">Common_ppl</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">'Potential Friends'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Potential Friends'</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">'Recommended Friends'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Recommended Friends'</span><span class="p">)</span>
 </pre></div>
 
 </div>

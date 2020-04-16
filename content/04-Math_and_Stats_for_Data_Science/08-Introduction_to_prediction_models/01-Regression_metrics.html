@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8">
 
-<title>Notebook</title>
+<title>01-Regression_metrics</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13126,32 +13087,32 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
-<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="k">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">interact_manual</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">interact_manual</span>
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
  
-<span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="k">import</span> <span class="n">download_plotlyjs</span><span class="p">,</span> <span class="n">init_notebook_mode</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">iplot</span>
-<span class="kn">from</span> <span class="nn">plotly</span> <span class="k">import</span> <span class="n">graph_objs</span> <span class="k">as</span> <span class="n">go</span>
+<span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="kn">import</span> <span class="n">download_plotlyjs</span><span class="p">,</span> <span class="n">init_notebook_mode</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">iplot</span>
+<span class="kn">from</span> <span class="nn">plotly</span> <span class="kn">import</span> <span class="n">graph_objs</span> <span class="k">as</span> <span class="n">go</span>
 <span class="n">init_notebook_mode</span><span class="p">(</span><span class="n">connected</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Math</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Math</span>
 
-<span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="k">import</span> <span class="n">show</span><span class="p">,</span> <span class="n">output_notebook</span>
-<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="k">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="k">import</span> <span class="n">norm</span> 
-<span class="kn">from</span> <span class="nn">bokeh</span> <span class="k">import</span> <span class="n">plotting</span> <span class="k">as</span> <span class="n">pl</span>
-<span class="kn">from</span> <span class="nn">bokeh.models</span> <span class="k">import</span> <span class="n">HoverTool</span><span class="p">,</span> <span class="n">Arrow</span><span class="p">,</span> <span class="n">OpenHead</span><span class="p">,</span> <span class="n">NormalHead</span><span class="p">,</span> <span class="n">VeeHead</span><span class="p">,</span> <span class="n">Label</span>
-<span class="kn">from</span> <span class="nn">bokeh.models.glyphs</span> <span class="k">import</span> <span class="n">Text</span>
+<span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="kn">import</span> <span class="n">show</span><span class="p">,</span> <span class="n">output_notebook</span>
+<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span> 
+<span class="kn">from</span> <span class="nn">bokeh</span> <span class="kn">import</span> <span class="n">plotting</span> <span class="k">as</span> <span class="n">pl</span>
+<span class="kn">from</span> <span class="nn">bokeh.models</span> <span class="kn">import</span> <span class="n">HoverTool</span><span class="p">,</span> <span class="n">Arrow</span><span class="p">,</span> <span class="n">OpenHead</span><span class="p">,</span> <span class="n">NormalHead</span><span class="p">,</span> <span class="n">VeeHead</span><span class="p">,</span> <span class="n">Label</span>
+<span class="kn">from</span> <span class="nn">bokeh.models.glyphs</span> <span class="kn">import</span> <span class="n">Text</span>
 <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="k">import</span> <span class="n">chi2_contingency</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
-<span class="kn">from</span> <span class="nn">statsmodels.formula.api</span> <span class="k">import</span> <span class="n">ols</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">chi2_contingency</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">from</span> <span class="nn">statsmodels.formula.api</span> <span class="kn">import</span> <span class="n">ols</span>
 <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
 <span class="n">output_notebook</span><span class="p">()</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">linear_model</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">linear_model</span>
 </pre></div>
 
     </div>
@@ -13198,10 +13159,10 @@ div#notebook {
 
 
 
-<div id="a173c059-8c23-421b-a5fe-80d5f45bf034"></div>
+<div id="a70b0963-df89-4c37-881f-f34cd9bb252a"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a173c059-8c23-421b-a5fe-80d5f45bf034');
+var element = $('#a70b0963-df89-4c37-881f-f34cd9bb252a');
 
 (function(root) {
   function now() {
@@ -13495,8 +13456,8 @@ var element = $('#a173c059-8c23-421b-a5fe-80d5f45bf034');
 2)  Root mean square error (RMSE)<br>
 3)  Mean absolute error (MAE)<br>
 4)  R-squared error ($\text{R}^2$)<br></p>
-<p>To do all this first we are going to define a regression problem.Then we are going to fit a linear regression model to it, get predicted values from it and then use our metrics to see how well it works. So lets being by first defining our regression problem</p>
-<p>Suppose you work in the construction industry, you are tasked with finding a appropriate length beam to hold a large amount of weight. You ran a few experiments with various lengths of steel beam and they broken at certain weights. You recorded those and plotted them. The plot below represents the data that you collected.*</p>
+<p>To do all this first we are going to define a regression problem.Then we are going to fit a linear regression model to it, get predicted values from it and then use our metrics to see how well it works. So let's begin by first defining our regression problem.</p>
+<p>Suppose you work in the construction industry, you are tasked with finding an appropriate length beam to hold a large amount of weight. You ran a few experiments with various lengths of steel beams and they broke at certain weights. You recorded those and plotted them. The plot below represents the data that you collected.*</p>
 <p>*Note this is artificial data, it was generated for purposes of demonstration.</p>
 
 </div>
@@ -13582,10 +13543,10 @@ var element = $('#a173c059-8c23-421b-a5fe-80d5f45bf034');
 
 
 
-<div id="de5d9b65-b88c-43e8-816c-e04d4120e18c"></div>
+<div id="0e1d7803-dbfd-40e8-8195-4ab0395a26dd"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#de5d9b65-b88c-43e8-816c-e04d4120e18c');
+var element = $('#0e1d7803-dbfd-40e8-8195-4ab0395a26dd');
 (function(root) {
   function embed_document(root) {
     
@@ -13694,10 +13655,10 @@ var element = $('#de5d9b65-b88c-43e8-816c-e04d4120e18c');
 
 
 
-<div id="6cf385f5-5948-420a-9903-cc8e64510366"></div>
+<div id="89e0e428-b836-4e44-a259-6e835a1852be"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#6cf385f5-5948-420a-9903-cc8e64510366');
+var element = $('#89e0e428-b836-4e44-a259-6e835a1852be');
 (function(root) {
   function embed_document(root) {
     
@@ -13759,7 +13720,7 @@ var element = $('#6cf385f5-5948-420a-9903-cc8e64510366');
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">mean_squared_error</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
 <span class="n">MSE</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">pred_values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"mean squared error for the linear regression model </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">MSE</span><span class="p">))</span>
 </pre></div>
@@ -13815,7 +13776,7 @@ var element = $('#6cf385f5-5948-420a-9903-cc8e64510366');
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">mean_squared_error</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
 <span class="n">RMSE</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">pred_values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"root mean squared error for the linear regression model </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">RMSE</span><span class="p">))</span>
@@ -13872,7 +13833,7 @@ abs() represent the absolute value of the number.</p>
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">mean_absolute_error</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span>
 <span class="n">MAE</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">pred_values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">" mean aboslute for the linear regression model </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">MAE</span><span class="p">))</span>
@@ -13913,16 +13874,16 @@ abs() represent the absolute value of the number.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>MAE, MSE and RMSE are absolute metrics they, are defined as measures of error from the regression line to the actual data points. The next metric we will be looking at will be relative measure of error.</p>
+<p>MAE, MSE and RMSE are absolute metrics, they are defined as measures of error from the regression line to the actual data points. The next metric we will be looking at will be relative measure of error.</p>
 <h2 id="R-squared">R-squared<a class="anchor-link" href="#R-squared">¶</a></h2><p>The last metric we are going to look at is $R^2$. In order to define $R^2$ we need to first define something called total sum of square.</p>
 <p>Total sum of squares =  sum of squares of regression + sum of squares of error</p>
 <p>where -</p>
 <p>Sum of squares of regression - is defined as  $\sum \limits_{i =1}^{i =N}(\text{actual points }  -  \text{mean of all actual points} )^2$. This sum of squares represents the sum of the difference between the mean value of the points and the actual points.</p>
-<p>Sum of squares of error  - is defined as  $\sum \limits_{i =1}^{i =N}(\text{actual points }-\text{predicted points }  )^2$. This is just the sum of the squares of the distance between the our fit line and the actual data points.</p>
+<p>Sum of squares of error  - is defined as  $\sum \limits_{i =1}^{i =N}(\text{actual points }-\text{predicted points }  )^2$. This is just the sum of the squares of the distance between the fit line and the actual data points.</p>
 <p>Combining both these sums we get the total sum of squares.</p>
 <p>So $R^2$ is defined as -</p>
 <p>$R^2$ = 1- $\dfrac{\text{Sum of squares of regression} }{\text{Total sum of squares} }$</p>
-<p>We call it a relative measure since we are looking what fraction of  the total sum of squares is the sum of squares of regression. Since $R^2$ is a ratio, the value will vary between 0 and 1. $R^2  = 1$ would mean that data points fit perfectly to the regression line. $R^2 = 0$ mean that there is really no relationship between our x and y variable. We are going to first calculate $R^2$ for our data then see some other examples of $R^2$</p>
+<p>We call it a relative measure since we are looking what fraction of the total sum of squares is the sum of squares of regression. Since $R^2$ is a ratio, the value will vary between 0 and 1. $R^2  = 1$ would mean that data points fit perfectly to the regression line. $R^2 = 0$ mean that there is really no relationship between our x and y variable. We are going to first calculate $R^2$ for our data then see some other examples of $R^2$</p>
 <p>$R^2$ for our current data can be calculated using-</p>
 
 </div>
@@ -13933,7 +13894,7 @@ abs() represent the absolute value of the number.</p>
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">r2_score</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
 
 <span class="n">r_squared</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">pred_values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 
@@ -13976,7 +13937,7 @@ abs() represent the absolute value of the number.</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We say that $R^2$ measures the goodness of fit of a model. Hence once we get a value of $R^2$ we can talk about how well our independent variable (which is the length of beam in our case ) is correlated to our dependent variable(which is the max weight ).</p>
-<p>Now lets us look at some examples where we have different values of $R^2$</p>
+<p>Now let us look at some examples where we have different values of $R^2$</p>
 <p>Suppose we have data such that-</p>
 <p>y = ([111.4, 122.9, 134.4, 130.4, 157.5, 169.3, 185.5, 192.5, 203.5, 200.7])</p>
 
@@ -14047,10 +14008,10 @@ abs() represent the absolute value of the number.</p>
 
 
 
-<div id="30428337-e7af-4eb6-9e1d-87fdc488852d"></div>
+<div id="0f7bbbb6-c0db-40e8-a8ce-05f61a77d826"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#30428337-e7af-4eb6-9e1d-87fdc488852d');
+var element = $('#0f7bbbb6-c0db-40e8-a8ce-05f61a77d826');
 (function(root) {
   function embed_document(root) {
     
@@ -14178,10 +14139,10 @@ var element = $('#30428337-e7af-4eb6-9e1d-87fdc488852d');
 
 
 
-<div id="570bafae-acf7-4e4a-aefd-affb2d3c59f2"></div>
+<div id="47f31651-084d-41d2-9df2-cbecee936e1b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#570bafae-acf7-4e4a-aefd-affb2d3c59f2');
+var element = $('#47f31651-084d-41d2-9df2-cbecee936e1b');
 (function(root) {
   function embed_document(root) {
     

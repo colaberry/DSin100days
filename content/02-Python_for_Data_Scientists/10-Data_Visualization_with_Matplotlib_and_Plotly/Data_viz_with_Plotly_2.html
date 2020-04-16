@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8">
 
-<title>Notebook</title>
+<title>Data_viz_with_Plotly_2</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13128,10 +13089,10 @@ div#notebook {
 <p>The histogram chart is pretty easy to construct. The data series/feature can be used to construct a 'Histogram' object from the graph objects module. The data object can then be used in the iplot function to visualize the plot.</p>
 <p>Here is sample code.</p>
 <div class="highlight"><pre><span></span><span class="c1"># Importing libraries</span>
-<span class="kn">import</span> <span class="nn">plotly.offline</span> <span class="kn">as</span> <span class="nn">ofl</span>
-<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="kn">as</span> <span class="nn">go</span>
+<span class="kn">import</span> <span class="nn">plotly.offline</span> <span class="k">as</span> <span class="nn">ofl</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Creating data</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
@@ -13277,10 +13238,10 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="c1"># Importing libraries</span>
-<span class="kn">import</span> <span class="nn">plotly.offline</span> <span class="kn">as</span> <span class="nn">ofl</span>
-<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="kn">as</span> <span class="nn">go</span>
+<span class="kn">import</span> <span class="nn">plotly.offline</span> <span class="k">as</span> <span class="nn">ofl</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Important to initialize notebook mode to visualize plots within notebook</span>
 <span class="n">ofl</span><span class="o">.</span><span class="n">init_notebook_mode</span><span class="p">()</span>
@@ -13302,7 +13263,7 @@ div#notebook {
 <h3 id="Box-plots">Box plots<a class="anchor-link" href="#Box-plots">¶</a></h3><p>Box plots or Box and whisker plots are one of the most common plots to show distribution of a data set/feature. As its name suggests, it has a box and whiskers. The length of the total box and whisker depict the range of the dataset. The length of the box and the whiskers is determined by the spread of data. The whiskers showcase the top and bottom 25th percentiles of data, whereas the box depicts the middle half, i.e., 25th to 75th percentile of the data. The longer the box/whisker, the more spread out the data would be. There is a line within the box, which depicts the 50th percentile mark of the data. This mark denotes the 'median', one of the measures of central tendency which you will learn later in this course.</p>
 <p>In order to create a box plot, we need to create a trace using the 'box' object from the graph objects library. It works similar to most plotly graph object creations. Refer to the example code given by the plotly documentation below:</p>
 <div class="highlight"><pre><span></span><span class="c1"># Importing numpy to help create sample data</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Creating sample data to plot</span>
 <span class="n">y0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
@@ -13366,7 +13327,7 @@ div#notebook {
 <span class="n">layout</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span>
     <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
         <span class="n">title</span><span class="o">=</span><span class="s1">'normalized moisture'</span><span class="p">,</span>
-        <span class="n">zeroline</span><span class="o">=</span><span class="bp">False</span>
+        <span class="n">zeroline</span><span class="o">=</span><span class="kc">False</span>
     <span class="p">),</span>
     <span class="n">boxmode</span><span class="o">=</span><span class="s1">'group'</span>
 <span class="p">)</span>
@@ -13434,10 +13395,10 @@ div#notebook {
 </ul>
 <p>An example code from plotly documentation, for creation of a distplot is given below.</p>
 <div class="highlight"><pre><span></span><span class="c1"># Import figure factory module. Provide ff as an alias</span>
-<span class="kn">import</span> <span class="nn">plotly.figure_factory</span> <span class="kn">as</span> <span class="nn">ff</span>
+<span class="kn">import</span> <span class="nn">plotly.figure_factory</span> <span class="k">as</span> <span class="nn">ff</span>
 
 <span class="c1"># Importing numpy to create data</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Creating data and labels</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>  
@@ -13452,10 +13413,10 @@ div#notebook {
 </pre></div>
 <p>We can also create a distplot with multiple datasets/features (or as referred to earlier as multiple data series). Below is an example to show multiple data series distplot.</p>
 <div class="highlight"><pre><span></span><span class="c1"># Import figure factory module. Provide ff as an alias</span>
-<span class="kn">import</span> <span class="nn">plotly.figure_factory</span> <span class="kn">as</span> <span class="nn">ff</span>
+<span class="kn">import</span> <span class="nn">plotly.figure_factory</span> <span class="k">as</span> <span class="nn">ff</span>
 
 <span class="c1"># Importing numpy to create data</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Adding histogram data</span>
 <span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span>  
@@ -13597,7 +13558,7 @@ div#notebook {
 <div class="highlight"><pre><span></span><span class="c1"># Solution</span>
 
 <span class="c1"># Import figure factory module. Provide ff as an alias</span>
-<span class="kn">import</span> <span class="nn">plotly.figure_factory</span> <span class="kn">as</span> <span class="nn">ff</span>
+<span class="kn">import</span> <span class="nn">plotly.figure_factory</span> <span class="k">as</span> <span class="nn">ff</span>
 
 <span class="c1"># Extracting data from source</span>
 <span class="n">x_1</span> <span class="o">=</span> <span class="n">led_data</span><span class="p">[</span><span class="s1">'energy_consumption'</span><span class="p">]</span>
@@ -13656,7 +13617,7 @@ div#notebook {
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span>
 </pre></div>
 
     </div>
@@ -13686,7 +13647,7 @@ div#notebook {
 <p>Example of datetime object</p>
 <div class="highlight"><pre><span></span><span class="c1"># Importing datetime to create a datetime object</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-<span class="kn">import</span> <span class="nn">pandas_datareader.data</span> <span class="kn">as</span> <span class="nn">web</span>
+<span class="kn">import</span> <span class="nn">pandas_datareader.data</span> <span class="k">as</span> <span class="nn">web</span>
 
 <span class="c1"># Importing the dataset</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">DataReader</span><span class="p">(</span><span class="s2">"C"</span><span class="p">,</span> <span class="s1">'iex'</span><span class="p">,</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
@@ -13701,7 +13662,7 @@ div#notebook {
 </pre></div>
 <p>Example of date strings</p>
 <div class="highlight"><pre><span></span><span class="c1"># Importing pandas to read from csv file</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv"</span><span class="p">)</span>
 

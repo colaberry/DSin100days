@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8">
 
-<title>Notebook</title>
+<title>02-Likelihood_function</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13126,23 +13087,23 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
-<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="k">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">interact_manual</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">interact_manual</span>
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
  
-<span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="k">import</span> <span class="n">download_plotlyjs</span><span class="p">,</span> <span class="n">init_notebook_mode</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">iplot</span>
-<span class="kn">from</span> <span class="nn">plotly</span> <span class="k">import</span> <span class="n">graph_objs</span> <span class="k">as</span> <span class="n">go</span>
+<span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="kn">import</span> <span class="n">download_plotlyjs</span><span class="p">,</span> <span class="n">init_notebook_mode</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">iplot</span>
+<span class="kn">from</span> <span class="nn">plotly</span> <span class="kn">import</span> <span class="n">graph_objs</span> <span class="k">as</span> <span class="n">go</span>
 <span class="n">init_notebook_mode</span><span class="p">(</span><span class="n">connected</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="kn">import</span> <span class="nn">random</span>
 
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Math</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Math</span>
 
-<span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="k">import</span> <span class="n">show</span><span class="p">,</span> <span class="n">output_notebook</span>
-<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="k">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="k">import</span> <span class="n">norm</span> 
-<span class="kn">from</span> <span class="nn">bokeh</span> <span class="k">import</span> <span class="n">plotting</span> <span class="k">as</span> <span class="n">pl</span>
-<span class="kn">from</span> <span class="nn">bokeh.models</span> <span class="k">import</span> <span class="n">HoverTool</span><span class="p">,</span> <span class="n">Arrow</span><span class="p">,</span> <span class="n">OpenHead</span><span class="p">,</span> <span class="n">NormalHead</span><span class="p">,</span> <span class="n">VeeHead</span><span class="p">,</span> <span class="n">Span</span>
+<span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="kn">import</span> <span class="n">show</span><span class="p">,</span> <span class="n">output_notebook</span>
+<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span> 
+<span class="kn">from</span> <span class="nn">bokeh</span> <span class="kn">import</span> <span class="n">plotting</span> <span class="k">as</span> <span class="n">pl</span>
+<span class="kn">from</span> <span class="nn">bokeh.models</span> <span class="kn">import</span> <span class="n">HoverTool</span><span class="p">,</span> <span class="n">Arrow</span><span class="p">,</span> <span class="n">OpenHead</span><span class="p">,</span> <span class="n">NormalHead</span><span class="p">,</span> <span class="n">VeeHead</span><span class="p">,</span> <span class="n">Span</span>
 
 
 <span class="n">output_notebook</span><span class="p">()</span>
@@ -13192,10 +13153,10 @@ div#notebook {
 
 
 
-<div id="92a1351a-735a-4edf-9b6a-c8f206edfd58"></div>
+<div id="bee388c3-35c3-498a-9543-32c2bf625239"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#92a1351a-735a-4edf-9b6a-c8f206edfd58');
+var element = $('#bee388c3-35c3-498a-9543-32c2bf625239');
 
 (function(root) {
   function now() {
@@ -13566,10 +13527,10 @@ var element = $('#92a1351a-735a-4edf-9b6a-c8f206edfd58');
 
 
 
-<div id="5145b9fe-8d6e-43e6-bf5a-04fdbdb71a4e"></div>
+<div id="4e9e3477-8264-476c-a72e-59a7021132c7"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#5145b9fe-8d6e-43e6-bf5a-04fdbdb71a4e');
+var element = $('#4e9e3477-8264-476c-a72e-59a7021132c7');
 (function(root) {
   function embed_document(root) {
     
@@ -13705,10 +13666,10 @@ p( 9.0 cm &lt; length of nail &lt; 9.5 cm GIVEN mean of distribution = 10.0,stan
 
  
  
-<div id="1a027139-fa2e-4c0c-985c-6b8925914541"></div>
+<div id="d7f327a8-373e-44c6-bb0a-b16c12e77e5e"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#1a027139-fa2e-4c0c-985c-6b8925914541');
+var element = $('#d7f327a8-373e-44c6-bb0a-b16c12e77e5e');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "66cc1de61617427eb36c5ab1fef2f491", "version_major": 2, "version_minor": 0}
@@ -13816,10 +13777,10 @@ $p(x|\theta)$ represents the probability distribution function in case of a cont
 
 
 
-<div id="0ffe1c5e-fe2f-43da-b6a2-434077c14a87"></div>
+<div id="04845a24-133e-4257-8e6a-5af3a0e24a32"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#0ffe1c5e-fe2f-43da-b6a2-434077c14a87');
+var element = $('#04845a24-133e-4257-8e6a-5af3a0e24a32');
 (function(root) {
   function embed_document(root) {
     
@@ -14025,10 +13986,10 @@ $\log \prod \limits_{i=1}^{i =n} p(x_i|\theta) = \log p(x_1|\theta) +...+p(x_n|\
 
 
 
-<div id="83678ee3-0e29-4f3e-97b5-d80fae7b577a"></div>
+<div id="a40d8423-a19e-415b-ba9e-4a276e43f2e6"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#83678ee3-0e29-4f3e-97b5-d80fae7b577a');
+var element = $('#a40d8423-a19e-415b-ba9e-4a276e43f2e6');
 (function(root) {
   function embed_document(root) {
     
