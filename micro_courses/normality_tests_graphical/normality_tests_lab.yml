@@ -1,0 +1,48 @@
+q0:  
+    question: "What do Graphical Normality tests do?"
+    options:  
+        a: "Check if our data is normally distributed"
+        b: "Test if a sample of the data follows a normal distribution"
+        c: "Precisely measures the deviation of our data distribution from a normal distribution"
+    question_type: "single"
+    answer: "Check if our data is normally distributed"
+
+q1:
+    question: "Which of the following is NOT an assumption for linear regression"
+    options: 
+        a: "We have a linear relationship between the independent variable and the target variable."
+        b: "Our data is hetroscedastic"
+        c: "Residuals will have a normal distribution"
+        d: "Minimal collinearity"
+    question_type: "single" 
+    answer: "Our data is hetroscedastic"
+      
+q2:  
+    question: "what is a potential pitfall of Histograms?"
+    options: 
+        a: "Nothing, Histograms always work!"
+        b: "Histograms cannot represent a normal distribution"
+        c: "How a distribution 'looks' can change on the bin size"
+        d:
+    question_type: "single"
+    answer: "my_dataframe.head(10)"
+
+q3:  
+    question: "What does QQ plot stand for?"
+    options: 
+        a: "Quarter-Quantile plot"
+        b: "Quarter-Quarter plot"
+        c: "Quantile-Quantile plot"
+    question_type: "single"
+    answer: "Quantile-Quantile plot"
+
+
+q4: 
+    question: "How can you tell if data is normally distributed using QQ plot"  
+    options: 
+        a: "The data points must form an s-shaped curve"
+        b: "The data points must lie on a straight line"
+        c: "The data points must lie on a a guide line that represents a normal distribution"
+        d: "The data points should lie on a guide line representing a normal distribution, but edge points might slightly diverse"
+    question_type: "single"
+    answer: "The data points should lie on a guide line representing a normal distribution, but edge points might slightly diverse"

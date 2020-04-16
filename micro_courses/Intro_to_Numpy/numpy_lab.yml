@@ -1,0 +1,48 @@
+q0:
+    question: "Numpy is primarily used for _______"
+    options: 
+        a: "String manipulation"
+        b: "Basic numerical operations"
+        c: "Symbolic manipulation"
+        d: "Scientific and numerical computing"
+    question_type: "single" 
+    answer: "Scientific and numerical computing"
+      
+q1:  
+    question: "In Numpy, a 'm x n' matrix is represented as ?"
+    options: 
+        a: "A multidimensional array"
+        b: "A list of lists"
+        c: "A single array" 
+    question_type: "single"
+    answer: "A multidimensional array"
+
+q2:  
+    question: "What happens when you convert list a = ['hello', 2, 3.4] into a Numpy array?"
+    options: 
+        a: "'a' will remain a list"
+        b: "Numpy will convert 'a' into a list of strings"
+        c: "Numpy will convert 'a' into an array of ints"
+        d: "Numpy will convert 'a' into an array of strings"
+    question_type: "single"
+    answer: "Numpy will convert 'a' into an array of strings"
+
+q3:  
+    question: "How do you duplicate a Numpy array b = np.array([1, 4, 3])?"
+    options:  
+        a: "c = b.duplicate()"
+        b: "c = copy(b)"
+        c: "c = b"
+        d: "c = b.copy()"
+    question_type: "single"
+    answer: "c = b.copy()"
+
+q4: 
+    question: "How do you multiply matricies in Numpy" 
+    options: 
+        a: "A * B"
+        b: "np.multiply(A,B)"
+        c: "np.dot(A,B)"
+        d: "np.matmul(A,B)"
+    question_type: "single"
+    answer: "np.matmul(A,B)"
