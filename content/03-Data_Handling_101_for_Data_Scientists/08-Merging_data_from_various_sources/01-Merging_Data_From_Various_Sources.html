@@ -13017,6 +13017,45 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
+<style type="text/css">
+    
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+
+    </style>
 
 
 <style type="text/css">
@@ -13158,8 +13197,8 @@ Here is the output of concat().</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h3><div class="highlight"><pre><span></span><span class="c1">#solution</span>
 <span class="n">All_fruits</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">Alice_fruits</span><span class="p">,</span><span class="n">Bob_fruits</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Alice_fruits</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Bob_fruits</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">Alice_fruits</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">Bob_fruits</span><span class="p">)</span>
 <span class="n">All_fruits</span>
 </pre></div>
 
@@ -13185,9 +13224,9 @@ Suppose we do not have unique indices in the input dataframes, the indices will 
                   <span class="s1">'C'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'C8'</span><span class="p">,</span> <span class="s1">'C9'</span><span class="p">,</span> <span class="s1">'C10'</span><span class="p">,</span> <span class="s1">'C11'</span><span class="p">],</span>
                   <span class="s1">'D'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'D8'</span><span class="p">,</span> <span class="s1">'D9'</span><span class="p">,</span> <span class="s1">'D10'</span><span class="p">,</span> <span class="s1">'D11'</span><span class="p">]})</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 <span class="n">result</span>
 </pre></div>
 <p>Here is the output:</p>
@@ -13211,15 +13250,15 @@ Suppose we do not have unique indices in the input dataframes, the indices will 
 <h3 id="Handling-Duplcate-Indices">Handling Duplcate Indices<a class="anchor-link" href="#Handling-Duplcate-Indices">¶</a></h3><p>There are several ways to handle duplicate indices. One of the ways is to identify if indices are duplicated.
 You may do this by using 'verify_integrity=True' parameter while using concat() function.</p>
 <div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">],</span><span class="n">verify_integrity</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">],</span><span class="n">verify_integrity</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"ValueError:"</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">"ValueError:"</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 </pre></div>
 <p>Or you could ingnore index by using 'ignore_index=True' flag.</p>
 <div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">],</span><span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">],</span><span class="n">ignore_index</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"ValueError:"</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">"ValueError:"</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 </pre></div>
 <h3 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">¶</a></h3><p>Try the concat() with the following dataframes A and B. Print Duplicate, if there are duplicate indices.
 Else print the resulting dataframe.</p>
@@ -13249,10 +13288,10 @@ Else print the resulting dataframe.</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h3><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">],</span><span class="n">verify_integrity</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">],</span><span class="n">verify_integrity</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Duplicate"</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">"Duplicate"</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13394,7 +13433,7 @@ A useful shortcut to concat() are the append() instance methods on Series and Da
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Aggregation-using-groupby()">Aggregation using groupby()<a class="anchor-link" href="#Aggregation-using-groupby()">¶</a></h2><p>Let us say we have data pertaining to monthly spends for the year 2017, of various departments in a company. The data may read something like this:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 
 <span class="n">spend_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"../../../data/Spend_by_dept.csv"</span><span class="p">)</span>
 
@@ -13728,7 +13767,7 @@ to read the above 3 datasources and merge the data in to one clean datasource.</
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Reading data into tables</span>
 <span class="n">df_csv_custorder</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">cust_order_link</span><span class="p">)</span>
@@ -13806,7 +13845,7 @@ get transaction details.</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="k">import</span> <span class="n">BeautifulSoup</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s1">'https://raw.githubusercontent.com/colaberry/DSin100days/master/data/order-transactions.html'</span>
 
@@ -13855,10 +13894,10 @@ get transaction details.</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now it is time to combine the above data sources and merge the datasets as provided in the previous lessons in this course. The below example shows python code to merge the above 3 datasets, to print the following:</p>
 <div class="highlight"><pre><span></span><span class="c1"># Printing all 3 tables out</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df_web_transactions</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df_db_products</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">df_web_transactions</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">df_db_products</span><span class="p">)</span>
 <span class="n">df_csv_custorder</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'customerno'</span><span class="p">,</span> <span class="s1">'orderno'</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df_csv_custorder</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">df_csv_custorder</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">orderno</span>  <span class="n">productno</span>  <span class="n">quantity</span>   <span class="n">total</span>
@@ -13891,7 +13930,7 @@ get transaction details.</p>
 <span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">df_csv_custorder</span><span class="p">[[</span><span class="s1">'customerno'</span><span class="p">,</span><span class="s1">'orderno'</span><span class="p">]],</span> <span class="n">on</span><span class="o">=</span><span class="s1">'orderno'</span><span class="p">)</span>
 <span class="c1"># Condition to filter products purchased by customer no.100</span>
 <span class="n">prods</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="s1">'customerno'</span><span class="p">]</span><span class="o">==</span><span class="mi">100</span><span class="p">][</span><span class="s1">'productname'</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">prods</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">prods</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">0</span>               <span class="n">WB</span> <span class="n">A1</span> <span class="n">Paper</span>
@@ -13902,7 +13941,7 @@ get transaction details.</p>
 <p>Print the list of customer numbers who have ordered the product 'Regis Stapler'.</p>
 <div class="highlight"><pre><span></span><span class="c1"># Condition to extract customer nos who purchased 'Regis Stapler'</span>
 <span class="n">custs</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="s1">'productname'</span><span class="p">]</span><span class="o">==</span><span class="s1">'Regis Stapler'</span><span class="p">][</span><span class="s1">'customerno'</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">custs</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">custs</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span>    <span class="mi">102</span>

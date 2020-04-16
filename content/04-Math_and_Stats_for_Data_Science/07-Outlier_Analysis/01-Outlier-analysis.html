@@ -13017,6 +13017,45 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
+<style type="text/css">
+    
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+
+    </style>
 
 
 <style type="text/css">
@@ -13392,14 +13431,14 @@ Original ABOD: Considers all training points with high-time complexity</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 <span class="kn">import</span> <span class="nn">matplotlib.font_manager</span>
-<span class="kn">from</span> <span class="nn">pyod.models.abod</span> <span class="kn">import</span> <span class="n">ABOD</span>
-<span class="kn">from</span> <span class="nn">pyod.models.knn</span> <span class="kn">import</span> <span class="n">KNN</span>
-<span class="kn">from</span> <span class="nn">pyod.models.iforest</span> <span class="kn">import</span> <span class="n">IForest</span>
-<span class="kn">from</span> <span class="nn">pyod.utils.data</span> <span class="kn">import</span> <span class="n">generate_data</span><span class="p">,</span> <span class="n">get_outliers_inliers</span>
+<span class="kn">from</span> <span class="nn">pyod.models.abod</span> <span class="k">import</span> <span class="n">ABOD</span>
+<span class="kn">from</span> <span class="nn">pyod.models.knn</span> <span class="k">import</span> <span class="n">KNN</span>
+<span class="kn">from</span> <span class="nn">pyod.models.iforest</span> <span class="k">import</span> <span class="n">IForest</span>
+<span class="kn">from</span> <span class="nn">pyod.utils.data</span> <span class="k">import</span> <span class="n">generate_data</span><span class="p">,</span> <span class="n">get_outliers_inliers</span>
 <span class="n">random_state</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
 
 <span class="c1">#generate random data with two features</span>
@@ -13565,13 +13604,13 @@ No of Errors :  K Nearest Neighbors (KNN) 3
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">matplotlib.font_manager</span>
 
 <span class="c1"># Import IForest model</span>
-<span class="kn">from</span> <span class="nn">pyod.models.iforest</span> <span class="kn">import</span> <span class="n">IForest</span>
-<span class="kn">from</span> <span class="nn">pyod.models.pca</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">from</span> <span class="nn">pyod.models.iforest</span> <span class="k">import</span> <span class="n">IForest</span>
+<span class="kn">from</span> <span class="nn">pyod.models.pca</span> <span class="k">import</span> <span class="n">PCA</span>
 <span class="c1"># Define the number of inliers and outliers</span>
 <span class="n">n_samples</span> <span class="o">=</span> <span class="mi">200</span>
 <span class="n">outliers_fraction</span> <span class="o">=</span> <span class="mf">0.25</span>
@@ -13632,7 +13671,7 @@ No of Errors :  K Nearest Neighbors (KNN) 3
     <span class="c1"># Fit the model</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">clf_name</span><span class="p">,</span> <span class="n">clf</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">classifiers</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'fitting'</span><span class="p">,</span> <span class="n">clf_name</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'fitting'</span><span class="p">,</span> <span class="n">clf_name</span><span class="p">)</span>
         <span class="c1"># fit the data and tag outliers</span>
         <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
         <span class="n">scores_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
@@ -13693,13 +13732,13 @@ No of Errors :  K Nearest Neighbors (KNN) 3
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">matplotlib.font_manager</span>
 
 <span class="c1"># Import IForest model</span>
-<span class="kn">from</span> <span class="nn">pyod.models.iforest</span> <span class="kn">import</span> <span class="n">IForest</span>
-<span class="kn">from</span> <span class="nn">pyod.models.pca</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">from</span> <span class="nn">pyod.models.iforest</span> <span class="k">import</span> <span class="n">IForest</span>
+<span class="kn">from</span> <span class="nn">pyod.models.pca</span> <span class="k">import</span> <span class="n">PCA</span>
 <span class="c1"># Define the number of inliers and outliers</span>
 <span class="n">n_samples</span> <span class="o">=</span> <span class="mi">200</span>
 <span class="n">outliers_fraction</span> <span class="o">=</span> <span class="mf">0.25</span>
@@ -13760,7 +13799,7 @@ No of Errors :  K Nearest Neighbors (KNN) 3
     <span class="c1"># Fit the model</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">clf_name</span><span class="p">,</span> <span class="n">clf</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">classifiers</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'fitting'</span><span class="p">,</span> <span class="n">clf_name</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'fitting'</span><span class="p">,</span> <span class="n">clf_name</span><span class="p">)</span>
         <span class="c1"># fit the data and tag outliers</span>
         <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
         <span class="n">scores_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>

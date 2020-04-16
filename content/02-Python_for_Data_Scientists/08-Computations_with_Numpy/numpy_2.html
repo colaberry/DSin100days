@@ -13017,6 +13017,45 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
+<style type="text/css">
+    
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+
+    </style>
 
 
 <style type="text/css">
@@ -13074,7 +13113,7 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered celltag_s1 celltag_content celltag_l1"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Numpy-II">Numpy II<a class="anchor-link" href="#Numpy-II">¶</a></h1><h2 id="1.-NumPy-Array-Operations">1. NumPy Array Operations<a class="anchor-link" href="#1.-NumPy-Array-Operations">¶</a></h2><p><br>
@@ -13133,7 +13172,7 @@ In this lesson we shall study various operations on numpy arrays.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_s1 celltag_ce celltag_l1">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
@@ -13146,7 +13185,7 @@ In this lesson we shall study various operations on numpy arrays.</p>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_s1 celltag_l1 celltag_ans"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
@@ -13159,7 +13198,7 @@ In this lesson we shall study various operations on numpy arrays.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_l2 celltag_content celltag_s2"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="2.-Max,-Min,-ArgMax,-ArgMin">2. Max, Min, ArgMax, ArgMin<a class="anchor-link" href="#2.-Max,-Min,-ArgMax,-ArgMin">¶</a></h2><p>Four simple functions that help a great deal when performing numerical computations on a large array of data is max(), min(), argmax() and argmin().</p>
@@ -13201,7 +13240,7 @@ In this lesson we shall study various operations on numpy arrays.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_l2 celltag_ce celltag_s2">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
@@ -13239,14 +13278,14 @@ In this lesson we shall study various operations on numpy arrays.</p>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_l2 celltag_s2 celltag_ans"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="n">max_X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 <span class="n">min_X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
 <span class="n">argmax_X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span>
 <span class="n">argmin_X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">argmin</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Max value is </span><span class="si">%d</span><span class="s2">,</span><span class="se">\n</span><span class="s2">Min value is </span><span class="si">%d</span><span class="s2">,</span><span class="se">\n</span><span class="s2">Max value index is </span><span class="si">%d</span><span class="s2">,</span><span class="se">\n</span><span class="s2">Min value index is </span><span class="si">%d</span><span class="s2">"</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"Max value is </span><span class="si">%d</span><span class="s2">,</span><span class="se">\n</span><span class="s2">Min value is </span><span class="si">%d</span><span class="s2">,</span><span class="se">\n</span><span class="s2">Max value index is </span><span class="si">%d</span><span class="s2">,</span><span class="se">\n</span><span class="s2">Min value index is </span><span class="si">%d</span><span class="s2">"</span>
       <span class="o">%</span><span class="p">(</span><span class="n">max_X</span><span class="p">,</span><span class="n">min_X</span><span class="p">,</span><span class="n">argmax_X</span><span class="p">,</span><span class="n">argmin_X</span><span class="p">))</span>
 </pre></div>
 
@@ -13262,18 +13301,18 @@ In this lesson we shall study various operations on numpy arrays.</p>
 </pre></div>
 <p>Below is a list of functions (and some attributes which can be extracted) that can be performed on a given array. Observe that the print statement details the functionalities of each of the specific functions.</p>
 <div class="highlight"><pre><span></span><span class="c1"># Importing numpy library</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
 <span class="c1"># data</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">366</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">74</span><span class="p">,</span><span class="mi">243</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">234</span><span class="p">,</span><span class="mi">636</span><span class="p">,</span><span class="mi">223</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">574</span><span class="p">])</span>
 
 <span class="c1"># Printing results</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'''Array of cummulative sums of elements of the original array: </span><span class="si">{}</span><span class="s1">,</span>
-<span class="s1">         Array of cummulative products of elements of the original array: </span><span class="si">{}</span><span class="s1">,</span>
-<span class="s1">         Average of all elements of the array: </span><span class="si">{:.2f}</span><span class="s1">,</span>
-<span class="s1">         Sum of all elements of the array: </span><span class="si">{}</span><span class="s1">,</span>
-<span class="s1">         Product of all elements of the array: </span><span class="si">{}</span><span class="s1">,</span>
-<span class="s1">         Standard deviation of all elements of the array: </span><span class="si">{:.2f}</span><span class="s1">'''</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'''Array of cummulative sums of elements of the original array: {},</span>
+<span class="s1">         Array of cummulative products of elements of the original array: {},</span>
+<span class="s1">         Average of all elements of the array: {:.2f},</span>
+<span class="s1">         Sum of all elements of the array: {},</span>
+<span class="s1">         Product of all elements of the array: {},</span>
+<span class="s1">         Standard deviation of all elements of the array: {:.2f}'''</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
          <span class="n">a</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(),</span>
          <span class="n">a</span><span class="o">.</span><span class="n">cumprod</span><span class="p">(),</span>
          <span class="n">a</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
@@ -13306,16 +13345,16 @@ In this lesson we shall study various operations on numpy arrays.</p>
 </ul>
 <p>Examples:</p>
 <div class="highlight"><pre><span></span><span class="c1"># Importing numpy library</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
 <span class="c1"># data</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">366</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">74</span><span class="p">,</span><span class="mi">243</span><span class="p">,</span><span class="mi">45</span><span class="p">],[</span><span class="mi">234</span><span class="p">,</span><span class="mi">636</span><span class="p">,</span><span class="mi">223</span><span class="p">]])</span>
 
 <span class="c1"># Printing results</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'''b is a </span><span class="si">{:d}</span><span class="s1">-dimensional array,</span>
-<span class="s1">         Diagonal of b is: </span><span class="si">{}</span><span class="s1">,</span>
-<span class="s1">         1-dimensional equivalent of b is: </span><span class="si">{}</span><span class="s1">,</span>
-<span class="s1">         Transpose of b is: </span><span class="si">{}</span><span class="s1">'''</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'''b is a {:d}-dimensional array,</span>
+<span class="s1">         Diagonal of b is: {},</span>
+<span class="s1">         1-dimensional equivalent of b is: {},</span>
+<span class="s1">         Transpose of b is: {}'''</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
          <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span>
          <span class="n">b</span><span class="o">.</span><span class="n">diagonal</span><span class="p">(),</span>
          <span class="n">b</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span>
@@ -13360,10 +13399,10 @@ In this lesson we shall study various operations on numpy arrays.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'''Shape of array 'a':</span><span class="si">{}</span><span class="s1">,</span>
-<span class="s1">         Index of element with maximum value: </span><span class="si">{}</span><span class="s1">,</span>
-<span class="s1">         Average of all elements of the array: </span><span class="si">{}</span><span class="s1">,</span>
-<span class="s1">         Cummulative sum of first 6 elements of the array: </span><span class="si">{}</span><span class="s1">'''</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">a</span><span class="o">.</span><span class="n">argmax</span><span class="p">(),</span><span class="n">a</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span><span class="n">a</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()[</span><span class="mi">5</span><span class="p">]))</span>
+<h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s1">'''Shape of array 'a':{},</span>
+<span class="s1">         Index of element with maximum value: {},</span>
+<span class="s1">         Average of all elements of the array: {},</span>
+<span class="s1">         Cummulative sum of first 6 elements of the array: {}'''</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">a</span><span class="o">.</span><span class="n">argmax</span><span class="p">(),</span><span class="n">a</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span><span class="n">a</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()[</span><span class="mi">5</span><span class="p">]))</span>
 </pre></div>
 
 </div>
@@ -13416,7 +13455,7 @@ Numpy's <strong>arange</strong>(lower, upper, increment) function has the same f
 <span class="n">array_one</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">array_one</span><span class="p">)</span>
 <span class="n">array_two</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">array_one</span><span class="p">,</span> <span class="n">array_two</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">array_one</span><span class="p">,</span> <span class="n">array_two</span><span class="p">)</span>
 </pre></div>
 
 </div>

@@ -13017,6 +13017,45 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
+<style type="text/css">
+    
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+
+    </style>
 
 
 <style type="text/css">
@@ -13074,7 +13113,7 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered celltag_l11111"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Principal-Component-Analysis-(PCA)">Principal Component Analysis (PCA)<a class="anchor-link" href="#Principal-Component-Analysis-(PCA)">¶</a></h1><p><br>
@@ -13105,7 +13144,7 @@ Principal Component Analysis or PCA is a classical linear approach to dimensiona
 </image></div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_l11111">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
@@ -13125,7 +13164,7 @@ Principal Component Analysis or PCA is a classical linear approach to dimensiona
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_l22222"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="2.-PCA">2. PCA<a class="anchor-link" href="#2.-PCA">¶</a></h2><p>PCA is an unsupervised algorithm that converts a set of observations of possibly correlated variables into a set which is a combination of original features. The new set of values are linearly uncorrelated variables called <strong>principal components</strong>.</p>
@@ -13146,7 +13185,7 @@ Principal Component Analysis or PCA is a classical linear approach to dimensiona
 <p><br>
 Let's see in detail all these steps using the famous "Iris" dataset.</p>
 <p>Loading "Iris" dataset:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
 
 <span class="n">raw</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
@@ -13176,7 +13215,7 @@ Let's see in detail all these steps using the famous "Iris" dataset.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_l22222">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
@@ -13231,7 +13270,7 @@ memory usage: 7.2 KB
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_l33333"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="3.1-Standardize-the-data">3.1 Standardize the data<a class="anchor-link" href="#3.1-Standardize-the-data">¶</a></h3><p><br></p>
@@ -13260,7 +13299,7 @@ $$ S = \sqrt \frac {\sum (x - \bar{x})^2}{n -1}$$</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_l33333">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
@@ -13271,7 +13310,7 @@ $$ S = \sqrt \frac {\sum (x - \bar{x})^2}{n -1}$$</p>
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cols_to_transform</span><span class="p">:</span>
     <span class="n">tips</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">raw</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span>
 
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="k">import</span> <span class="n">StandardScaler</span>
 
 <span class="c1"># Add your code here</span>
 </pre></div>
@@ -13291,18 +13330,18 @@ $$ S = \sqrt \frac {\sum (x - \bar{x})^2}{n -1}$$</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_l44444"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="3.2-Calculate-the-covariance-matrix">3.2 Calculate the covariance matrix<a class="anchor-link" href="#3.2-Calculate-the-covariance-matrix">¶</a></h3><p>The covariance matrix Σ, is a d×d matrix where each element represents the covariance between two features. <strong>Covariance</strong> is a measure of how changes in one variable are associated with changes in a second variable. It’s similar to variance, but where variance tells you how a single variable varies, Covariance tells you how two variables vary together.</p>
 <p><img src="data:image/PNG;base64,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"></p>
 <p>Let's see how we can calculate the co-variance matrix using <em>numpy</em> library</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">cov</span>
 
 <span class="n">X_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">X_std</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">cv_mat</span> <span class="o">=</span> <span class="n">cov</span><span class="p">((</span><span class="n">X_std</span> <span class="o">-</span> <span class="n">X_mean</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Covariance matrix </span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">cv_mat</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'Covariance matrix </span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">cv_mat</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span>
 <span class="n">Covariance</span> <span class="n">matrix</span> 
@@ -13316,13 +13355,13 @@ $$ S = \sqrt \frac {\sum (x - \bar{x})^2}{n -1}$$</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_l44444">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">cov</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">cov</span>
 
 <span class="c1">#Add your code here</span>
 </pre></div>
@@ -13337,13 +13376,13 @@ $$ S = \sqrt \frac {\sum (x - \bar{x})^2}{n -1}$$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h2><div class="highlight"><pre><span></span><span class="n">X_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">X_std</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">cv_mat</span> <span class="o">=</span> <span class="n">cov</span><span class="p">((</span><span class="n">X_std</span> <span class="o">-</span> <span class="n">X_mean</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Covariance matrix: </span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">cv_mat</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'Covariance matrix: </span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">cv_mat</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_l55555"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="3.3-Perform-eigendecomposition-on-the-covariance-matrix">3.3 Perform eigendecomposition on the covariance matrix<a class="anchor-link" href="#3.3-Perform-eigendecomposition-on-the-covariance-matrix">¶</a></h3><p>The eigenvectors and eigenvalues of a covariance matrix form the "core" of a PCA: The eigenvectors represent the directions or principal components, and the eigenvalues determine their magnitude.</p>
@@ -13361,8 +13400,8 @@ $$ S = \sqrt \frac {\sum (x - \bar{x})^2}{n -1}$$</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">eig</span>
 
 <span class="n">e_values</span><span class="p">,</span> <span class="n">e_vectors</span> <span class="o">=</span> <span class="n">eig</span><span class="p">(</span><span class="n">cv_mat</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Eigenvectors </span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">e_vectors</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">Eigenvalues </span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">e_values</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'Eigenvectors </span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">e_vectors</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">Eigenvalues </span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">e_values</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span>
 <span class="n">Eigenvectors</span> 
@@ -13382,12 +13421,12 @@ $$ S = \sqrt \frac {\sum (x - \bar{x})^2}{n -1}$$</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_l55555">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">eig</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="k">import</span> <span class="n">eig</span>
 
 <span class="c1">#Add your code here</span>
 
@@ -13405,14 +13444,14 @@ $$ S = \sqrt \frac {\sum (x - \bar{x})^2}{n -1}$$</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h2><div class="highlight"><pre><span></span><span class="n">e_values</span><span class="p">,</span> <span class="n">e_vectors</span> <span class="o">=</span> <span class="n">eig</span><span class="p">(</span><span class="n">cv_mat</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Eigenvectors: </span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">e_vectors</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">Eigenvalues: </span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">e_values</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'Eigenvectors: </span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">e_vectors</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">Eigenvalues: </span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">e_values</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_l66666"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="3.4-Choose-k-eigenvectors">3.4 Choose <strong>k</strong> eigenvectors<a class="anchor-link" href="#3.4-Choose-k-eigenvectors">¶</a></h3><p>This is the most important step in PCA approach as the eigenvectors define the directions of the new axis. Therefore we have to carefully choose k eigenvectors that correspond to the k largest Eigenvalues (where <strong>k</strong> is the number of dimensions of the new feature subspace)</p>
@@ -13420,7 +13459,7 @@ $$ S = \sqrt \frac {\sum (x - \bar{x})^2}{n -1}$$</p>
 1.Rank the eigenvalues from highest to lowest: This is because the eigenvectors with the lowest eigenvalues bear the least information about the distribution of the data and they can be dropped.</p>
 <p>Now let's create the EigenPairs and sort them based on the eigenvalues from highest to lowest.</p>
 <div class="highlight"><pre><span></span><span class="n">e_pairs</span> <span class="o">=</span> <span class="p">[(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">e_values</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">e_vectors</span><span class="p">[:,</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">e_values</span><span class="p">))]</span>
-<span class="n">e_pairs</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">e_pairs</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">e_pairs</span>
 
 <span class="o">&gt;&gt;&gt;</span>
@@ -13441,8 +13480,8 @@ $$ S = \sqrt \frac {\sum (x - \bar{x})^2}{n -1}$$</p>
 <div class="highlight"><pre><span></span><span class="n">tot_var</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">e_values</span><span class="p">)</span>
 <span class="n">exp_var_percent</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span> <span class="o">/</span> <span class="n">tot_var</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">e_values</span><span class="p">]</span>
 <span class="n">cum_var</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">exp_var_percent</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Explained Variance </span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">exp_var_percent</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">Cumulative Variance </span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">cum_var</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'Explained Variance </span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">exp_var_percent</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">Cumulative Variance </span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">cum_var</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span>
 <span class="n">Explained</span> <span class="n">Variance</span> 
@@ -13452,7 +13491,7 @@ $$ S = \sqrt \frac {\sum (x - \bar{x})^2}{n -1}$$</p>
  <span class="p">[</span> <span class="mf">72.77045209</span>  <span class="mf">95.80097536</span>  <span class="mf">99.48480732</span> <span class="mf">100.</span>        <span class="p">]</span>
 </pre></div>
 <p>This information would make more sense when we visualize graphically.</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'PC </span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">e_values</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
 <span class="n">y_1</span> <span class="o">=</span> <span class="n">exp_var_percent</span>
@@ -13471,7 +13510,7 @@ $$ S = \sqrt \frac {\sum (x - \bar{x})^2}{n -1}$$</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_l66666">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
@@ -13511,14 +13550,14 @@ $$ S = \sqrt \frac {\sum (x - \bar{x})^2}{n -1}$$</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_l77777"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="3.5-Construct-the-projection-matrix-W">3.5 Construct the projection matrix <strong>W</strong><a class="anchor-link" href="#3.5-Construct-the-projection-matrix-W">¶</a></h3><p>Once the <strong> <em>k</em> </strong> value is choosen the, a subspace is created so that data can be projected into this subspace. This subspace is also called the <strong>Projection Matrix</strong>, which is basically a matrix of our concatenated top k eigenvectors.</p>
 <p>For Iris dataset, by choosing the top 2 eigenvectors, we are reducing the 4-dimensional feature space to a 2-dimensional feature subspace.</p>
 <div class="highlight"><pre><span></span><span class="n">matrix_w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">e_pairs</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> 
                       <span class="n">e_pairs</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Matrix W:</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">matrix_w</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'Matrix W:</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">matrix_w</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">Matrix</span> <span class="n">W</span><span class="p">:</span>
 <span class="p">[[</span> <span class="mf">0.52237162</span> <span class="o">-</span><span class="mf">0.37231836</span><span class="p">]</span>
@@ -13533,7 +13572,7 @@ $$ S = \sqrt \frac {\sum (x - \bar{x})^2}{n -1}$$</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_l77777">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
@@ -13555,13 +13594,13 @@ $$ S = \sqrt \frac {\sum (x - \bar{x})^2}{n -1}$$</p>
                       <span class="n">e_pairs</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
                       <span class="n">e_pairs</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
                       <span class="n">e_pairs</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">),))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Matrix W:</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">matrix_w</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'Matrix W:</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="n">matrix_w</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_l88888"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="3.6-Project-the-data-into-into-the-subspace-W">3.6 Project the data into into the subspace <strong>W</strong><a class="anchor-link" href="#3.6-Project-the-data-into-into-the-subspace-W">¶</a></h3><p>Once the projection matrix is created, then the data can be transformed onto the new subspace via <em>matrix multiplication</em> as given by the equation: <br>
@@ -13587,7 +13626,7 @@ $$ S = \sqrt \frac {\sum (x - \bar{x})^2}{n -1}$$</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_l88888">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
@@ -13609,7 +13648,7 @@ $$ S = \sqrt \frac {\sum (x - \bar{x})^2}{n -1}$$</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_l99999"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="4.-PCA-in-scikit-learn">4. PCA in scikit-learn<a class="anchor-link" href="#4.-PCA-in-scikit-learn">¶</a></h2><p>As we have seen above, the PCA approach using <em>numpy</em> library involves a lot of effort and time. This can be avoided by using the <em>scikit-learn</em> library as it has a predefined function that can handle PCA for us. The advantage is that once a projection is calculated, it can be applied to new data again and again quite easily.</p>
@@ -13636,12 +13675,12 @@ $$ S = \sqrt \frac {\sum (x - \bar{x})^2}{n -1}$$</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_l99999">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span> <span class="k">as</span> <span class="n">sklearnPCA</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="k">import</span> <span class="n">PCA</span> <span class="k">as</span> <span class="n">sklearnPCA</span>
 
 <span class="c1"># Add your code here</span>
 </pre></div>

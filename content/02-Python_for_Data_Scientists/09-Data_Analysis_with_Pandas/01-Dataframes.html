@@ -13017,6 +13017,45 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
+<style type="text/css">
+    
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+
+    </style>
 
 
 <style type="text/css">
@@ -13074,7 +13113,7 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered celltag_s1 celltag_content celltag_l1"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="The-Pandas-Library">The Pandas Library<a class="anchor-link" href="#The-Pandas-Library">¶</a></h1><p>Pandas is an open source library that provides easy-to-use data structures and data analysis tools in Python. This library offers a two useful labelled array data structure called the Series and the Dataframes.</p>
@@ -13084,8 +13123,8 @@ div#notebook {
 <div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">)</span>
 </pre></div>
 <p>An example is shown below on how to use the series in a program.</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
     <span class="nb">list</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
     <span class="nb">list</span>
 
@@ -13148,8 +13187,8 @@ div#notebook {
 <h2 id="Dataframes">Dataframes<a class="anchor-link" href="#Dataframes">¶</a></h2><p>Dataframes is defined as a 2-dimensional labeled data structure with columns of potentially different types according to pydata.org. It is similar to a spreadsheet or SQL table, or a dict of Series objects.</p>
 <p>&lt;img src="<a href="https://s3.amazonaws.com/rfv2/dataframe.png">https://s3.amazonaws.com/rfv2/dataframe.png</a>", style="width: 300px;"&gt;</p>
 <p>To use pandas library, first you have to import the library and use the funcations available in the library</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]))</span>
 </pre></div>
 <h3 id="Description">Description<a class="anchor-link" href="#Description">¶</a></h3><p>Let us read in a csv file into a dataframe object. The pandas dataframe is so versatile that it can easily read files from url links.</p>
@@ -13178,7 +13217,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_s1 celltag_ce celltag_l1">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
@@ -13199,7 +13238,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_s1 celltag_l1 celltag_ans"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h3><div class="highlight"><pre><span></span><span class="n">grad_sample</span> <span class="o">=</span> <span class="n">grad_students</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -13209,7 +13248,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_l2 celltag_content celltag_s2"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Using-head()-function-with-a-parameter">Using head() function with a parameter<a class="anchor-link" href="#Using-head()-function-with-a-parameter">¶</a></h2><p>We can pass the number of rows as a parameter to head() function.</p>
@@ -13220,7 +13259,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_l2 celltag_ce celltag_s2">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
@@ -13241,7 +13280,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_l2 celltag_s2 celltag_ans"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h3><div class="highlight"><pre><span></span><span class="n">midwest_sample</span> <span class="o">=</span> <span class="n">midwest_survey</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
@@ -13262,7 +13301,7 @@ div#notebook {
 <div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">','</span><span class="p">)</span>
 </pre></div>
 <p>As the Dataframe will in Series form, the output will have indexes and if we want to avoid the indexes to be copied to the csv file, we need to pass 'False' value to the 'index' argument.</p>
-<div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </pre></div>
 <h2 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">¶</a></h2><p>What is the syntax for writing a dataframe 'grad_students' to a csv file 'gradstudents.csv' without any index values stored in the csv file?</p>
 
@@ -13289,7 +13328,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h3><div class="highlight"><pre><span></span><span class="n">student_doc</span> <span class="o">=</span> <span class="s2">"gradstudents.csv"</span>
-<span class="n">grad_students</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">student_doc</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">grad_students</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">student_doc</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13379,7 +13418,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_l3 celltag_s3 celltag_content"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Indexing">Indexing<a class="anchor-link" href="#Indexing">¶</a></h1><p>Indexing is done using labels which is attributes used for column representation and numeric ranges</p>
@@ -13403,7 +13442,7 @@ iloc: indexing via integers ]] --------- explanation for iloc and loc</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_l3 celltag_s3 celltag_ce">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
@@ -13429,7 +13468,7 @@ iloc: indexing via integers ]] --------- explanation for iloc and loc</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_l4 celltag_s4 celltag_content"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><br><br><br></p>
@@ -13446,7 +13485,7 @@ iloc: indexing via integers ]] --------- explanation for iloc and loc</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_l4 celltag_s4 celltag_ce">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
@@ -13461,7 +13500,7 @@ iloc: indexing via integers ]] --------- explanation for iloc and loc</p>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_s4 celltag_l4 celltag_ans"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h3><div class="highlight"><pre><span></span><span class="n">major_category</span> <span class="o">=</span> <span class="n">grad_students</span><span class="p">[</span><span class="s1">'Major_category'</span><span class="p">][</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
@@ -13471,7 +13510,7 @@ iloc: indexing via integers ]] --------- explanation for iloc and loc</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_l5 celltag_content celltag_s5"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><br><br><br></p>
@@ -13489,7 +13528,7 @@ iloc: indexing via integers ]] --------- explanation for iloc and loc</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_l5 celltag_ce celltag_s5">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [19]:</div>
 <div class="inner_cell">
@@ -13852,7 +13891,7 @@ iloc: indexing via integers ]] --------- explanation for iloc and loc</p>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_l5 celltag_s5 celltag_ans"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h3><div class="highlight"><pre><span></span><span class="n">grad_students_sample</span> <span class="o">=</span> <span class="n">grad_students</span><span class="p">[[</span><span class="s1">'Major_code'</span><span class="p">,</span> <span class="s1">'Grad_employed'</span><span class="p">]][</span><span class="mi">3</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span>
@@ -13862,7 +13901,7 @@ iloc: indexing via integers ]] --------- explanation for iloc and loc</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_content celltag_l6 celltag_s6"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><br><br><br></p>
@@ -13884,7 +13923,7 @@ iloc: indexing via integers ]] --------- explanation for iloc and loc</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_ce celltag_l6 celltag_s6">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
@@ -15117,7 +15156,7 @@ iloc: indexing via integers ]] --------- explanation for iloc and loc</p>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_l6 celltag_s6 celltag_ans"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h3><div class="highlight"><pre><span></span><span class="n">major_emp_data</span> <span class="o">=</span> <span class="n">grad_students</span><span class="o">.</span><span class="n">Major_category</span><span class="p">[</span><span class="n">grad_students</span><span class="o">.</span><span class="n">emp_percent</span> <span class="o">&gt;</span> <span class="mi">80</span><span class="p">]</span>
@@ -15127,7 +15166,7 @@ iloc: indexing via integers ]] --------- explanation for iloc and loc</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_l7 celltag_s7 celltag_content"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><br><br><br></p>
@@ -15150,7 +15189,7 @@ iloc: indexing via integers ]] --------- explanation for iloc and loc</p>
 <div class="highlight"><pre><span></span><span class="n">midwest_survey</span><span class="p">[</span><span class="s1">'Which of the following states do you consider part of the Midwest? Please select all that apply. '</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s1">'NA'</span><span class="p">)</span>
 </pre></div>
 <p>The above statement does not change the original dataframe. We can do that by specifying inplace=True</p>
-<div class="highlight"><pre><span></span><span class="n">midwest_survey</span><span class="p">[</span><span class="s1">'Which of the following states do you consider part of the Midwest? Please select all that apply. '</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s1">'NA'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">midwest_survey</span><span class="p">[</span><span class="s1">'Which of the following states do you consider part of the Midwest? Please select all that apply. '</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s1">'NA'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 <p>We can also substitute with another value:</p>
 <div class="highlight"><pre><span></span><span class="n">midwest_survey</span><span class="p">[</span><span class="s1">'Which of the following states do you consider part of the Midwest? Please select all that apply. '</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
@@ -15168,7 +15207,7 @@ iloc: indexing via integers ]] --------- explanation for iloc and loc</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_l7 celltag_s7 celltag_ce">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
@@ -15183,7 +15222,7 @@ iloc: indexing via integers ]] --------- explanation for iloc and loc</p>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_l7 celltag_s7 celltag_ans"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h3><div class="highlight"><pre><span></span><span class="n">grad_emp_max</span> <span class="o">=</span> <span class="n">grad_students</span><span class="p">[</span><span class="n">grad_students</span><span class="o">.</span><span class="n">Grad_employed</span> <span class="o">==</span> <span class="n">grad_students</span><span class="o">.</span><span class="n">Grad_employed</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span><span class="o">.</span><span class="n">Major</span>
@@ -15193,7 +15232,7 @@ iloc: indexing via integers ]] --------- explanation for iloc and loc</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_s8 celltag_content celltag_l8"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><br><br><br></p>
@@ -15210,7 +15249,7 @@ iloc: indexing via integers ]] --------- explanation for iloc and loc</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_s8 celltag_ce celltag_l8">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [19]:</div>
 <div class="inner_cell">
@@ -15225,7 +15264,7 @@ iloc: indexing via integers ]] --------- explanation for iloc and loc</p>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_s8 celltag_l8 celltag_ans"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h3><div class="highlight"><pre><span></span><span class="n">grad_select_list</span> <span class="o">=</span> <span class="n">grad_students</span><span class="p">[((</span><span class="n">grad_students</span><span class="o">.</span><span class="n">Major</span> <span class="o">==</span> <span class="s1">'ENGINEERING'</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">grad_students</span><span class="o">.</span><span class="n">Major</span> <span class="o">==</span> <span class="s1">'COMMERCIAL ART AND GRAPHIC DESIGN'</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">grad_students</span><span class="o">.</span><span class="n">Grad_unemployment_rate</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)]</span>
@@ -15235,7 +15274,7 @@ iloc: indexing via integers ]] --------- explanation for iloc and loc</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_l9 celltag_content celltag_s9"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><br></p>
@@ -15252,7 +15291,7 @@ Indices can be used just as in arrays or lists when selection is in a sequence i
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_l9 celltag_ce celltag_s9">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [31]:</div>
 <div class="inner_cell">
@@ -15266,7 +15305,7 @@ Indices can be used just as in arrays or lists when selection is in a sequence i
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_s9 celltag_l9 celltag_ans"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h3><div class="highlight"><pre><span></span><span class="n">grad_row_sample</span> <span class="o">=</span> <span class="n">grad_students</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
@@ -15276,7 +15315,7 @@ Indices can be used just as in arrays or lists when selection is in a sequence i
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_l10 celltag_content celltag_s10"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><br><br><br></p>
@@ -15299,7 +15338,7 @@ You can use groupby extension to group by the elements of the column.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_l10 celltag_ce celltag_s10">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
@@ -15313,7 +15352,7 @@ You can use groupby extension to group by the elements of the column.</p>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered celltag_l10 celltag_ans celltag_s10"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h3><div class="highlight"><pre><span></span><span class="n">grad_cat_max</span> <span class="o">=</span> <span class="n">grad_students</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'Major_category'</span><span class="p">)</span><span class="o">.</span><span class="n">Grad_employed</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
@@ -15329,7 +15368,7 @@ You can use groupby extension to group by the elements of the column.</p>
 <h1 id="Reshaping">Reshaping<a class="anchor-link" href="#Reshaping">¶</a></h1><h3 id="Pivot">Pivot<a class="anchor-link" href="#Pivot">¶</a></h3><p>The Pivot method is used to seperate and extract a new table from the original dataset.This methods are very useful in summerizing the data in the dataset. They can automatically perform mean, sort, count from the dataframe and store the result in a new table. This method allows us to group or organize data as per our wish from the existing dataset.</p>
 <p>The Pivot method can have index, columns, and values as arguments and they do not create a duplicate values for the specified column.</p>
 <h3 id="Pivot-Table">Pivot Table<a class="anchor-link" href="#Pivot-Table">¶</a></h3><p>The pivot_table method overcomes the disadvantage of pivot method. The Pivot table performs the same role as Pivot method but it combines the values from with duplicate values for the specified columns.</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="n">raw_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'regiment'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'Nighthawks'</span><span class="p">,</span> <span class="s1">'Nighthawks'</span><span class="p">,</span> <span class="s1">'Nighthawks'</span><span class="p">,</span> <span class="s1">'Nighthawks'</span><span class="p">,</span> <span class="s1">'Dragoons'</span><span class="p">,</span> <span class="s1">'Dragoons'</span><span class="p">,</span> <span class="s1">'Dragoons'</span><span class="p">,</span> <span class="s1">'Dragoons'</span><span class="p">,</span> <span class="s1">'Scouts'</span><span class="p">,</span> <span class="s1">'Scouts'</span><span class="p">,</span> <span class="s1">'Scouts'</span><span class="p">,</span> <span class="s1">'Scouts'</span><span class="p">],</span> 
         <span class="s1">'company'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'1st'</span><span class="p">,</span> <span class="s1">'1st'</span><span class="p">,</span> <span class="s1">'2nd'</span><span class="p">,</span> <span class="s1">'2nd'</span><span class="p">,</span> <span class="s1">'1st'</span><span class="p">,</span> <span class="s1">'1st'</span><span class="p">,</span> <span class="s1">'2nd'</span><span class="p">,</span> <span class="s1">'2nd'</span><span class="p">,</span><span class="s1">'1st'</span><span class="p">,</span> <span class="s1">'1st'</span><span class="p">,</span> <span class="s1">'2nd'</span><span class="p">,</span> <span class="s1">'2nd'</span><span class="p">],</span> 
         <span class="s1">'TestScore'</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]}</span>

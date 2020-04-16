@@ -13017,6 +13017,45 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
+<style type="text/css">
+    
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+
+    </style>
 
 
 <style type="text/css">
@@ -13086,24 +13125,24 @@ div#notebook {
 <span class="n">btup</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="s2">"hello"</span>
 
 <span class="c1"># printing the tuple and confirming the data type of variable as tuple</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">atup</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">atup</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">btup</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">btup</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">atup</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">atup</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">btup</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">btup</span><span class="p">))</span>
 <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="s1">'hello'</span><span class="p">)</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">'</span><span class="nc">tuple</span><span class="s1">'&gt;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="s1">'hello'</span><span class="p">)</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">'</span><span class="nc">tuple</span><span class="s1">'&gt;</span>
 
 <span class="c1"># Checking whether hello is present in the tuple and retrieving 3rd element of the tuple</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'hello'</span> <span class="ow">in</span> <span class="n">atup</span><span class="p">,</span> <span class="n">atup</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'hello'</span> <span class="ow">in</span> <span class="n">atup</span><span class="p">,</span> <span class="n">atup</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 <span class="c1"># Output</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kc">True</span> <span class="mi">123</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="bp">True</span> <span class="mi">123</span>
 </pre></div>
 <p>Creating an empty tuple, and a tuple with one element.</p>
 <div class="highlight"><pre><span></span><span class="n">empty_tup</span> <span class="o">=</span> <span class="p">()</span>
 <span class="n">ctup</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"hello"</span><span class="p">,)</span>
 <span class="n">dtup</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">empty_tup</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">empty_tup</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ctup</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">ctup</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">dtup</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">dtup</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">empty_tup</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">empty_tup</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ctup</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">ctup</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">dtup</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">dtup</span><span class="p">))</span>
 <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">()</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">'</span><span class="nc">tuple</span><span class="s1">'&gt;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="s1">'hello'</span><span class="p">,)</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">'</span><span class="nc">tuple</span><span class="s1">'&gt;</span>
@@ -13111,9 +13150,9 @@ div#notebook {
 </pre></div>
 <p>Be careful with <b>one element</b> tuple, it must have a <b>trailing comma</b>. If there's no comma, it becomes other data types. For example:</p>
 <div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"hello"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
 <span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
 <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">hello</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">'</span><span class="nc">str</span><span class="s1">'&gt;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">12</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">'</span><span class="nc">int</span><span class="s1">'&gt;</span>
@@ -13122,9 +13161,9 @@ div#notebook {
 <div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">123</span><span class="p">,</span><span class="s2">"hello"</span><span class="p">]</span>
 <span class="n">atup</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span>
 <span class="n">btup</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ls</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">ls</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">atup</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">atup</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">btup</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">btup</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ls</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">ls</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">atup</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">atup</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">btup</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">btup</span><span class="p">))</span>
 <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="s1">'hello'</span><span class="p">]</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">'</span><span class="nc">list</span><span class="s1">'&gt;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="s1">'hello'</span><span class="p">)</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">'</span><span class="nc">tuple</span><span class="s1">'&gt;</span>
@@ -13139,11 +13178,11 @@ div#notebook {
 <span class="n">alist_1</span> <span class="o">=</span> <span class="n">alist</span>
 <span class="n">alist_copy</span> <span class="o">=</span> <span class="n">alist</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="c1"># Print the locations of the tuple/list objects, then we can see the differences between assigning and copying.</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">atup</span><span class="p">)</span><span class="o">==</span><span class="nb">id</span><span class="p">(</span><span class="n">atup_copy</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span><span class="o">==</span><span class="nb">id</span><span class="p">(</span><span class="n">alist_1</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span><span class="o">==</span><span class="nb">id</span><span class="p">(</span><span class="n">alist_copy</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">atup</span><span class="p">)</span><span class="o">==</span><span class="nb">id</span><span class="p">(</span><span class="n">atup_copy</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span><span class="o">==</span><span class="nb">id</span><span class="p">(</span><span class="n">alist_1</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span><span class="o">==</span><span class="nb">id</span><span class="p">(</span><span class="n">alist_copy</span><span class="p">))</span>
 <span class="c1"># Output</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kc">True</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kc">True</span> <span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="bp">True</span> <span class="bp">False</span>
 </pre></div>
 <p>After using "=" sign, we successfully copied the tuple. However, we cannot use "=" sign to copy list because it is mutable and it just creates a reference not a copy.</p>
 <h4 id="Deleting-a-tuple">Deleting a tuple<a class="anchor-link" href="#Deleting-a-tuple">¶</a></h4><p>To delete an entire tuple, we can simply use "del" keywords. For example:</p>
@@ -13151,7 +13190,7 @@ div#notebook {
 </pre></div>
 <h4 id="Packing-and-Unpacking-a-tuple">Packing and Unpacking a tuple<a class="anchor-link" href="#Packing-and-Unpacking-a-tuple">¶</a></h4><p>Tuples can be accessed using the indices, just like a list, array or string.</p>
 <div class="highlight"><pre><span></span><span class="n">atup</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">123</span><span class="p">,</span><span class="s2">"hello"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">atup</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">atup</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">atup</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">atup</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
 <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">123</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">35</span><span class="p">)</span>
 </pre></div>
@@ -13170,7 +13209,7 @@ div#notebook {
 
 <span class="c1"># We can change the element inside the list, which is contained in a tuple.        </span>
 <span class="n">btup</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">btup</span><span class="p">,</span><span class="nb">type</span><span class="p">[</span><span class="n">btup</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">btup</span><span class="p">,</span><span class="nb">type</span><span class="p">[</span><span class="n">btup</span><span class="p">])</span>
 <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="p">[</span><span class="mi">123</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">789</span><span class="p">],</span> <span class="s1">'hello'</span><span class="p">)</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">'</span><span class="nc">tuple</span><span class="s1">'&gt;</span>
 </pre></div>
@@ -13188,10 +13227,10 @@ div#notebook {
 <div class="highlight"><pre><span></span><span class="c1"># This is called unpacking a tuple</span>
 <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">address</span><span class="p">)</span> <span class="o">=</span> <span class="n">Person_1</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"The name of the person is </span><span class="si">{:s}</span><span class="s2"> and their email id is </span><span class="si">{:s}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">email</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"The name of the person is {:s} and their email id is {:s}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">email</span><span class="p">))</span>
 
 <span class="c1"># Output</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">person</span> <span class="ow">is</span> <span class="n">John</span> <span class="n">Doe</span> <span class="ow">and</span> <span class="n">their</span> <span class="n">email</span> <span class="nb">id</span> <span class="ow">is</span> <span class="n">john</span><span class="o">.</span><span class="n">doe</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">person</span> <span class="ow">is</span> <span class="n">John</span> <span class="n">Doe</span> <span class="ow">and</span> <span class="n">their</span> <span class="n">email</span> <span class="nb">id</span> <span class="ow">is</span> <span class="n">john</span><span class="o">.</span><span class="n">doe</span><span class="nd">@gmail.com</span>
 </pre></div>
 <h4 id="Adding-an-element-to-a-tuple">Adding an element to a tuple<a class="anchor-link" href="#Adding-an-element-to-a-tuple">¶</a></h4><p>Though the existing contents of the tuple are immutable, we can add additional objects to a tuple and create a new tuple, or even add two tuples to create a new one. The following are examples to show how to add additional objects to a tuple and also how to add two tuples to create a new one.</p>
 <div class="highlight"><pre><span></span><span class="n">loc</span> <span class="o">=</span> <span class="p">(</span><span class="mf">30.456</span><span class="p">,</span> <span class="mf">50.436</span><span class="p">)</span>
@@ -13203,7 +13242,7 @@ div#notebook {
 <span class="n">atup</span> <span class="o">=</span> <span class="n">atup</span> <span class="o">+</span> <span class="p">(</span><span class="s2">"I can add an object"</span><span class="p">,)</span>
 
 <span class="c1"># printing the new tuples</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">loc</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">loc</span><span class="p">),</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="n">atup</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">atup</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">loc</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">loc</span><span class="p">),</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="n">atup</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">atup</span><span class="p">))</span>
 
 <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mf">30.456</span><span class="p">,</span> <span class="mf">50.436</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="s1">'hello'</span><span class="p">)</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">'</span><span class="nc">tuple</span><span class="s1">'&gt;</span>
@@ -13248,7 +13287,7 @@ div#notebook {
 <span class="n">bio_data</span> <span class="o">=</span> <span class="n">bio_data</span> <span class="o">+</span> <span class="p">(</span><span class="s2">"602-123-4567"</span><span class="p">,)</span>
 
 <span class="c1"># printing the new tuples</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">bio_data</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">bio_data</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">bio_data</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">bio_data</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -13265,7 +13304,7 @@ div#notebook {
 <span class="c1"># Example 2</span>
 <span class="n">list_A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s2">"Hello"</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="s2">"Hello"</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">even_number_set</span><span class="p">,</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="nb">set</span><span class="p">(</span><span class="n">list_A</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">even_number_set</span><span class="p">,</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="nb">set</span><span class="p">(</span><span class="n">list_A</span><span class="p">))</span>
 
 <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">}</span>
@@ -13307,10 +13346,10 @@ One way we can use sets is if we would like to check the existence of a certain 
 <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.00000001</span><span class="p">,</span><span class="mf">0.0000001</span><span class="p">,</span><span class="mf">0.0000001</span><span class="p">,</span><span class="mf">0.00000001</span><span class="p">,</span><span class="mf">0.00000001</span><span class="p">,</span><span class="mf">0.00000001</span><span class="p">,</span><span class="mf">0.0000001</span><span class="p">,</span><span class="mf">0.0000001</span><span class="p">,</span><span class="mf">0.0000001</span><span class="p">,</span><span class="mf">0.000001</span><span class="p">,</span><span class="mf">0.00000001</span><span class="p">,</span><span class="mf">0.0000001</span><span class="p">,</span><span class="mf">0.00000001</span><span class="p">,</span><span class="mf">0.00000000001</span><span class="p">,</span><span class="mf">0.000000001</span><span class="p">,</span><span class="mf">0.00000001</span><span class="p">,</span><span class="mf">0.0000000001</span><span class="p">,</span><span class="mf">0.000000001</span><span class="p">,</span><span class="mf">0.00000000001</span><span class="p">,</span><span class="mf">0.0000000000001</span><span class="p">,</span><span class="mf">0.000000001</span><span class="p">,</span><span class="mf">0.0000000000001</span><span class="p">,</span><span class="mf">0.0000000001</span><span class="p">,</span><span class="mf">0.0000000001</span><span class="p">,</span><span class="mf">0.00000001</span><span class="p">,</span><span class="mf">0.00000001</span><span class="p">,</span><span class="mf">0.00000001</span><span class="p">,</span><span class="mf">0.000000001</span><span class="p">,</span><span class="mf">0.000000001</span><span class="p">,</span><span class="mf">0.000000001</span><span class="p">,</span><span class="mf">0.00000000000001</span><span class="p">,</span><span class="mf">0.0000000000001</span><span class="p">]</span>
 
 <span class="c1"># Printing the list vs set</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'''The list is </span><span class="si">{}</span><span class="s1"></span>
-<span class="s1">The length of list is: </span><span class="si">{:d}</span><span class="s1"></span>
-<span class="s1">The set is </span><span class="si">{}</span><span class="s1"></span>
-<span class="s1">The length of set is: </span><span class="si">{:d}</span><span class="s1">'''</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="nb">set</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">a</span><span class="p">))))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'''The list is {}</span>
+<span class="s1">The length of list is: {:d}</span>
+<span class="s1">The set is {}</span>
+<span class="s1">The length of set is: {:d}'''</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="nb">set</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">a</span><span class="p">))))</span>
 </pre></div>
 
 </div>
@@ -13372,7 +13411,7 @@ Assign it to the variable location_map </p>
 <h2 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h2><div class="highlight"><pre><span></span><span class="n">location_map</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Boston'</span><span class="p">:</span> <span class="p">(</span><span class="mf">42.318365</span><span class="p">,</span> <span class="o">-</span><span class="mf">71.086692</span><span class="p">),</span>
                 <span class="s1">'Chicago'</span><span class="p">:</span> <span class="p">(</span><span class="mf">41.797568</span><span class="p">,</span> <span class="o">-</span><span class="mf">87.620958</span><span class="p">),</span> 
                 <span class="s1">'New York'</span><span class="p">:</span> <span class="p">(</span><span class="mf">40.685526</span><span class="p">,</span> <span class="o">-</span><span class="mf">73.887406</span><span class="p">)}</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">location_map</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">location_map</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13405,7 +13444,7 @@ Assign it to the variable location_map </p>
 <div class="highlight"><pre><span></span><span class="n">location_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Boston'</span><span class="p">:</span> <span class="s1">'MA'</span><span class="p">,</span> <span class="s1">'Chicago'</span><span class="p">:</span> <span class="s1">'IL'</span><span class="p">,</span> <span class="s1">'New York'</span><span class="p">:</span> <span class="s1">'NY'</span><span class="p">}</span>
 
 <span class="c1"># Retrieving value of a known key</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">location_dict</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="n">location_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">location_dict</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="n">location_dict</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="n">location_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">location_dict</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
 
 <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">dict_items</span><span class="p">([(</span><span class="s1">'Boston'</span><span class="p">,</span> <span class="s1">'MA'</span><span class="p">),</span> <span class="p">(</span><span class="s1">'Chicago'</span><span class="p">,</span> <span class="s1">'IL'</span><span class="p">),</span> <span class="p">(</span><span class="s1">'New York'</span><span class="p">,</span> <span class="s1">'NY'</span><span class="p">)])</span> 
@@ -13456,7 +13495,7 @@ Assign it to the variable location_map </p>
 <span class="n">alpha_dict</span><span class="p">[</span><span class="s1">'e'</span><span class="p">]</span><span class="o">=</span><span class="mi">581</span>
 
 <span class="c1"># Retrieving all keys</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">alpha_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="n">alpha_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 </pre></div>
 
 </div>
@@ -13611,20 +13650,20 @@ Assign it to the variable location_map </p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h2><div class="highlight"><pre><span></span><span class="c1"># answers</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"A gallon of regular chocolate milk: </span><span class="si">{:f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">retail_goods</span><span class="p">[</span><span class="s1">'milk'</span><span class="p">][</span><span class="s1">'regular'</span><span class="p">][</span><span class="s1">'chocolate'</span><span class="p">][</span><span class="s1">'gallon'</span><span class="p">]))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"A gallon of regular chocolate milk: {:f}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">retail_goods</span><span class="p">[</span><span class="s1">'milk'</span><span class="p">][</span><span class="s1">'regular'</span><span class="p">][</span><span class="s1">'chocolate'</span><span class="p">][</span><span class="s1">'gallon'</span><span class="p">]))</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"2-quarts of organic strawberry milk: </span><span class="si">{:f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">retail_goods</span><span class="p">[</span><span class="s1">'milk'</span><span class="p">][</span><span class="s1">'organic'</span><span class="p">][</span><span class="s1">'strawberry'</span><span class="p">][</span><span class="s1">'2-quart'</span><span class="p">]))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"2-quarts of organic strawberry milk: {:f}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">retail_goods</span><span class="p">[</span><span class="s1">'milk'</span><span class="p">][</span><span class="s1">'organic'</span><span class="p">][</span><span class="s1">'strawberry'</span><span class="p">][</span><span class="s1">'2-quart'</span><span class="p">]))</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"The price difference between 1 quart of regular chocolate milk and organic chocolate milk: </span><span class="si">{:f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">retail_goods</span><span class="p">[</span><span class="s1">'milk'</span><span class="p">][</span><span class="s1">'organic'</span><span class="p">][</span><span class="s1">'chocolate'</span><span class="p">][</span><span class="s1">'quart'</span><span class="p">]</span><span class="o">-</span><span class="n">retail_goods</span><span class="p">[</span><span class="s1">'milk'</span><span class="p">][</span><span class="s1">'regular'</span><span class="p">][</span><span class="s1">'chocolate'</span><span class="p">][</span><span class="s1">'quart'</span><span class="p">]))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"The price difference between 1 quart of regular chocolate milk and organic chocolate milk: {:f}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">retail_goods</span><span class="p">[</span><span class="s1">'milk'</span><span class="p">][</span><span class="s1">'organic'</span><span class="p">][</span><span class="s1">'chocolate'</span><span class="p">][</span><span class="s1">'quart'</span><span class="p">]</span><span class="o">-</span><span class="n">retail_goods</span><span class="p">[</span><span class="s1">'milk'</span><span class="p">][</span><span class="s1">'regular'</span><span class="p">][</span><span class="s1">'chocolate'</span><span class="p">][</span><span class="s1">'quart'</span><span class="p">]))</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Large brown regular eggs: </span><span class="si">{:f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">retail_goods</span><span class="p">[</span><span class="s1">'eggs'</span><span class="p">][</span><span class="s1">'regular'</span><span class="p">][</span><span class="s1">'brown'</span><span class="p">][</span><span class="s1">'large'</span><span class="p">]))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"Large brown regular eggs: {:f}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">retail_goods</span><span class="p">[</span><span class="s1">'eggs'</span><span class="p">][</span><span class="s1">'regular'</span><span class="p">][</span><span class="s1">'brown'</span><span class="p">][</span><span class="s1">'large'</span><span class="p">]))</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Jumbo white organic eggs: </span><span class="si">{:f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">retail_goods</span><span class="p">[</span><span class="s1">'eggs'</span><span class="p">][</span><span class="s1">'organic'</span><span class="p">][</span><span class="s1">'white'</span><span class="p">][</span><span class="s1">'jumbo'</span><span class="p">]))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"Jumbo white organic eggs: {:f}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">retail_goods</span><span class="p">[</span><span class="s1">'eggs'</span><span class="p">][</span><span class="s1">'organic'</span><span class="p">][</span><span class="s1">'white'</span><span class="p">][</span><span class="s1">'jumbo'</span><span class="p">]))</span>
 
 <span class="c1"># discount on 1 pack</span>
 <span class="n">discount</span> <span class="o">=</span> <span class="n">retail_goods</span><span class="p">[</span><span class="s1">'eggs'</span><span class="p">][</span><span class="s1">'organic'</span><span class="p">][</span><span class="s1">'brown'</span><span class="p">][</span><span class="s1">'jumbo'</span><span class="p">]</span><span class="o">-</span><span class="n">retail_goods</span><span class="p">[</span><span class="s1">'eggs'</span><span class="p">][</span><span class="s1">'regular'</span><span class="p">][</span><span class="s1">'white'</span><span class="p">][</span><span class="s1">'jumbo'</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Savings on 3 packs of organic jumbo brown eggs: </span><span class="si">{:f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">discount</span><span class="o">*</span><span class="mi">3</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"Savings on 3 packs of organic jumbo brown eggs: {:f}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">discount</span><span class="o">*</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
 
 </div>
