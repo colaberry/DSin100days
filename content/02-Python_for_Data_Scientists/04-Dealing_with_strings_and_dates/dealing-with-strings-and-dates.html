@@ -13017,6 +13017,45 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
+<style type="text/css">
+    
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+
+    </style>
 
 
 <style type="text/css">
@@ -13091,9 +13130,9 @@ div#notebook {
 <h3 id="Other-operations:">Other operations:<a class="anchor-link" href="#Other-operations:">¶</a></h3><p>.lower(), .upper() to lower &amp; upper case the strings</p>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><span class="n">str1</span> <span class="o">=</span> <span class="s1">'A String example'</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Uppercase:'</span><span class="p">,</span> <span class="n">str1</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Lowercase'</span><span class="p">,</span> <span class="n">str1</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Uppercase each word:'</span><span class="p">,</span> <span class="n">str1</span><span class="o">.</span><span class="n">title</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'Uppercase:'</span><span class="p">,</span> <span class="n">str1</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'Lowercase'</span><span class="p">,</span> <span class="n">str1</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'Uppercase each word:'</span><span class="p">,</span> <span class="n">str1</span><span class="o">.</span><span class="n">title</span><span class="p">())</span>
 
 <span class="c1"># Output:</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">Uppercase</span><span class="p">:</span> <span class="n">A</span> <span class="n">STRING</span> <span class="n">EXAMPLE</span>
@@ -13106,7 +13145,7 @@ div#notebook {
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span> <span class="o">--</span> <span class="n">Importing</span> <span class="n">re</span> <span class="n">library</span>
 <span class="n">mangoes</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">"Mango"</span><span class="p">,</span> <span class="s2">"This is a Mango"</span><span class="p">)</span> <span class="o">--</span> <span class="n">Searching</span> <span class="k">for</span> <span class="n">the</span> <span class="n">first</span> <span class="n">occurance</span> <span class="n">of</span> <span class="n">string</span> <span class="n">Mango</span>
 <span class="n">mangoes</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">mangoes</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">mangoes</span><span class="p">)</span>
 <span class="o">&lt;</span><span class="n">_sre</span><span class="o">.</span><span class="n">SRE_Match</span> <span class="nb">object</span><span class="p">;</span> <span class="n">span</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="n">match</span><span class="o">=</span><span class="s1">'Mango'</span><span class="o">&gt;</span> <span class="o">--</span> <span class="n">Printing</span> <span class="n">the</span> <span class="n">search</span> <span class="n">results</span> <span class="k">with</span> <span class="mi">10</span> <span class="k">as</span> <span class="n">the</span> <span class="n">starting</span> <span class="n">index</span> <span class="n">of</span> <span class="n">Mango</span> <span class="ow">and</span> <span class="mi">15</span> <span class="k">as</span> <span class="n">the</span> <span class="n">ending</span> <span class="n">index</span> <span class="n">of</span> <span class="n">the</span> <span class="n">mango</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">string</span>
 </pre></div>
 <p>The above example is to search for an exact match. If we want to do some fuzzy matches, the regular expression will be more powerful. The following are some frequently used symbols in regex:</p>
@@ -13221,10 +13260,10 @@ div#notebook {
 <h3 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h3><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
 
 <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span>
 
 <span class="n">hel_strings</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">"hel"</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">hel_strings</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">hel_strings</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
 </pre></div>
 <p>After successful execution of this exercise, we encourage you to try to find the index of second 'hel' for fun and practice.</p>
 
@@ -13238,8 +13277,8 @@ div#notebook {
 <div class="highlight"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">'Bo.st.r'</span><span class="p">,</span> <span class="s1">'Booster'</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
 </pre></div>
 <p>In here, the string with the prefix letter 'r' means it is a raw string. When using regular expressions, remember to write 'r' as a prefix. Because Python will interpret some special characters differently, for example '\n':</p>
-<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">New Line'</span><span class="p">)</span>     <span class="c1">#print a blank line and then the two words "New Line"</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\nNew Line'</span><span class="p">)</span>    <span class="c1">#print every character in the string, "\nNew Line"</span>
+<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">New Line'</span><span class="p">)</span>     <span class="c1">#print a blank line and then the two words "New Line"</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\nNew Line'</span><span class="p">)</span>    <span class="c1">#print every character in the string, "\nNew Line"</span>
 
 <span class="c1"># Output:</span>
 <span class="o">&gt;&gt;&gt;</span> 
@@ -13283,7 +13322,7 @@ Reference: <a href="https://docs.python.org/2/reference/lexical_analysis.html#gr
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Numbers-and-repetitions">Numbers and repetitions<a class="anchor-link" href="#Numbers-and-repetitions">¶</a></h2><p>A \d is used to match numbers or digits. And a number of repetitions is matched using 
 {x} where x is the number of repetitions.</p>
-<div class="highlight"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\d</span><span class="si">{3}</span><span class="s1">-\d</span><span class="si">{3}</span><span class="s1">-\d</span><span class="si">{4}</span><span class="s1">'</span><span class="p">,</span> <span class="s1">'the phone number of John is 109-876-5432'</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\d{3}-\d{3}-\d{4}'</span><span class="p">,</span> <span class="s1">'the phone number of John is 109-876-5432'</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
 </pre></div>
 <h3 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">¶</a></h3><ul>
 <li>a) In the phone number text contact = 'the phone number of John is 201.442.4536' use regular expressions to obain the phone number, assign it to variable phone_no and print it.</li>
@@ -13310,8 +13349,8 @@ Reference: <a href="https://docs.python.org/2/reference/lexical_analysis.html#gr
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="n">phone_no</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\d</span><span class="si">{3}</span><span class="s1">.\d</span><span class="si">{3}</span><span class="s1">.\d</span><span class="si">{4}</span><span class="s1">'</span><span class="p">,</span> <span class="n">contact</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">phone_no</span><span class="p">)</span>
+<h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="n">phone_no</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\d{3}.\d{3}.\d{4}'</span><span class="p">,</span> <span class="n">contact</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">phone_no</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13367,7 +13406,7 @@ Being able to extract useful information and then clean the data will be very im
 
 <span class="c1">#Find upc numbers(every upc number contains 12 digits). Because the above string contains a upc number that starts with letter l instead of number 1, we need to use '\w' to find all the '12 characters' numbers.</span>
 <span class="kn">import</span> <span class="nn">re</span>
-<span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\b\w</span><span class="si">{12}</span><span class="s1">\b'</span><span class="p">,</span> <span class="n">str1</span><span class="p">)</span>          
+<span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\b\w{12}\b'</span><span class="p">,</span> <span class="n">str1</span><span class="p">)</span>          
 <span class="c1">#In this example, '\b' represents whitespace around words</span>
 
 <span class="c1"># Output</span>
@@ -13380,7 +13419,7 @@ Being able to extract useful information and then clean the data will be very im
 
 <span class="c1">#Find phone numbers: start with '(' or without, 3 digits, followed by 1 or more non-digits, another 3 digits, followed by 1 or more non-digits, another 4 digits, followed by a whitespace.</span>
 
-<span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\(?\d</span><span class="si">{3}</span><span class="s1">\D+\d</span><span class="si">{3}</span><span class="s1">\D+\d</span><span class="si">{4}</span><span class="s1">\b'</span><span class="p">,</span> <span class="n">str1</span><span class="p">)</span>
+<span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\(?\d{3}\D+\d{3}\D+\d{4}\b'</span><span class="p">,</span> <span class="n">str1</span><span class="p">)</span>
 
 <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="s1">'(845) 928-4465'</span><span class="p">,</span> <span class="s1">'(231) 231 - 8675'</span><span class="p">,</span> <span class="s1">'873 876 2980'</span><span class="p">,</span> <span class="s1">'876 237 3276'</span><span class="p">]</span>
@@ -13439,8 +13478,8 @@ Being able to extract useful information and then clean the data will be very im
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="n">style_no</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\b\w\d</span><span class="si">{5}</span><span class="s1">\b'</span><span class="p">,</span> <span class="n">str1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">style_no</span><span class="p">)</span>
+<h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="n">style_no</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\b\w\d{5}\b'</span><span class="p">,</span> <span class="n">str1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">style_no</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13451,21 +13490,21 @@ Being able to extract useful information and then clean the data will be very im
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Additional-String-Operations">Additional String Operations<a class="anchor-link" href="#Additional-String-Operations">¶</a></h2><h3 id="Accessing-the-characters">Accessing the characters<a class="anchor-link" href="#Accessing-the-characters">¶</a></h3><p>The individual characters of a string can be accessed by using indexing. Similarly a range of characters of a string can be accessed by using slicing. In python string indices start from 0.</p>
 <div class="highlight"><pre><span></span><span class="n">str1</span> <span class="o">=</span> <span class="s1">'A String example'</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'str1 = '</span><span class="p">,</span> <span class="n">str1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'str1 = '</span><span class="p">,</span> <span class="n">str1</span><span class="p">)</span>
 
 <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span><span class="n">str1</span> <span class="o">=</span>  <span class="n">A</span> <span class="n">String</span> <span class="n">example</span>
 
 
 <span class="c1">#Print the first character</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'str1[0] = '</span><span class="p">,</span> <span class="n">str1</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'str1[0] = '</span><span class="p">,</span> <span class="n">str1</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
 <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span><span class="n">str1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span>  <span class="n">A</span>
 </pre></div>
 <p>In order to access a range of characters a slice could be used.</p>
 <div class="highlight"><pre><span></span><span class="c1">#To access the substring exam from str1, we could slice from 9 to 13th character (13 excluded) </span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'str1[9:13] = '</span><span class="p">,</span> <span class="n">str1</span><span class="p">[</span><span class="mi">9</span><span class="p">:</span><span class="mi">13</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'str1[9:13] = '</span><span class="p">,</span> <span class="n">str1</span><span class="p">[</span><span class="mi">9</span><span class="p">:</span><span class="mi">13</span><span class="p">])</span>
 
 <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span><span class="n">str1</span><span class="p">[</span><span class="mi">9</span><span class="p">:</span><span class="mi">13</span><span class="p">]</span> <span class="o">=</span>  <span class="n">exam</span>
@@ -13510,7 +13549,7 @@ Being able to extract useful information and then clean the data will be very im
 <h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="n">str_python</span> <span class="o">=</span> <span class="n">str_input</span><span class="p">[</span><span class="mi">25</span><span class="p">:</span><span class="mi">31</span><span class="p">]</span>
 <span class="c1"># We can use find() to search for the starting index, so this can also be written as the following:</span>
 <span class="c1"># str_python = str_input[str_input.find('Python'):str_input.find('Python')+6]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'str_python = '</span><span class="p">,</span> <span class="n">str_python</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'str_python = '</span><span class="p">,</span> <span class="n">str_python</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13524,8 +13563,8 @@ Being able to extract useful information and then clean the data will be very im
 <span class="n">str1</span> <span class="o">=</span> <span class="s2">"A String example is an example"</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'\s'</span><span class="p">,</span> <span class="n">str1</span><span class="p">)</span>
 <span class="n">result1</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'\s'</span><span class="p">,</span> <span class="n">str1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1">#Here we split str1 only at the first two occurrences.</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result1</span><span class="p">)</span>
 
 <span class="c1"># Output:</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="s1">'A'</span><span class="p">,</span> <span class="s1">'String'</span><span class="p">,</span> <span class="s1">'example'</span><span class="p">,</span> <span class="s1">'is'</span><span class="p">,</span> <span class="s1">'an'</span><span class="p">,</span> <span class="s1">'example'</span><span class="p">]</span>
@@ -13565,14 +13604,14 @@ Being able to extract useful information and then clean the data will be very im
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Replace-a-String">Replace a String<a class="anchor-link" href="#Replace-a-String">¶</a></h2><p>String replace() method is used to replace a given substring within a string.</p>
 <div class="highlight"><pre><span></span><span class="n">str1</span> <span class="o">=</span> <span class="s1">'firststring'</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'str1 = '</span><span class="p">,</span> <span class="n">str1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'str1 = '</span><span class="p">,</span> <span class="n">str1</span><span class="p">)</span>
 
 <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span><span class="n">str1</span> <span class="o">=</span>  <span class="n">firststring</span>
 
 <span class="c1">#Print the first character</span>
 <span class="n">str2</span> <span class="o">=</span> <span class="n">str1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'first'</span><span class="p">,</span><span class="s1">'second'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'str2 = '</span><span class="p">,</span> <span class="n">str2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'str2 = '</span><span class="p">,</span> <span class="n">str2</span><span class="p">)</span>
 
 <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span><span class="n">str2</span> <span class="o">=</span>  <span class="n">secondstring</span>
@@ -13601,7 +13640,7 @@ Being able to extract useful information and then clean the data will be very im
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="n">output_str</span> <span class="o">=</span> <span class="n">input_str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'Hi'</span><span class="p">,</span><span class="s1">'Hello'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'output_str = '</span><span class="p">,</span> <span class="n">output_str</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'output_str = '</span><span class="p">,</span> <span class="n">output_str</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13613,15 +13652,15 @@ Being able to extract useful information and then clean the data will be very im
 <h3 id="Join-Two-Strings">Join Two Strings<a class="anchor-link" href="#Join-Two-Strings">¶</a></h3><p>String join() method is used to a given character or string to every character in a string.
 For example if you want to add a hyphen character between each character in a second string, you could use a join.</p>
 <div class="highlight"><pre><span></span><span class="n">str1</span> <span class="o">=</span> <span class="s1">'-'</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'str1 = '</span><span class="p">,</span> <span class="n">str1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'str1 = '</span><span class="p">,</span> <span class="n">str1</span><span class="p">)</span>
 
 <span class="c1">#Print the first character</span>
 <span class="n">str2</span> <span class="o">=</span> <span class="n">str1</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">'word'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'str2 = '</span><span class="p">,</span> <span class="n">str2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'str2 = '</span><span class="p">,</span> <span class="n">str2</span><span class="p">)</span>
 </pre></div>
 <h3 id="Reverse-a-String">Reverse a String<a class="anchor-link" href="#Reverse-a-String">¶</a></h3><p>String reversed() method is used to reverse each character in a given string and return an iterator.</p>
 <div class="highlight"><pre><span></span><span class="n">string</span><span class="o">=</span><span class="s2">"12345"</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">string</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">string</span><span class="p">)))</span>
 </pre></div>
 <h3 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">¶</a></h3><p>In the below exercise given two strings string1 and string2, join both strings by reversing string2 and assign it to variable string3. Print the resultant string3.</p>
 
@@ -13649,7 +13688,7 @@ For example if you want to add a hyphen character between each character in a se
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="n">string3</span><span class="o">=</span><span class="n">string1</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">string2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">string3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">string3</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13719,7 +13758,7 @@ For example if you want to add a hyphen character between each character in a se
     <span class="c1"># It was an int, and now we have the int value</span>
     <span class="n">outvar</span> <span class="o">=</span> <span class="n">intvalue</span><span class="o">*</span><span class="mi">2</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">outvar</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">outvar</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13740,8 +13779,8 @@ tzinfo— An abstract class for dealing with time zones<br></p>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 <span class="n">today</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
 <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">today</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">now</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">today</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">now</span><span class="p">)</span>
 </pre></div>
 <h3 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">¶</a></h3><p>Write pyton code to import date,time and datetime from datetime library. Then assign variable today_now with the current date with timestamp. Hint: use datetime module.</p>
 
@@ -13754,8 +13793,8 @@ tzinfo— An abstract class for dealing with time zones<br></p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#write your code below</span>
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">date</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span>
 <span class="n">today_now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
 <span class="n">today_now</span>
 </pre></div>
@@ -13771,7 +13810,7 @@ tzinfo— An abstract class for dealing with time zones<br></p>
 <h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">time</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 <span class="n">today_now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">today_now</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">today_now</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13786,32 +13825,32 @@ tzinfo— An abstract class for dealing with time zones<br></p>
 <span class="n">today</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
 
 <span class="n">day</span> <span class="o">=</span> <span class="n">today</span><span class="o">.</span><span class="n">day</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Day component is "</span><span class="p">,</span> <span class="n">day</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"Day component is "</span><span class="p">,</span> <span class="n">day</span><span class="p">)</span>
 
 
 <span class="n">month</span> <span class="o">=</span> <span class="n">today</span><span class="o">.</span><span class="n">month</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Month component is "</span><span class="p">,</span> <span class="n">month</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"Month component is "</span><span class="p">,</span> <span class="n">month</span><span class="p">)</span>
 
 
 <span class="n">year</span> <span class="o">=</span> <span class="n">today</span><span class="o">.</span><span class="n">year</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Year component is "</span><span class="p">,</span> <span class="n">year</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"Year component is "</span><span class="p">,</span> <span class="n">year</span><span class="p">)</span>
 </pre></div>
 <h2 id="Time-operations">Time operations<a class="anchor-link" href="#Time-operations">¶</a></h2><p>datetime object has individual components representing hour, minute, seconds by using the properties.</p>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 <span class="n">today_now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">today_now</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">today_now</span><span class="p">)</span>
 
 <span class="n">hour</span> <span class="o">=</span> <span class="n">today_now</span><span class="o">.</span><span class="n">hour</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Hour component is "</span><span class="p">,</span> <span class="n">hour</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"Hour component is "</span><span class="p">,</span> <span class="n">hour</span><span class="p">)</span>
 
 
 <span class="n">minute</span> <span class="o">=</span> <span class="n">today_now</span><span class="o">.</span><span class="n">minute</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Minute component is "</span><span class="p">,</span> <span class="n">minute</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"Minute component is "</span><span class="p">,</span> <span class="n">minute</span><span class="p">)</span>
 
 
 <span class="n">seconds</span> <span class="o">=</span> <span class="n">today_now</span><span class="o">.</span><span class="n">second</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Second component is "</span><span class="p">,</span> <span class="n">seconds</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"Second component is "</span><span class="p">,</span> <span class="n">seconds</span><span class="p">)</span>
 </pre></div>
 <h3 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">¶</a></h3><p>From the variable today_now extract day,month, year, hour, minute and seconds in respective variable names and print each of the six components. For example if timestamp is 2018-08-14 19:06:46.291600 then print : "Day Component is 14". Similarly print other 5 components mentioned above.</p>
 
@@ -13837,31 +13876,31 @@ tzinfo— An abstract class for dealing with time zones<br></p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 <span class="n">today_now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">today_now</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">today_now</span><span class="p">)</span>
 
 <span class="n">day</span> <span class="o">=</span> <span class="n">today_now</span><span class="o">.</span><span class="n">day</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Day component is "</span><span class="p">,</span> <span class="n">day</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"Day component is "</span><span class="p">,</span> <span class="n">day</span><span class="p">)</span>
 
 
 <span class="n">month</span> <span class="o">=</span> <span class="n">today_now</span><span class="o">.</span><span class="n">month</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Month component is "</span><span class="p">,</span> <span class="n">month</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"Month component is "</span><span class="p">,</span> <span class="n">month</span><span class="p">)</span>
 
 
 <span class="n">year</span> <span class="o">=</span> <span class="n">today_now</span><span class="o">.</span><span class="n">year</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Year component is "</span><span class="p">,</span> <span class="n">year</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"Year component is "</span><span class="p">,</span> <span class="n">year</span><span class="p">)</span>
 
 
 
 <span class="n">hour</span> <span class="o">=</span> <span class="n">today_now</span><span class="o">.</span><span class="n">hour</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Hour component is "</span><span class="p">,</span> <span class="n">hour</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"Hour component is "</span><span class="p">,</span> <span class="n">hour</span><span class="p">)</span>
 
 
 <span class="n">minute</span> <span class="o">=</span> <span class="n">today_now</span><span class="o">.</span><span class="n">minute</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Minute component is "</span><span class="p">,</span> <span class="n">minute</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"Minute component is "</span><span class="p">,</span> <span class="n">minute</span><span class="p">)</span>
 
 
 <span class="n">seconds</span> <span class="o">=</span> <span class="n">today_now</span><span class="o">.</span><span class="n">second</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Second component is "</span><span class="p">,</span> <span class="n">seconds</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"Second component is "</span><span class="p">,</span> <span class="n">seconds</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13894,7 +13933,7 @@ The string and the format it represents is provided as the parameters. See code 
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span>
 <span class="n">str_dttm</span> <span class="o">=</span> <span class="s2">"Jul 14 2018 5:10AM"</span>
 
 <span class="c1"># write your code below</span>
@@ -13911,7 +13950,7 @@ The string and the format it represents is provided as the parameters. See code 
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="n">parsed_dttm</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">str_dttm</span><span class="p">,</span> <span class="s1">'%b </span><span class="si">%d</span><span class="s1"> %Y %I:%M%p'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">parsed_dttm</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">parsed_dttm</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13940,10 +13979,10 @@ The string and the format it represents is provided as the parameters. See code 
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
 <span class="n">init_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s1">'2019 07 01'</span><span class="p">,</span> <span class="s1">'%Y %m </span><span class="si">%d</span><span class="s1">'</span><span class="p">)</span>
 <span class="n">result_date</span> <span class="o">=</span> <span class="n">init_date</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">weeks</span><span class="o">=-</span><span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result_date</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result_date</span><span class="p">)</span>
 
 <span class="c1"># Output</span>
-<span class="o">&gt;&gt;&gt;</span><span class="mi">2019</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">10</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>
+<span class="o">&gt;&gt;&gt;</span><span class="mi">2019</span><span class="o">-</span><span class="mo">06</span><span class="o">-</span><span class="mi">10</span> <span class="mo">00</span><span class="p">:</span><span class="mo">00</span><span class="p">:</span><span class="mo">00</span>
 </pre></div>
 <ol>
 <li>We have a certain date, and want to get the previous week's Monday date based on that date:</li>
@@ -13956,10 +13995,10 @@ The string and the format it represents is provided as the parameters. See code 
 <span class="n">Monday_date</span> <span class="o">=</span> <span class="n">init_date</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=-</span><span class="p">(</span><span class="n">init_date</span><span class="o">.</span><span class="n">weekday</span><span class="p">()))</span>
 <span class="c1"># Then add the desired weeks or days, etc.</span>
 <span class="n">result_date</span> <span class="o">=</span> <span class="n">Monday_date</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">weeks</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result_date</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result_date</span><span class="p">)</span>
 
 <span class="c1"># Output</span>
-<span class="o">&gt;&gt;&gt;</span><span class="mi">2019</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">24</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>
+<span class="o">&gt;&gt;&gt;</span><span class="mi">2019</span><span class="o">-</span><span class="mo">06</span><span class="o">-</span><span class="mi">24</span> <span class="mo">00</span><span class="p">:</span><span class="mo">00</span><span class="p">:</span><span class="mo">00</span>
 </pre></div>
 <h3 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">¶</a></h3><p>a) In this exercise get time delta of exactly 200 days interms of weeks, days, hours, minutes and seconds and assign it to variable future_date using below criteria. Print future_date.</p>
 <p>b) Given a person's birthday, calculate how old he is.</p>
@@ -13976,9 +14015,9 @@ Minutes must be between 1 to 59<br></p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">timedelta</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">date</span>
 <span class="n">dob</span> <span class="o">=</span> <span class="s1">'09/10/1985'</span>   <span class="c1">#a person's birthday</span>
 <span class="c1"># write your code below</span>
 </pre></div>
@@ -13992,13 +14031,13 @@ Minutes must be between 1 to 59<br></p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="n">future_date</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">weeks</span><span class="o">=</span><span class="mi">28</span><span class="p">,</span> <span class="n">days</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">hours</span><span class="o">=</span><span class="mi">23</span><span class="p">,</span> <span class="n">minutes</span><span class="o">=</span><span class="mi">59</span><span class="p">,</span> <span class="n">seconds</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>  <span class="c1"># adds up to 200 days</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">future_date</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">future_date</span><span class="p">)</span>
 
 <span class="n">dob_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">dob</span><span class="p">,</span> <span class="s1">'%m/</span><span class="si">%d</span><span class="s1">/%Y'</span><span class="p">)</span>
 <span class="n">today</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
 <span class="n">delta</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">today</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">today</span><span class="o">.</span><span class="n">day</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">dob_date</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">dob_date</span><span class="o">.</span><span class="n">day</span><span class="p">))</span>     <span class="c1">#check if the person's birthday has passed or not in current year. If not passed, assign delta to 1.</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">today</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="n">dob_date</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="n">delta</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </pre></div>
 
 </div>
