@@ -1,3 +1,0 @@
-numpy
-ipywidgets
-nbinteract
