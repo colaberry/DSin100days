@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8">
 
-<title>03-Lab-SVR-Poly</title>
+<title>Lab-SVC_guided</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13116,169 +13077,92 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="03-Lab----SVR--Polynomial">03-Lab  - SVR- Polynomial<a class="anchor-link" href="#03-Lab----SVR--Polynomial">¶</a></h2><p>In this lab, you will work with Auto dataset - description provided below .
-The dataset contains information about varoious cars/automobiles, the number of wheels, engine displacement along with their fuel efficiency.
-Your task is to fit a Support Vector Machine regression with polynomial kerneland compare it with Polynomial regression &amp; in terms of accuracy scores and MSE.
-You are required to use "mpg" as the target variable and do the data manipulation (dummy categorical variables), use SVR with poly kernel to create the model.</p>
-<p>Data is availabe in : <a href="https://raw.githubusercontent.com/colaberry/DSin100days/master/data/Auto.csv">https://raw.githubusercontent.com/colaberry/DSin100days/master/data/Auto.csv</a></p>
+<h2 id="Lab---Support-Vector-Machines">Lab - Support Vector Machines<a class="anchor-link" href="#Lab---Support-Vector-Machines">¶</a></h2><p>In this lab, you will work with loan default dataset and use Support Vector Machines (SVC) to predict default.
+The dataset contains information about income, balance and default for various people along with their student status.
+Your task is to fit a Support Vactor Machines model (from sklearn) , and predict default status of individuals given the data sample.
+You are required to perform pre-processing train-test split,GridSearchCV to find the best parameters and create the model.
+Also try different kernels as well as hyper-parameters to find the best fit.</p>
+<p>Data is availabe in : <a href="https://raw.githubusercontent.com/colaberry/DSin100days/master/data/default.csv">https://raw.githubusercontent.com/colaberry/DSin100days/master/data/default.csv</a></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [2]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import the library</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Importing pandas</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">auto</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'https://raw.githubusercontent.com/colaberry/DSin100days/master/data/Auto.csv'</span><span class="p">,</span> <span class="n">na_values</span><span class="o">=</span><span class="s1">'?'</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
-<span class="n">auto</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-<span class="n">auto</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-
-<span class="c1">#Write your code here or in other code cells down</span>
+<span class="n">default</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'https://raw.githubusercontent.com/colaberry/DSin100days/master/data/default.csv'</span><span class="p">,</span> <span class="n">na_values</span><span class="o">=</span><span class="s1">'?'</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">default</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<span class="n">default</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class 'pandas.core.frame.DataFrame'&gt;
-Int64Index: 392 entries, 0 to 396
-Data columns (total 9 columns):
-mpg             392 non-null float64
-cylinders       392 non-null int64
-displacement    392 non-null float64
-horsepower      392 non-null float64
-weight          392 non-null int64
-acceleration    392 non-null float64
-year            392 non-null int64
-origin          392 non-null int64
-name            392 non-null object
-dtypes: float64(4), int64(4), object(1)
-memory usage: 30.6+ KB
-</pre>
 </div>
-</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_set</span> <span class="o">=</span> <span class="n">default</span><span class="p">[[</span><span class="s2">"balance"</span><span class="p">,</span><span class="s2">"income"</span><span class="p">,</span> <span class="s2">"default2"</span><span class="p">]]</span>
+</pre></div>
 
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[2]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>mpg</th>
-      <th>cylinders</th>
-      <th>displacement</th>
-      <th>horsepower</th>
-      <th>weight</th>
-      <th>acceleration</th>
-      <th>year</th>
-      <th>origin</th>
-      <th>name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>18.0</td>
-      <td>8</td>
-      <td>307.0</td>
-      <td>130.0</td>
-      <td>3504</td>
-      <td>12.0</td>
-      <td>70</td>
-      <td>1</td>
-      <td>chevrolet chevelle malibu</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>15.0</td>
-      <td>8</td>
-      <td>350.0</td>
-      <td>165.0</td>
-      <td>3693</td>
-      <td>11.5</td>
-      <td>70</td>
-      <td>1</td>
-      <td>buick skylark 320</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>18.0</td>
-      <td>8</td>
-      <td>318.0</td>
-      <td>150.0</td>
-      <td>3436</td>
-      <td>11.0</td>
-      <td>70</td>
-      <td>1</td>
-      <td>plymouth satellite</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>16.0</td>
-      <td>8</td>
-      <td>304.0</td>
-      <td>150.0</td>
-      <td>3433</td>
-      <td>12.0</td>
-      <td>70</td>
-      <td>1</td>
-      <td>amc rebel sst</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>17.0</td>
-      <td>8</td>
-      <td>302.0</td>
-      <td>140.0</td>
-      <td>3449</td>
-      <td>10.5</td>
-      <td>70</td>
-      <td>1</td>
-      <td>ford torino</td>
-    </tr>
-  </tbody>
-</table>
+    </div>
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span> 
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">LinearSVC</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
 
+<span class="n">X</span> <span class="o">=</span> <span class="n">data_set</span><span class="p">[[</span><span class="s1">'balance'</span><span class="p">,</span><span class="s1">'income'</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data_set</span><span class="p">[</span><span class="s1">'default2'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">l_svc</span> <span class="o">=</span> <span class="c1"># create an svc classifier instance  </span>
+<span class="n">l_svc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># run predict on the test dataset and get y_pred </span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="c1"># Calcuate the accuracy score </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"accuracy of the model is </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">'####'</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>accuracy of the model is 0.967</p>
+
+</div>
+</div>
 </div>
     </div>
   </div>
