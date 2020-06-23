@@ -13,9 +13,9 @@ steps:
   image: karrug/dsin100dayscicd:0.3
   environment:
     AWS_ACCESS_KEY_ID:
-      fron_secret: AWS_ACCESS_KEY_ID
+      from_secret: AWS_ACCESS_KEY_ID
     AWS_SECRET_ACCESS_KEY:
-      fron_secret: AWS_SECRET_ACCESS_KEY
+      from_secret: AWS_SECRET_ACCESS_KEY
   commands:
   - echo $${AWS_ACCESS_KEY_ID}
   - echo $${AWS_SECRET_ACCESS_KEY}
