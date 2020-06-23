@@ -17,6 +17,8 @@ steps:
     AWS_SECRET_ACCESS_KEY:
       fron_secret: AWS_SECRET_ACCESS_KEY
   commands:
+  - echo $${AWS_ACCESS_KEY_ID}
+  - echo $${AWS_SECRET_ACCESS_KEY}
   - AWS_ACCESS_KEY_ID=$${AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=$${AWS_SECRET_ACCESS_KEY} /root/env/bin/aws s3 sync --acl public-read content s3://refactoredstage/dsin100days/content
   - /root/env/bin/aws s5 sync --acl public-read micro_courses s3://refactoredstage/dsin100days/micro_courses
  
