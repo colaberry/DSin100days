@@ -25,3 +25,31 @@ trigger:
   - develop
   event:
   - push
+
+---
+kind: pipeline
+type: docker
+name: live
+
+steps:
+- name: build
+  image: karrug/dsin100dayscicd:0.3
+  commands:
+  - /root/env/bin/python tools/buildhtmlpages.py
+
+- name: deploy
+  image: karrug/dsin100dayscicd:0.3
+  environment:
+    AWS_ACCESS_KEY_ID:
+      from_secret: AWS_ACCESS_KEY_ID_LIVE
+    AWS_SECRET_ACCESS_KEY:
+      from_secret: AWS_SECRET_ACCESS_KEY_LIVE
+  commands:
+  - AWS_ACCESS_KEY_ID=$${AWS_ACCESS_KEY_ID_LIVE} AWS_SECRET_ACCESS_KEY=$${AWS_SECRET_ACCESS_KEY_LIVE} /root/env/bin/aws s3 sync --acl public-read content s3://refactored/dsin100days/content
+  - /root/env/bin/aws s3 sync --acl public-read micro_courses s3://refactored/dsin100days/micro_courses
+ 
+trigger:
+  branch:
+  - master
+  event:
+  - push
