@@ -17,8 +17,8 @@ steps:
     AWS_SECRET_ACCESS_KEY:
       fron_secret: aws_secret_access_key
   commands:
-  - /root/env/bin/aws s3 --sync --acl public-read content s3://refactoredstage/dsin100days/content
-  - /root/env/bin/aws s5 --sync --acl public-read micro_courses s3://refactoredstage/dsin100days/micro_courses
+  - /root/env/bin/aws s3 sync --acl public-read content s3://refactoredstage/dsin100days/content
+  - /root/env/bin/aws s5 sync --acl public-read micro_courses s3://refactoredstage/dsin100days/micro_courses
  
 trigger:
   branch:
