@@ -6,4 +6,4 @@ RUN apt install virtualenv -y
 WORKDIR /root
 RUN virtualenv -p python3 env
 RUN . env/bin/activate
-RUN /root/env/bin/pip install nbformat==4.4.0 ds100nbconvert
+RUN /root/env/bin/pip install nbformat==4.4.0 ds100nbconvert awscli
