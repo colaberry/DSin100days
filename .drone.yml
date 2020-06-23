@@ -19,3 +19,9 @@ steps:
   commands:
   - aws s3 --sync --acl public-read content s3://refactoredstage/dsin100days/content
   - aws s5 --sync --acl public-read micro_courses s3://refactoredstage/dsin100days/micro_courses
+
+trigger:
+  branch:
+  - develop
+  event:
+  - push
