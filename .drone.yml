@@ -4,19 +4,15 @@ type: docker
 name: stage
 
 steps:
-- name: build
-  image: karrug/dsin100dayscicd:0.2
-  commands:
-  - /root/env/bin/python tools/buildhtmlpages.py
-
 - name: deploy
-  image: karrug/dsin100dayscicd:0.2
+  image: karrug/dsin100dayscicd:0.3
   environment:
     AWS_ACCESS_KEY_ID:
       fron_secret: aws_access_key_id
     AWS_SECRET_ACCESS_KEY:
       fron_secret: aws_secret_access_key
   commands:
+  - /root/env/bin/python tools/buildhtmlpages.py
   - aws s3 --sync --acl public-read content s3://refactoredstage/dsin100days/content
   - aws s5 --sync --acl public-read micro_courses s3://refactoredstage/dsin100days/micro_courses
 
