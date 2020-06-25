@@ -4,25 +4,6 @@ type: docker
 name: stage
 
 steps:
-- name: validate
-  image: karrug/dsin100dayscicd:0.3
-  commands:
-  - /root/env/bin/python tools/buildhtmlpages.py
-
-trigger:
-  event:
-  - push
-  - deployment
-  - pull_request
-  - tag
-
-
----
-kind: pipeline
-type: docker
-name: stage
-
-steps:
 - name: build
   image: karrug/dsin100dayscicd:0.3
   commands:
