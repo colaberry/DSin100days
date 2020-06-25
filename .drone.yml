@@ -1,6 +1,22 @@
 ---
 kind: pipeline
 type: docker
+name: test
+
+steps:
+- name: build
+  image: karrug/dsin100dayscicd:0.3
+  commands:
+  - /root/env/bin/python tools/buildhtmlpages.py
+
+trigger:
+  event:
+  - pull_request
+
+
+---
+kind: pipeline
+type: docker
 name: stage
 
 steps:
@@ -25,6 +41,7 @@ trigger:
   - develop
   event:
   - push
+
 
 ---
 kind: pipeline
