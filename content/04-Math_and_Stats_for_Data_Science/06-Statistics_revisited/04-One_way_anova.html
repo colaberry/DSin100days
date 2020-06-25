@@ -13122,7 +13122,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [6]:</div>
+<div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
@@ -13166,7 +13166,22 @@ div#notebook {
 
 
 <div class="output_html rendered_html output_subarea ">
-<script>requirejs.config({paths: { 'plotly': ['https://cdn.plot.ly/plotly-latest.min']},});if(!window.Plotly) {{require(['plotly'],function(plotly) {window.Plotly=plotly;});}}</script>
+        <script type="text/javascript">
+        window.PlotlyConfig = {MathJaxConfig: 'local'};
+        if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+        if (typeof require !== 'undefined') {
+        require.undef("plotly");
+        requirejs.config({
+            paths: {
+                'plotly': ['https://cdn.plot.ly/plotly-latest.min']
+            }
+        });
+        require(['plotly'], function(Plotly) {
+            window._Plotly = Plotly;
+        });
+        }
+        </script>
+        
 </div>
 
 </div>
@@ -13181,7 +13196,7 @@ div#notebook {
 
     <div class="bk-root">
         <a href="https://bokeh.pydata.org" target="_blank" class="bk-logo bk-logo-small bk-logo-notebook"></a>
-        <span id="de29772c-2f64-4ccc-a79b-feccc2ce3f32">Loading BokehJS ...</span>
+        <span id="1001">Loading BokehJS ...</span>
     </div>
 </div>
 
@@ -13195,10 +13210,10 @@ div#notebook {
 
 
 
-<div id="53ad77e7-bb5c-4102-bf6d-d9af98a89612"></div>
+<div id="25080d46-22f9-4bef-af95-d745198ff0a3"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#53ad77e7-bb5c-4102-bf6d-d9af98a89612');
+var element = $('#25080d46-22f9-4bef-af95-d745198ff0a3');
 
 (function(root) {
   function now() {
@@ -13207,7 +13222,7 @@ var element = $('#53ad77e7-bb5c-4102-bf6d-d9af98a89612');
 
   var force = true;
 
-  if (typeof (root._bokeh_onload_callbacks) === "undefined" || force === true) {
+  if (typeof root._bokeh_onload_callbacks === "undefined" || force === true) {
     root._bokeh_onload_callbacks = [];
     root._bokeh_is_loading = undefined;
   }
@@ -13234,7 +13249,7 @@ var element = $('#53ad77e7-bb5c-4102-bf6d-d9af98a89612');
     var id = cell.output_area._bokeh_element_id;
     var server_id = cell.output_area._bokeh_server_id;
     // Clean up Bokeh references
-    if (id !== undefined) {
+    if (id != null && id in Bokeh.index) {
       Bokeh.index[id].model.document.clear();
       delete Bokeh.index[id];
     }
@@ -13245,9 +13260,11 @@ var element = $('#53ad77e7-bb5c-4102-bf6d-d9af98a89612');
       cell.notebook.kernel.execute(cmd, {
         iopub: {
           output: function(msg) {
-            var element_id = msg.content.text.trim();
-            Bokeh.index[element_id].model.document.clear();
-            delete Bokeh.index[element_id];
+            var id = msg.content.text.trim();
+            if (id in Bokeh.index) {
+              Bokeh.index[id].model.document.clear();
+              delete Bokeh.index[id];
+            }
           }
         }
       });
@@ -13356,7 +13373,7 @@ var element = $('#53ad77e7-bb5c-4102-bf6d-d9af98a89612');
      "</div>"}};
 
   function display_loaded() {
-    var el = document.getElementById("de29772c-2f64-4ccc-a79b-feccc2ce3f32");
+    var el = document.getElementById("1001");
     if (el != null) {
       el.textContent = "BokehJS is loading...";
     }
@@ -13372,51 +13389,80 @@ var element = $('#53ad77e7-bb5c-4102-bf6d-d9af98a89612');
 
   function run_callbacks() {
     try {
-      root._bokeh_onload_callbacks.forEach(function(callback) { callback() });
-    }
-    finally {
+      root._bokeh_onload_callbacks.forEach(function(callback) {
+        if (callback != null)
+          callback();
+      });
+    } finally {
       delete root._bokeh_onload_callbacks
     }
-    console.info("Bokeh: all callbacks have finished");
+    console.debug("Bokeh: all callbacks have finished");
   }
 
-  function load_libs(js_urls, callback) {
+  function load_libs(css_urls, js_urls, callback) {
+    if (css_urls == null) css_urls = [];
+    if (js_urls == null) js_urls = [];
+
     root._bokeh_onload_callbacks.push(callback);
     if (root._bokeh_is_loading > 0) {
-      console.log("Bokeh: BokehJS is being loaded, scheduling callback at", now());
+      console.debug("Bokeh: BokehJS is being loaded, scheduling callback at", now());
       return null;
     }
     if (js_urls == null || js_urls.length === 0) {
       run_callbacks();
       return null;
     }
-    console.log("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
-    root._bokeh_is_loading = js_urls.length;
+    console.debug("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
+    root._bokeh_is_loading = css_urls.length + js_urls.length;
+
+    function on_load() {
+      root._bokeh_is_loading--;
+      if (root._bokeh_is_loading === 0) {
+        console.debug("Bokeh: all BokehJS libraries/stylesheets loaded");
+        run_callbacks()
+      }
+    }
+
+    function on_error() {
+      console.error("failed to load " + url);
+    }
+
+    for (var i = 0; i < css_urls.length; i++) {
+      var url = css_urls[i];
+      const element = document.createElement("link");
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.rel = "stylesheet";
+      element.type = "text/css";
+      element.href = url;
+      console.debug("Bokeh: injecting link tag for BokehJS stylesheet: ", url);
+      document.body.appendChild(element);
+    }
+
     for (var i = 0; i < js_urls.length; i++) {
       var url = js_urls[i];
-      var s = document.createElement('script');
-      s.src = url;
-      s.async = false;
-      s.onreadystatechange = s.onload = function() {
-        root._bokeh_is_loading--;
-        if (root._bokeh_is_loading === 0) {
-          console.log("Bokeh: all BokehJS libraries loaded");
-          run_callbacks()
-        }
-      };
-      s.onerror = function() {
-        console.warn("failed to load library " + url);
-      };
-      console.log("Bokeh: injecting script tag for BokehJS library: ", url);
-      document.getElementsByTagName("head")[0].appendChild(s);
+      var element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.async = false;
+      element.src = url;
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
     }
-  };var element = document.getElementById("de29772c-2f64-4ccc-a79b-feccc2ce3f32");
+  };var element = document.getElementById("1001");
   if (element == null) {
-    console.log("Bokeh: ERROR: autoload.js configured with elementid 'de29772c-2f64-4ccc-a79b-feccc2ce3f32' but no matching script tag was found. ")
+    console.error("Bokeh: ERROR: autoload.js configured with elementid '1001' but no matching script tag was found. ")
     return false;
   }
 
-  var js_urls = ["https://cdn.pydata.org/bokeh/release/bokeh-0.12.16.min.js", "https://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.16.min.js", "https://cdn.pydata.org/bokeh/release/bokeh-tables-0.12.16.min.js", "https://cdn.pydata.org/bokeh/release/bokeh-gl-0.12.16.min.js"];
+  function inject_raw_css(css) {
+    const element = document.createElement("style");
+    element.appendChild(document.createTextNode(css));
+    document.body.appendChild(element);
+  }
+
+  var js_urls = ["https://cdn.pydata.org/bokeh/release/bokeh-1.2.0.min.js", "https://cdn.pydata.org/bokeh/release/bokeh-widgets-1.2.0.min.js", "https://cdn.pydata.org/bokeh/release/bokeh-tables-1.2.0.min.js", "https://cdn.pydata.org/bokeh/release/bokeh-gl-1.2.0.min.js"];
+  var css_urls = ["https://cdn.pydata.org/bokeh/release/bokeh-1.2.0.min.css", "https://cdn.pydata.org/bokeh/release/bokeh-widgets-1.2.0.min.css", "https://cdn.pydata.org/bokeh/release/bokeh-tables-1.2.0.min.css"];
 
   var inline_js = [
     function(Bokeh) {
@@ -13426,14 +13472,7 @@ var element = $('#53ad77e7-bb5c-4102-bf6d-d9af98a89612');
     function(Bokeh) {
       
     },
-    function(Bokeh) {
-      console.log("Bokeh: injecting CSS: https://cdn.pydata.org/bokeh/release/bokeh-0.12.16.min.css");
-      Bokeh.embed.inject_css("https://cdn.pydata.org/bokeh/release/bokeh-0.12.16.min.css");
-      console.log("Bokeh: injecting CSS: https://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.16.min.css");
-      Bokeh.embed.inject_css("https://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.16.min.css");
-      console.log("Bokeh: injecting CSS: https://cdn.pydata.org/bokeh/release/bokeh-tables-0.12.16.min.css");
-      Bokeh.embed.inject_css("https://cdn.pydata.org/bokeh/release/bokeh-tables-0.12.16.min.css");
-    }
+    function(Bokeh) {} // ensure no trailing comma for IE
   ];
 
   function run_inline_js() {
@@ -13449,18 +13488,18 @@ var element = $('#53ad77e7-bb5c-4102-bf6d-d9af98a89612');
       console.log("Bokeh: BokehJS failed to load within specified timeout.");
       root._bokeh_failed_load = true;
     } else if (force !== true) {
-      var cell = $(document.getElementById("de29772c-2f64-4ccc-a79b-feccc2ce3f32")).parents('.cell').data().cell;
+      var cell = $(document.getElementById("1001")).parents('.cell').data().cell;
       cell.output_area.append_execute_result(NB_LOAD_WARNING)
     }
 
   }
 
   if (root._bokeh_is_loading === 0) {
-    console.log("Bokeh: BokehJS loaded, going straight to plotting");
+    console.debug("Bokeh: BokehJS loaded, going straight to plotting");
     run_inline_js();
   } else {
-    load_libs(js_urls, function() {
-      console.log("Bokeh: BokehJS plotting callback run at", now());
+    load_libs(css_urls, js_urls, function() {
+      console.debug("Bokeh: BokehJS plotting callback run at", now());
       run_inline_js();
     });
   }
@@ -13519,7 +13558,7 @@ Note: It's not really telling us which means are not equal to the other means. J
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [7]:</div>
+<div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Just run the below code</span>
@@ -13550,7 +13589,7 @@ Note: It's not really telling us which means are not equal to the other means. J
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
 
@@ -13591,7 +13630,7 @@ Note: It's not really telling us which means are not equal to the other means. J
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [8]:</div>
+<div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Just run the below code</span>
@@ -13613,7 +13652,7 @@ Note: It's not really telling us which means are not equal to the other means. J
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[8]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -13871,7 +13910,7 @@ Note: It's not really telling us which means are not equal to the other means. J
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [9]:</div>
+<div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Just run the below code</span>
@@ -13935,7 +13974,7 @@ F= \dfrac{\text{variation between group means}}{\text{variation in group means} 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [10]:</div>
+<div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">trace1</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
@@ -13988,14 +14027,49 @@ F= \dfrac{\text{variation between group means}}{\text{variation in group means} 
 
 
 <div class="output_html rendered_html output_subarea ">
-<div id="eddab52f-64a6-45f3-8cd4-711943a1e080" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";
-        Plotly.plot(
-            'eddab52f-64a6-45f3-8cd4-711943a1e080',
-            [{"mode": "markers", "name": "old", "x": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], "y": [28.12172681831621, 16.941217931749623, 17.35914123868272, 14.635156889219147, 24.327038146623394, 8.492306515598587, 28.7240588210824, 16.193965495524488, 21.595195480285494, 18.75314812261295, 27.31053968522487, 9.69929645251173, 18.387913979932463, 18.07972822665792, 25.66884721167719, 14.500543663429845, 19.137858962247822, 15.610707910393142, 20.211068733577964, 22.91407606857911], "type": "scatter", "uid": "af0820b0-5b4f-11e9-9903-b0359f561c51"}, {"mode": "markers", "name": "young", "x": [2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0], "y": [27.916210762972646, 29.718665863868353, 19.31901952165773, 38.201354042024946, 21.032822074025685, 25.79126317171898, 32.51440708579021, 23.77355956696384, 24.710238905688307, 25.45496192536575, 32.757270222732124, 41.46104006407479, 30.207696964992017, 24.410372774432417, 32.69529160290394, 27.019201500967664, 29.904347517394243, 35.875006097501455, 26.260645253530686, 30.045126254866627], "type": "scatter", "uid": "af0820b1-5b4f-11e9-9903-b0359f561c51"}],
-            {"xaxis": {"dtick": 1, "range": [0, 3], "title": "Category"}, "yaxis": {"range": [0, 50], "title": "Number of hours watching TV (hrs/week) "}},
-            {"showLink": true, "linkText": "Export to plot.ly"}
-        ).then(function () {return Plotly.addFrames('eddab52f-64a6-45f3-8cd4-711943a1e080',{});}).then(function(){Plotly.animate('eddab52f-64a6-45f3-8cd4-711943a1e080');})
-        });</script>
+<div>
+        
+        
+            <div id="e492681f-a670-4527-9192-060e102a76d2" class="plotly-graph-div" style="height:525px; width:100%;"></div>
+            <script type="text/javascript">
+                require(["plotly"], function(Plotly) {
+                    window.PLOTLYENV=window.PLOTLYENV || {};
+                    
+                if (document.getElementById("e492681f-a670-4527-9192-060e102a76d2")) {
+                    Plotly.newPlot(
+                        'e492681f-a670-4527-9192-060e102a76d2',
+                        [{"mode": "markers", "name": "old", "type": "scatter", "x": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], "y": [28.12172681831621, 16.941217931749623, 17.35914123868272, 14.635156889219147, 24.327038146623394, 8.492306515598587, 28.7240588210824, 16.193965495524488, 21.595195480285494, 18.75314812261295, 27.31053968522487, 9.69929645251173, 18.387913979932463, 18.07972822665792, 25.66884721167719, 14.500543663429845, 19.137858962247822, 15.610707910393142, 20.211068733577964, 22.91407606857911]}, {"mode": "markers", "name": "young", "type": "scatter", "x": [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], "y": [27.916210762972646, 29.718665863868353, 19.31901952165773, 38.201354042024946, 21.032822074025685, 25.79126317171898, 32.51440708579021, 23.77355956696384, 24.710238905688307, 25.45496192536575, 32.757270222732124, 41.46104006407479, 30.207696964992017, 24.410372774432417, 32.69529160290394, 27.019201500967664, 29.904347517394243, 35.875006097501455, 26.260645253530686, 30.045126254866627]}],
+                        {"template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "zerolinecolor": "white", "zerolinewidth": 2}}}, "xaxis": {"dtick": 1, "range": [0, 3], "title": {"text": "Category"}}, "yaxis": {"range": [0, 50], "title": {"text": "Number of hours watching TV (hrs/week) "}}},
+                        {"responsive": true}
+                    ).then(function(){
+                            
+var gd = document.getElementById('e492681f-a670-4527-9192-060e102a76d2');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })
+                };
+                });
+            </script>
+        </div>
 </div>
 
 </div>
@@ -14035,7 +14109,7 @@ F= \dfrac{\text{variation between group means}}{\text{variation in group means} 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [11]:</div>
+<div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># variation between groups </span>
@@ -14048,6 +14122,7 @@ F= \dfrac{\text{variation between group means}}{\text{variation in group means} 
 <span class="n">sum_squares_between_groups</span><span class="o">=</span> <span class="n">num_samples</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">old_mean</span><span class="o">-</span><span class="n">grand_mean</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">young_mean</span><span class="o">-</span><span class="n">grand_mean</span><span class="p">))</span>
 <span class="n">variation_between_group</span> <span class="o">=</span> <span class="n">sum_squares_between_groups</span><span class="o">/</span><span class="n">df1</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Variation between groups- </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">variation_between_group</span><span class="p">))</span>
+<span class="n">df1</span>
 </pre></div>
 
     </div>
@@ -14067,6 +14142,19 @@ F= \dfrac{\text{variation between group means}}{\text{variation in group means} 
 <pre>Variation between groups- 925.4917621802622
 </pre>
 </div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[15]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1</pre>
+</div>
+
 </div>
 
 </div>
@@ -14113,7 +14201,7 @@ $\text{value}_j$-  is the $j^{th}$ value in the $i^{th}$ group. For example $\te
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [12]:</div>
+<div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># step 2 and 3 </span>
@@ -14129,6 +14217,7 @@ $\text{value}_j$-  is the $j^{th}$ value in the $i^{th}$ group. For example $\te
 <span class="n">variation_within_group</span><span class="o">=</span> <span class="n">sum_of_squares_within_groups</span><span class="o">/</span><span class="n">df2</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Variation between groups- </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">variation_within_group</span><span class="p">))</span>
+<span class="n">df2</span>
 </pre></div>
 
     </div>
@@ -14148,6 +14237,19 @@ $\text{value}_j$-  is the $j^{th}$ value in the $i^{th}$ group. For example $\te
 <pre>Variation between groups- 31.45801251631027
 </pre>
 </div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[16]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>38</pre>
+</div>
+
 </div>
 
 </div>
@@ -14173,7 +14275,7 @@ $\text{value}_j$-  is the $j^{th}$ value in the $i^{th}$ group. For example $\te
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [13]:</div>
+<div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">F_value</span> <span class="o">=</span>  <span class="n">variation_between_group</span><span class="o">/</span><span class="n">variation_within_group</span>
@@ -14222,7 +14324,7 @@ $\text{value}_j$-  is the $j^{th}$ value in the $i^{th}$ group. For example $\te
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [14]:</div>
+<div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">p_value</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">stats</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">F_value</span><span class="p">,</span><span class="n">df1</span><span class="p">,</span><span class="n">df2</span><span class="p">)</span>
@@ -14271,7 +14373,7 @@ $\text{value}_j$-  is the $j^{th}$ value in the $i^{th}$ group. For example $\te
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [15]:</div>
+<div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">conf_int</span> <span class="o">=</span> <span class="mi">0</span> 
@@ -14356,13 +14458,13 @@ $\text{value}_j$-  is the $j^{th}$ value in the $i^{th}$ group. For example $\te
 
  
  
-<div id="bd4d200c-f01b-46a7-8138-fe313e803448"></div>
+<div id="c63990c5-2362-47ce-a2f4-341ec16ddf5c"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#bd4d200c-f01b-46a7-8138-fe313e803448');
+var element = $('#c63990c5-2362-47ce-a2f4-341ec16ddf5c');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "25c0aa64716546779444c767f386c133"}
+{"model_id": "d8ea089ff1014ac3af5c79936172b34d", "version_major": 2, "version_minor": 0}
 </script>
 </div>
 
@@ -14390,7 +14492,7 @@ var element = $('#bd4d200c-f01b-46a7-8138-fe313e803448');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [16]:</div>
+<div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -14416,7 +14518,7 @@ var element = $('#bd4d200c-f01b-46a7-8138-fe313e803448');
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -14452,7 +14554,7 @@ var element = $('#bd4d200c-f01b-46a7-8138-fe313e803448');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [17]:</div>
+<div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
@@ -14469,7 +14571,7 @@ var element = $('#bd4d200c-f01b-46a7-8138-fe313e803448');
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[17]:</div>
+    <div class="prompt output_prompt">Out[12]:</div>
 
 
 
