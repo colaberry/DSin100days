@@ -50,68 +50,9 @@ def display_users_by_day_table(clickData):
         return figures.generate_users_by_day_table(x)
     return 0
 
-# @app.callback(
-#     Output('click-data-unique-users-visiting-notebooks-by-day', 'children'),
-#     [Input('user-by-day-visting-notebooks-graph', 'clickData')])
-# def display_unique_users_visiting_notebooks_by_day_table(clickData):
-#     if clickData is not None and "points" in clickData:
-#         x = clickData["points"][0]["x"]
-#         return figures.generate_unique_users_visiting_notebooks_by_day_table(x)
-#     return 0
-
 if __name__ == "__main__":
     app.run_server(debug=True)
 
-# app.layout = html.Div([  
-#     html.H1(
-#         'Refactored Metrics',
-#         style={
-#             'textAlign': 'center',
-#             }
-#         ),
-    
-#     html.Div([dcc.Graph(
-#         id='new_users-by-week',
-#         figure=figures.new_users_by_week_bar_graph()
-#     )], style={'width': '49%', 'display': 'inline-block', 'padding': '0 20'}),
 
-#     html.Div(
-#         id='click-data',
-#         style={'width': '49%', 'display': 'inline-block', 'padding': '0 20'},
-#         ),
-        #, style={'width': '49%', 'display': 'inline-block', 'padding': '0 20'}),
-    
-    # html.Div([
-    # figures.generate_table('2020-09-28')
-    # ], style={'width': '49%', 'display': 'inline-block', 'padding': '0 20'}),
-    
-    # html.Div([
-    #       dash_table.DataTable(
-    #       id='new-users-table',
-    #       columns=[{"name": i, "id": i} for i in queries.new_users_list().columns],
-    #       data=new_users_list.to_dict('records'),   
-    #   )
-    #       ], style={'width': '49%', 'display': 'inline-block', 'padding': '0 20'}),
-
-#     html.Div([dcc.Graph(
-#         id='user-by-day-visting-notebooks-graph',
-#         figure=figures.users_by_day_line_graph()
-#     )], style={'width': '49%', 'display': 'inline-block', 'padding': '0 20'}),
-    
-#     html.Div([dcc.Graph(
-#         id='user-by-day-graph',
-#         figure=figures.users_by_day_bar_graph()
-#     )], style={'width': '49%', 'display': 'inline-block', 'padding': '0 20'}),
-    
-#       html.Div([dcc.Graph(
-#         id='user-activity-per-hour-graph',
-#         figure=figures.user_activity_per_hour()
-#     )], style={'width': '49%', 'display': 'inline-block', 'padding': '0 20'}),
-      
-# ])
-                
-
-# if __name__ == "__main__":
-#     app.run_server(debug=True)
 
 

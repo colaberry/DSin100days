@@ -92,36 +92,3 @@ def create_layout(app):
 
 
 
-# app.layout = html.Div([
-#     html.H1(
-#         'Refactored Metrics',
-#         style={
-#             'textAlign': 'center',
-#             }
-#         ),
-    
-#      html.Div([dcc.Graph(
-#         id='new_users-by-week',
-#         figure=fig1
-#     )], style={'width': '49%', 'display': 'inline-block', 'padding': '0 20'}),
-
-#     html.Div([dcc.Graph(
-#         id='user-by-day-visting-notebooks-graph',
-#         figure=fig2
-#     )], style={'width': '49%', 'display': 'inline-block', 'padding': '0 20'}),
-    
-#     html.Div([dcc.Graph(
-#         id='user-by-day-graph',
-#         figure=fig3
-#     )], style={'width': '49%', 'display': 'inline-block', 'padding': '0 20'}),
-    
-#      html.Div([dcc.Graph(
-#         id='user-activity-per-hour-graph',
-#         figure=fig4
-#     )], style={'width': '49%', 'display': 'inline-block', 'padding': '0 20'}),
-      
-# ])
-
-# if __name__ == '__main__':
-#     app.run_server(debug=True)
-
