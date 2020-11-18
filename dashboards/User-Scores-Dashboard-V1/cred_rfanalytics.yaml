@@ -1,5 +1,0 @@
-host: log.refactored.ai 
-port: 5432
-dbname: rfanalytics
-user: logreader
-passwd: EyR2SYCsJx4NCzyR
