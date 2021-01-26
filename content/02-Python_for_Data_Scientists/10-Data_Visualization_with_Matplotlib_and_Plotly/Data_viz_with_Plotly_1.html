@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13138,8 +13099,8 @@ div#notebook {
 <li>Figure: This is a dictionary-like object which contains both the data object and the layout object and this defines the graph.</li>
 </ol>
 <p>In order to start creating graphs using plotly, we need to import both 'plotly' and 'graph_objs' modules.</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.offline</span> <span class="kn">as</span> <span class="nn">ofl</span>
-<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="kn">as</span> <span class="nn">go</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.offline</span> <span class="k">as</span> <span class="nn">ofl</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
 </pre></div>
 <p><b>Initializing notebook mode:</b> Plotly was designed to render graphs on a web server or a local port. In order to render the plots inside the jupyter notebook, the notebook mode of plotly must be initialized. Without initializing notebook mode, no plotly plots can be visualized within this notebook (or any jupyter notebook).</p>
 <p>Syntax to enable notebook mode is:</p>
@@ -13174,8 +13135,8 @@ div#notebook {
 <div class="highlight"><pre><span></span><span class="c1"># solution</span>
 
 <span class="kn">import</span> <span class="nn">plotly</span>
-<span class="kn">import</span> <span class="nn">plotly.offline</span> <span class="kn">as</span> <span class="nn">ofl</span>
-<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="kn">as</span> <span class="nn">go</span>
+<span class="kn">import</span> <span class="nn">plotly.offline</span> <span class="k">as</span> <span class="nn">ofl</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
 <span class="n">plotly</span><span class="o">.</span><span class="n">__version__</span>
 </pre></div>
 
@@ -13239,9 +13200,9 @@ The code to create a trace with above given data would be:</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="c1"># solution</span>
 
-<span class="kn">import</span> <span class="nn">plotly.offline</span> <span class="kn">as</span> <span class="nn">ofl</span>
-<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="kn">as</span> <span class="nn">go</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">plotly.offline</span> <span class="k">as</span> <span class="nn">ofl</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">ofl</span><span class="o">.</span><span class="n">init_notebook_mode</span><span class="p">()</span>
 
@@ -13462,7 +13423,7 @@ The code to create a trace with above given data would be:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Creating data</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">31</span><span class="p">)</span>
@@ -13901,14 +13862,14 @@ In this case, the values for both data and layout are lists with two objects, on
         <span class="s2">"annotations"</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
                 <span class="s2">"font"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"size"</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
-                <span class="s2">"showarrow"</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+                <span class="s2">"showarrow"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
                 <span class="s2">"text"</span><span class="p">:</span> <span class="s2">"GHG"</span><span class="p">,</span>
                 <span class="s2">"x"</span><span class="p">:</span> <span class="mf">0.20</span><span class="p">,</span>
                 <span class="s2">"y"</span><span class="p">:</span> <span class="mf">0.5</span>
             <span class="p">},</span>
             <span class="p">{</span>
                 <span class="s2">"font"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"size"</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
-                <span class="s2">"showarrow"</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+                <span class="s2">"showarrow"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
                 <span class="s2">"text"</span><span class="p">:</span> <span class="s2">"CO2"</span><span class="p">,</span>
                 <span class="s2">"x"</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span>
                 <span class="s2">"y"</span><span class="p">:</span> <span class="mf">0.5</span>
@@ -13991,14 +13952,14 @@ In this case, the values for both data and layout are lists with two objects, on
         <span class="s2">"annotations"</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
                 <span class="s2">"font"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"size"</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
-                <span class="s2">"showarrow"</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+                <span class="s2">"showarrow"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
                 <span class="s2">"text"</span><span class="p">:</span> <span class="s2">"Corp A"</span><span class="p">,</span>
                 <span class="s2">"x"</span><span class="p">:</span> <span class="mf">0.194</span><span class="p">,</span>
                 <span class="s2">"y"</span><span class="p">:</span> <span class="mf">0.5</span>
             <span class="p">},</span>
             <span class="p">{</span>
                 <span class="s2">"font"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"size"</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
-                <span class="s2">"showarrow"</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+                <span class="s2">"showarrow"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
                 <span class="s2">"text"</span><span class="p">:</span> <span class="s2">"Corp B"</span><span class="p">,</span>
                 <span class="s2">"x"</span><span class="p">:</span> <span class="mf">0.808</span><span class="p">,</span>
                 <span class="s2">"y"</span><span class="p">:</span> <span class="mf">0.5</span>
@@ -14095,7 +14056,7 @@ Another example with overlapping bubbles:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Creating data</span>
 <span class="n">x</span><span class="o">=</span><span class="p">[]</span>
@@ -14164,7 +14125,7 @@ We can create a semi-circular gauge chart from a donut chart, by dividing the do
     <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"pie"</span><span class="p">,</span>
     <span class="s2">"direction"</span><span class="p">:</span> <span class="s2">"clockwise"</span><span class="p">,</span>
     <span class="s2">"rotation"</span><span class="p">:</span> <span class="mi">108</span><span class="p">,</span>
-    <span class="s2">"showlegend"</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+    <span class="s2">"showlegend"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
     <span class="s2">"hoverinfo"</span><span class="p">:</span> <span class="s2">"none"</span><span class="p">,</span>
     <span class="s2">"textinfo"</span><span class="p">:</span> <span class="s2">"label"</span><span class="p">,</span>
     <span class="s2">"textposition"</span><span class="p">:</span> <span class="s2">"outside"</span>
@@ -14190,7 +14151,7 @@ We can create a semi-circular gauge chart from a donut chart, by dividing the do
     <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"pie"</span><span class="p">,</span>
     <span class="s2">"direction"</span><span class="p">:</span> <span class="s2">"clockwise"</span><span class="p">,</span>
     <span class="s2">"rotation"</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>
-    <span class="s2">"showlegend"</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+    <span class="s2">"showlegend"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
     <span class="s2">"textinfo"</span><span class="p">:</span> <span class="s2">"label"</span><span class="p">,</span>
     <span class="s2">"textposition"</span><span class="p">:</span> <span class="s2">"inside"</span><span class="p">,</span>
     <span class="s2">"hoverinfo"</span><span class="p">:</span> <span class="s2">"none"</span>
@@ -14199,14 +14160,14 @@ We can create a semi-circular gauge chart from a donut chart, by dividing the do
 <span class="c1"># Creating dial within layout</span>
 <span class="n">layout</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">'xaxis'</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">'showticklabels'</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
-        <span class="s1">'showgrid'</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
-        <span class="s1">'zeroline'</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+        <span class="s1">'showticklabels'</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s1">'showgrid'</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s1">'zeroline'</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s1">'yaxis'</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">'showticklabels'</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
-        <span class="s1">'showgrid'</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
-        <span class="s1">'zeroline'</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+        <span class="s1">'showticklabels'</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s1">'showgrid'</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s1">'zeroline'</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
     <span class="p">},</span>
 
     <span class="c1"># Creating the dial using a triangle shape</span>
@@ -14229,7 +14190,7 @@ We can create a semi-circular gauge chart from a donut chart, by dividing the do
             <span class="s1">'x'</span><span class="p">:</span> <span class="mf">0.23</span><span class="p">,</span>
             <span class="s1">'y'</span><span class="p">:</span> <span class="mf">0.45</span><span class="p">,</span>
             <span class="s1">'text'</span><span class="p">:</span> <span class="s1">'50'</span><span class="p">,</span>
-            <span class="s1">'showarrow'</span><span class="p">:</span> <span class="bp">False</span>
+            <span class="s1">'showarrow'</span><span class="p">:</span> <span class="kc">False</span>
         <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">}</span>

@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13113,7 +13074,7 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered celltag_s1 celltag_content celltag_l1"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Support-Vector-Machines-(SVMs)">Support Vector Machines (SVMs)<a class="anchor-link" href="#Support-Vector-Machines-(SVMs)">¶</a></h1><h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">¶</a></h2><p>Support Vector Machines (SVMs) are a popular machine learning method for classification,
@@ -13135,13 +13096,13 @@ tions about variable distribution than do many other methods, which makes them e
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 <span class="c1"># Load libraries</span>
-<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="k">import</span> <span class="n">LinearSVC</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">datasets</span>
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="k">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">LinearSVC</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 
 <span class="c1"># Load data with only two classes and two features</span>
 <span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
@@ -13231,13 +13192,13 @@ gamma is the Kernel coefficient and relevant only for ‘rbf’, ‘poly’ and 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered celltag_l2 celltag_s2 celltag_ans">
 <div class="input">
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="k">import</span> <span class="n">SVR</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">mean_squared_error</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVR</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># #############################################################################</span>
@@ -13330,7 +13291,7 @@ Create svr_poly, y_poly and print mean_squared_error similar to linear kernel co
                <span class="n">coef0</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">y_poly</span> <span class="o">=</span> <span class="n">svr_poly</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">y_poly</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">y_poly</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -13372,7 +13333,7 @@ We also use epsilon=.1, to specify the margin of tolerance and coef0=1 - it's an
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h3><div class="highlight"><pre><span></span><span class="n">svr_rbf</span> <span class="o">=</span> <span class="n">SVR</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">'rbf'</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=.</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">y_rbf</span> <span class="o">=</span> <span class="n">svr_rbf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">y_rbf</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">y_rbf</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -13394,7 +13355,7 @@ We also use epsilon=.1, to specify the margin of tolerance and coef0=1 - it's an
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="k">import</span> <span class="n">SVR</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVR</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="c1"># #############################################################################</span>

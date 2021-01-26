@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13164,7 +13125,7 @@ In this example, we will use a web site called <a href="http://quotes.toscrape.c
 <span class="n">url</span> <span class="o">=</span> <span class="s1">'http://quotes.toscrape.com/'</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
-<span class="k">print</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13184,7 +13145,7 @@ For example:</p>
 </pre></div>
 <h3 id="2.3-Reading-the-content-usign-tags-and-classes">2.3 Reading the content usign tags and classes<a class="anchor-link" href="#2.3-Reading-the-content-usign-tags-and-classes">¶</a></h3><p>We can read a file line-by-line using a <strong>for loop</strong>. This is both efficient and fast.</p>
 <div class="highlight"><pre><span></span><span class="n">a_tag</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">a</span>
-<span class="k">print</span><span class="p">(</span><span class="n">a_tag</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_tag</span><span class="p">)</span>
 
 <span class="c1">#For a specific class you can use find_all() with class_ attribute as below</span>
 <span class="n">specific_tags</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">"div"</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">"my_class"</span><span class="p">)</span>
@@ -13220,7 +13181,7 @@ For example:</p>
 
 <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
 <span class="n">tag</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">"div"</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">"quote"</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13237,7 +13198,7 @@ For example:</p>
 <h3 id="2.2-Getting-the-content-within">2.2 Getting the content within<a class="anchor-link" href="#2.2-Getting-the-content-within">¶</a></h3><p>In order to fetch the content, use tag.text.
 For example, in this case the code will be similar to below:</p>
 <div class="highlight"><pre><span></span><span class="n">content</span> <span class="o">=</span> <span class="n">tag</span><span class="o">.</span><span class="n">text</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"Content is :: "</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Content is :: "</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span>
 </pre></div>
 <h3 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">¶</a></h3><p>From the previous exercise 'tag' variable with all DIV with class "quote", find all "small" tags with the class as  "author". Print the content within the resulting div tags.</p>
 
@@ -13261,10 +13222,10 @@ For example, in this case the code will be similar to below:</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h3><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tag</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"small"</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">"author"</span><span class="p">)</span>
     <span class="n">author</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">text</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"By :: "</span><span class="p">,</span> <span class="n">author</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"By :: "</span><span class="p">,</span> <span class="n">author</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13300,8 +13261,6 @@ For example, in this case the code will be similar to below:</p>
 <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tag</span><span class="p">:</span>
     <span class="n">text_out</span> <span class="o">=</span>  <span class="n">t</span><span class="o">.</span><span class="n">span</span><span class="o">.</span><span class="n">text</span> 
 <span class="c1">## Add your logic to call the function get_author_dob() with links</span>
-
-    
 </pre></div>
 
     </div>
@@ -13354,18 +13313,18 @@ to this:
 <span class="c1">#print(tag)</span>
 <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tag</span><span class="p">:</span>
     <span class="n">text_out</span> <span class="o">=</span>  <span class="n">t</span><span class="o">.</span><span class="n">span</span><span class="o">.</span><span class="n">text</span> 
-    <span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 
     <span class="n">a</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"small"</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">"author"</span><span class="p">)</span>
     <span class="n">author</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">text</span>
     <span class="n">text_out</span> <span class="o">=</span> <span class="n">text_out</span> <span class="o">+</span> <span class="s1">',"'</span> <span class="o">+</span> <span class="n">author</span> <span class="o">+</span> <span class="s1">'"'</span> 
-    <span class="k">print</span><span class="p">(</span><span class="s2">"By :: "</span><span class="p">,</span> <span class="n">author</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"By :: "</span><span class="p">,</span> <span class="n">author</span><span class="p">)</span>
     <span class="n">hrefs</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">a</span>
     <span class="n">link</span> <span class="o">=</span> <span class="n">hrefs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'href'</span><span class="p">)</span>
     <span class="n">link_url</span> <span class="o">=</span> <span class="n">url</span><span class="o">+</span> <span class="n">link</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">link_url</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">link_url</span><span class="p">)</span>
     <span class="n">dob</span> <span class="o">=</span> <span class="n">get_author_dob</span><span class="p">(</span><span class="n">link_url</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"Author DOB:"</span><span class="p">,</span> <span class="n">dob</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Author DOB:"</span><span class="p">,</span> <span class="n">dob</span><span class="p">)</span>
     <span class="n">text_out</span> <span class="o">=</span> <span class="n">text_out</span> <span class="o">+</span> <span class="s1">',"'</span> <span class="o">+</span> <span class="n">dob</span> <span class="o">+</span> <span class="s1">'"'</span> 
     <span class="n">output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text_out</span><span class="p">)</span>
 </pre></div>

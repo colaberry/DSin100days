@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13116,10 +13077,11 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Lab---Decision-Trees">Lab - Decision Trees<a class="anchor-link" href="#Lab---Decision-Trees">¶</a></h2><p>In this lab, you will work with the Heart dataset to predict whether the patient has AHD or not.
+<h2 id="Lab---Decision-Trees">Lab - Decision Trees<a class="anchor-link" href="#Lab---Decision-Trees">¶</a></h2><p>This is a multi part lab. In the first part, you will train a simple decision tree on a dataset. Next you will plot the decision boundary of the classifier and third you will output a decision tree diagram.</p>
+<p>You will use the Heart dataset to predict whether the patient has AHD or not.
 The dataset contains information about various patient with heart conditions including their age, sex and other medical parameters.
 Your task is to fit a DecisionTree model , and predict the value for AHD (yes or no) for the given data sample.
-You are required to perform pre-processing train-test split,GridSearchCV to find the best parameters and create the model.
+You will pick only two parameters - Max heart rate and age to predict AHD. 
 Data is availabe in : <a href="https://raw.githubusercontent.com/colaberry/DSin100days/master/data/Heart.csv">https://raw.githubusercontent.com/colaberry/DSin100days/master/data/Heart.csv</a></p>
 <p>"Some of the data in this lab are taken from "An Introduction to Statistical Learning, with applications in R"  (Springer, 2013) from the authors: G. James, D. Witten,  T. Hastie and R. Tibshirani "</p>
 
@@ -13133,7 +13095,7 @@ Data is availabe in : <a href="https://raw.githubusercontent.com/colaberry/DSin1
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Importing pandas</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
 <span class="n">heart</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'https://raw.githubusercontent.com/colaberry/DSin100days/master/data/Heart.csv'</span><span class="p">,</span> <span class="n">na_values</span><span class="o">=</span><span class="s1">'?'</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
 <span class="n">heart</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 <span class="n">heart</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -13156,21 +13118,23 @@ Data is availabe in : <a href="https://raw.githubusercontent.com/colaberry/DSin1
 <pre>&lt;class 'pandas.core.frame.DataFrame'&gt;
 Int64Index: 297 entries, 0 to 301
 Data columns (total 15 columns):
-Unnamed: 0    297 non-null int64
-Age           297 non-null int64
-Sex           297 non-null int64
-ChestPain     297 non-null object
-RestBP        297 non-null int64
-Chol          297 non-null int64
-Fbs           297 non-null int64
-RestECG       297 non-null int64
-MaxHR         297 non-null int64
-ExAng         297 non-null int64
-Oldpeak       297 non-null float64
-Slope         297 non-null int64
-Ca            297 non-null float64
-Thal          297 non-null object
-AHD           297 non-null object
+ #   Column      Non-Null Count  Dtype  
+---  ------      --------------  -----  
+ 0   Unnamed: 0  297 non-null    int64  
+ 1   Age         297 non-null    int64  
+ 2   Sex         297 non-null    int64  
+ 3   ChestPain   297 non-null    object 
+ 4   RestBP      297 non-null    int64  
+ 5   Chol        297 non-null    int64  
+ 6   Fbs         297 non-null    int64  
+ 7   RestECG     297 non-null    int64  
+ 8   MaxHR       297 non-null    int64  
+ 9   ExAng       297 non-null    int64  
+ 10  Oldpeak     297 non-null    float64
+ 11  Slope       297 non-null    int64  
+ 12  Ca          297 non-null    float64
+ 13  Thal        297 non-null    object 
+ 14  AHD         297 non-null    object 
 dtypes: float64(2), int64(10), object(3)
 memory usage: 37.1+ KB
 </pre>
@@ -13317,6 +13281,28 @@ memory usage: 37.1+ KB
 
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Part-1:-training-the-Classifier">Part 1: training the Classifier<a class="anchor-link" href="#Part-1:-training-the-Classifier">¶</a></h2><p>Start by training the decision tree classifier. This is similar to what we did in the main section.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># get dataset  </span>
+<span class="n">data_set</span> <span class="o">=</span> <span class="n">heart</span><span class="p">[[</span><span class="s2">"Age"</span><span class="p">,</span><span class="s2">"MaxHR"</span><span class="p">,</span><span class="s2">"AHD"</span><span class="p">]]</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 

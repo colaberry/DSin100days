@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13124,8 +13085,8 @@ div#notebook {
 <div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">)</span>
 </pre></div>
 <p>An example is shown below on how to use the series in a program.</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-    <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
     <span class="nb">list</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
     <span class="nb">list</span>
 
@@ -13166,8 +13127,8 @@ div#notebook {
 <h2 id="Dataframes">Dataframes<a class="anchor-link" href="#Dataframes">¶</a></h2><p>Dataframe is defined as a 2-dimensional labeled data structure with columns of potentially different types according to pydata.org. It is similar to a spreadsheet or SQL table, or a dict of Series objects.</p>
 <p><img src="dataframe.png" style="width: 300px"></p>
 <p>To use pandas library, first you have to import the library and use the functions available in the library</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]))</span>
 </pre></div>
 <h3 id="Description">Description<a class="anchor-link" href="#Description">¶</a></h3><p>Let us read in a csv file into a dataframe object. The pandas dataframe is so versatile that it can easily read files from url links.</p>
@@ -13250,7 +13211,7 @@ div#notebook {
 </pre></div>
 <p>As the Dataframe will be in Series form, the output will have indexes and if we want to avoid the indexes to be copied to the csv file, we need to pass 'False' value to the 'index' argument.</p>
 <p>Here we also define the parameter "encoding" as "utf-8", which is the default in Python 3. "utf-8" is used to encode text in any language, and it's a variable-sized encoding for Unicode. It can use from one to four 8-bit bytes to encode a Unicode code point, while "ASCII", the default in Python 2, only uses 7 bits and has more difficulties to store special characters.</p>
-<div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 <h2 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">¶</a></h2><p>What is the syntax for writing a dataframe 'grad_students' to a csv file 'gradstudents.csv' without any index values stored in the csv file?</p>
 
@@ -14968,7 +14929,7 @@ Indices can be used just as in arrays or lists when selection is in a sequence i
 <h2 id="Sorting-&amp;-Grouping">Sorting &amp; Grouping<a class="anchor-link" href="#Sorting-&amp;-Grouping">¶</a></h2><h3 id="Sorting">Sorting<a class="anchor-link" href="#Sorting">¶</a></h3><p>To sort a column in a dataframe, you can use sort_values method and specify the column. To sort by "Grad_sample_size" in the ascending order in the grad student dataframe:</p>
 <div class="highlight"><pre><span></span><span class="n">grad_students</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">'Grad_sample_size'</span><span class="p">)</span>
 <span class="c1"># If you want to sort the dataframe by two or more columns, you can define the orders for each column. Here is the example:</span>
-<span class="n">grad_students</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'Grad_sample_size'</span><span class="p">,</span> <span class="s1">'Grad_employed'</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">])</span>
+<span class="n">grad_students</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'Grad_sample_size'</span><span class="p">,</span> <span class="s1">'Grad_employed'</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span>
 <span class="c1"># This will give you the sorted dataframe with ascending 'Grad_sample_size', then descending 'Grad_employed'.</span>
 </pre></div>
 <p>The above sort_values() function can sort a dataframe based on the passed values. While sort_index() function can sort by labels along the given axis. The diffrences between the two functions are that sort_index() is applied on the axis labels rather than the actual data.</p>

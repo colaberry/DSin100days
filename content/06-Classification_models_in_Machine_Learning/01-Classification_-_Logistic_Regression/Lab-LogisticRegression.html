@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13119,7 +13080,7 @@ div#notebook {
 <h2 id="02-Lab----Logistic-Regression">02-Lab  - Logistic Regression<a class="anchor-link" href="#02-Lab----Logistic-Regression">¶</a></h2><p>In this lab, you will work with loan default dataset to predict default.
 The dataset contains information about income, balance and default for various people along with their student status.
 Your task is to fit a Logistic Regression model, and predict default status of individuals given the data sample.
-You are required to perform train-test split,GridSearchCV to find the best parameters and create the model.</p>
+You are required to perform train-test split, GridSearchCV to find the best parameters and create the model.</p>
 <p>Data is availabe in : <a href="https://raw.githubusercontent.com/colaberry/DSin100days/master/data/default.csv">https://raw.githubusercontent.com/colaberry/DSin100days/master/data/default.csv</a></p>
 
 </div>
@@ -13127,11 +13088,15 @@ You are required to perform train-test split,GridSearchCV to find the best param
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [2]:</div>
+<div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import the library</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">plot_roc_curve</span><span class="p">,</span> <span class="n">plot_confusion_matrix</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">default</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'https://raw.githubusercontent.com/colaberry/DSin100days/master/data/default.csv'</span><span class="p">,</span> <span class="n">na_values</span><span class="o">=</span><span class="s1">'?'</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
 <span class="n">default</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -13171,7 +13136,7 @@ memory usage: 546.9+ KB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[2]:</div>
+    <div class="prompt output_prompt">Out[1]:</div>
 
 
 

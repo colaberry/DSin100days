@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13148,16 +13109,16 @@ And some additional helpers....</p>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="k">import</span> <span class="n">axes3d</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">axes3d</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="k">import</span> <span class="n">scale</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">scale</span>
 <span class="kn">import</span> <span class="nn">sklearn.linear_model</span> <span class="k">as</span> <span class="nn">skl_lm</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
 <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
 <span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
 
-<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">'seaborn-white'</span><span class="p">)</span>
 </pre></div>
 
@@ -13509,7 +13470,7 @@ memory usage: 30.6+ KB
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.plotly</span> <span class="k">as</span> <span class="nn">py</span>
-<span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="k">import</span> <span class="n">download_plotlyjs</span><span class="p">,</span> <span class="n">init_notebook_mode</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">iplot</span>
+<span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="kn">import</span> <span class="n">download_plotlyjs</span><span class="p">,</span> <span class="n">init_notebook_mode</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">iplot</span>
 <span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
 
 <span class="c1"># Create a trace</span>
@@ -13561,11 +13522,11 @@ Select some outliers visually and print them.</p>
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span>
-<span class="kn">from</span> <span class="nn">bqplot</span> <span class="k">import</span> <span class="o">*</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">bqplot</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="k">import</span> <span class="n">Layout</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">Layout</span>
 
 <span class="n">x_sc</span> <span class="o">=</span> <span class="n">LinearScale</span><span class="p">()</span>
 <span class="n">y_sc</span> <span class="o">=</span> <span class="n">LinearScale</span><span class="p">()</span>
@@ -13602,10 +13563,10 @@ Select some outliers visually and print them.</p>
 
  
  
-<div id="36dc942f-8e87-452d-973b-bdaacdd6a1d8"></div>
+<div id="6d94ad50-20e3-460b-9ccb-b13c0cc58a07"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#36dc942f-8e87-452d-973b-bdaacdd6a1d8');
+var element = $('#6d94ad50-20e3-460b-9ccb-b13c0cc58a07');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "444dd67cbf3e435a9919dd69e47fb838", "version_major": 2, "version_minor": 0}
@@ -13659,10 +13620,10 @@ var element = $('#36dc942f-8e87-452d-973b-bdaacdd6a1d8');
 <p>Let us get to some serious stuff now.</p>
 <h2 id="Linear-Regression-Using-sklearn-library">Linear Regression Using sklearn library<a class="anchor-link" href="#Linear-Regression-Using-sklearn-library">¶</a></h2><p>scikit-learn or sklearn is a python library that provides some built-in machine learning algorithms. We could simply import the library and start using the algorithms in our code with our datasets. 
 If you remember from the first step, we had already imported sklearn and statsmodels (another useful library for statistics and machine learning.)</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sklearn.linear_model</span> <span class="kn">as</span> <span class="nn">skl_lm</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sklearn.linear_model</span> <span class="k">as</span> <span class="nn">skl_lm</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
-<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="kn">as</span> <span class="nn">sm</span>
-<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="kn">as</span> <span class="nn">smf</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
 </pre></div>
 <p>Before we use the ML algorithms to train the model, we need to prepare the data. We can call this as train dataset.
 We simply prepare the predictors or the input vectore, let's say, 'X'. 
@@ -14001,7 +13962,7 @@ Also we prepare the labels for these input vector, and call it 'y'. Since we alr
 <span class="kn">import</span> <span class="nn">bqplot.scales</span> <span class="k">as</span> <span class="nn">bqs</span>
 <span class="kn">import</span> <span class="nn">bqplot.axes</span> <span class="k">as</span> <span class="nn">bqa</span>
 <span class="kn">import</span> <span class="nn">bqplot</span> <span class="k">as</span> <span class="nn">bq</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">'ipywidgets version'</span><span class="p">,</span> <span class="n">widgets</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
@@ -14076,10 +14037,10 @@ bqplot version 0.10.5
 
  
  
-<div id="388ab4ac-41af-4b43-a2c4-0d489890f8e5"></div>
+<div id="ed381823-b709-46c4-bc17-f024f6a70176"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#388ab4ac-41af-4b43-a2c4-0d489890f8e5');
+var element = $('#ed381823-b709-46c4-bc17-f024f6a70176');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "d1b78a59c77c49eebd1bfd41d85dd616", "version_major": 2, "version_minor": 0}
@@ -14763,8 +14724,8 @@ var element = $('#388ab4ac-41af-4b43-a2c4-0d489890f8e5');
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Scientific libraries</span>
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">arange</span><span class="p">,</span><span class="n">array</span><span class="p">,</span><span class="n">ones</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">arange</span><span class="p">,</span><span class="n">array</span><span class="p">,</span><span class="n">ones</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
 
 
 <span class="n">xi</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
@@ -15124,8 +15085,8 @@ var element = $('#388ab4ac-41af-4b43-a2c4-0d489890f8e5');
 <div class="prompt input_prompt">In [42]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython</span> <span class="k">import</span> <span class="n">display</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">IFrame</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s1">'https://colaberry-dash-datadoc1.herokuapp.com/'</span>
 <span class="n">IFrame</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1600</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
 </pre></div>

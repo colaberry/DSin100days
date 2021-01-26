@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13116,61 +13077,203 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Lab---Anamoly-Detection-using-Outlier-Analysis">Lab - Anamoly Detection using Outlier Analysis<a class="anchor-link" href="#Lab---Anamoly-Detection-using-Outlier-Analysis">¶</a></h2><p>Outlier Analysis is used by many organizations for various purposes. Many Financial Services enterprises utilize Outlier Analysis as part of their Anamoly Detection methods. Collective Outliers are often analyzed to identify any unpredictable behavior.</p>
-<p>Below given code loads the sample transaction data of a few clients of a credit card company.</p>
+<h2 id="Lab---Anamoly-Detection-using-Outlier-Analysis">Lab - Anamoly Detection using Outlier Analysis<a class="anchor-link" href="#Lab---Anamoly-Detection-using-Outlier-Analysis">¶</a></h2><p>Outlier Analysis is used by many organizations for various purposes. We are going to identify outliers using two different methods in this problem:</p>
+<p>1) Using Interquantile range <br></p>
+<p>2) Using PyOD and K-means</p>
+<p>We will be using the Glass dataset for this lab. The data deals with identifying different types of glass for criminological investigations. This is a UCI dataset, which can be found <a href="https://archive.ics.uci.edu/ml/datasets/Glass+Identification">here</a>. The columns of the dataset are:</p>
+<p>Attribute Information:</p>
+<ol>
+<li>Id number: 1 to 214 <br></li>
+<li>RI: refractive index <br></li>
+<li>Na: Sodium (unit measurement: weight percent in corresponding oxide, as 
+<pre><code>        are attributes 4-10)</code></pre>
+</li>
+<li>Mg: Magnesium <br></li>
+<li>Al: Aluminum <br></li>
+<li>Si: Silicon <br></li>
+<li>K: Potassium <br></li>
+<li>Ca: Calcium <br></li>
+<li><p>Ba: Barium <br></p>
+<ol>
+<li>Fe: Iron <br></li>
+<li>Type of glass: (class attribute) <br></li>
+</ol>
+<ul>
+<li>1 building_windows_float_processed <br></li>
+<li>2 building_windows_non_float_processed <br></li>
+<li>3 vehicle_windows_float_processed <br></li>
+<li>4 vehicle_windows_non_float_processed (none in this database) <br></li>
+<li>5 containers <br></li>
+<li>6 tableware <br></li>
+<li>7 headlamps <br></li>
+</ul>
+</li>
+</ol>
+<p>Source: <a href="https://archive.ics.uci.edu/ml/datasets/Glass+Identification">UCI glass dataset</a></p>
+<p>This dataset is intented for classification; we have to use the concentration of eleements to identify the typ of glass found on the crime scene. The labels are given in the last column.</p>
+<p>For our purposes, we will use certain columns in the data to identify outliers. We ask</p>
+<p>1) What are the outliers in the 5 th column i.e the Aluminum weight percent. This is just an example you can do this for any column  <br>
+2) Can we use IForest algorithm from pyod to detect and label outliers?</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
+<div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">pyod.models.iforest</span> <span class="kn">import</span> <span class="n">IForest</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="kn">import</span> <span class="n">Rbf</span>
 
-<span class="n">transaction_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"../../../data/Outlier_Analysis_dataset.csv"</span><span class="p">)</span>
-<span class="n">transaction_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">glass_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"../../../data/glass.csv"</span><span class="p">)</span>
+<span class="n">glass_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[1]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Id_Number</th>
+      <th>RI</th>
+      <th>Na</th>
+      <th>Mg</th>
+      <th>Al</th>
+      <th>Si</th>
+      <th>K</th>
+      <th>Ca</th>
+      <th>Ba</th>
+      <th>Fe</th>
+      <th>Type_of_glass</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1.52101</td>
+      <td>13.64</td>
+      <td>4.49</td>
+      <td>1.10</td>
+      <td>71.78</td>
+      <td>0.06</td>
+      <td>8.75</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>1.51761</td>
+      <td>13.89</td>
+      <td>3.60</td>
+      <td>1.36</td>
+      <td>72.73</td>
+      <td>0.48</td>
+      <td>7.83</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1.51618</td>
+      <td>13.53</td>
+      <td>3.55</td>
+      <td>1.54</td>
+      <td>72.99</td>
+      <td>0.39</td>
+      <td>7.78</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>1.51766</td>
+      <td>13.21</td>
+      <td>3.69</td>
+      <td>1.29</td>
+      <td>72.61</td>
+      <td>0.57</td>
+      <td>8.22</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>1.51742</td>
+      <td>13.27</td>
+      <td>3.62</td>
+      <td>1.24</td>
+      <td>73.08</td>
+      <td>0.55</td>
+      <td>8.07</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>As we can see, the above dataset has following features -</p>
-<ul>
-<li>Transaction_id - Unique ID for each transaction</li>
-<li>Account_id - ID unique to each account/credit card</li>
-<li>Date - Timestamp associated with the transaction</li>
-<li>Amount - Value of the transaction in US Dollars</li>
-</ul>
-<p>The Enterprise identifies any high valued transactions (outliers - mild or extreme), happening in quick succession, i.e. within a span of 2 hours as potential fraud. Essentially they are looking for collective outliers happening within a span of 2 hours.</p>
-<p>There are two parts to this assignment -</p>
-<ul>
-<li>Basic Outlier Analysis (mandatory)</li>
-<li>Outlier Analysis using KNN from PyOD module (Bonus)</li>
-</ul>
-<h3 id="Basic-Outlier-Analysis">Basic Outlier Analysis<a class="anchor-link" href="#Basic-Outlier-Analysis">¶</a></h3><p>Analyze the loaded data to answer the below questions</p>
-<ol>
-<li>How client accounts is the data set pertaining to?</li>
-<li>Construct a box plot of transaction amounts, to study the outliers in transactions for each account.</li>
-<li>From above plot, identify if there are any mild or extreme outliers. Note and Report.</li>
-<li>Identify if there is potential fraud in each of the accounts. For this you would have to isolate transactions of each account, sort them according to time stamp, identify outliers as compared to rest of data and see which are collecting outliers happening within 2 hours.</li>
-<li>There is an easy way of doing the above exercise using a single step, instead of selecting the data frame and sorting it and so on. Can you identify what would be the simplest and easiest to identify potential frauds.</li>
-<li>Based on the analysis, write a few lines/comments about the client behavior (purchasing patterns, what you would consider fraud etc.) of each account in the above data set.</li>
-</ol>
-<h3 id="Outlier-Analysis-using-KNN-from-PyOD-module">Outlier Analysis using KNN from PyOD module<a class="anchor-link" href="#Outlier-Analysis-using-KNN-from-PyOD-module">¶</a></h3><ul>
-<li>Use the PyOD module and KNN clustering function to create clusters among the given transaction data.</li>
-<li>What outliers are identified for each account?</li>
-<li>Comment on what you would consider potential fraud. Are these similar to results of basic outlier analysis? Do you see any advantages of using this approach ove the basic analysis approach?</li>
-</ul>
+</div>
+
+</div>
 
 </div>
 </div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div>
     </div>
   </div>

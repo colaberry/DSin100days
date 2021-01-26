@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13116,13 +13077,447 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Simplify-the-Grad-Students-Dataset">Simplify the Grad Students Dataset<a class="anchor-link" href="#Simplify-the-Grad-Students-Dataset">¶</a></h2><p>Given a dataset about Graduate Students and their college majors and other statistics about the number of graduates, number employed etc, write python code to extract the following infromation from the dataset and write to a output file - "grad_simplified.csv". Use pandas library (Dataframe) for this purpose.</p>
-<p>The criteria for output extraction is:</p>
-<ol>
-<li>Only include the columns: Major_Code, Major, Major_Category, Grad_employes and Grad_unemployed</li>
-<li>Only include the Majors that have either 'ENGINEERING', 'TECHNOLOGIES' or 'SCIENCE' (case insensitive) in its major  field.</li>
-<li>Exclude any Major_category that has 'Social Science' or 'Arts' in the name of Major_category.</li>
-</ol>
+<h1 id="Lab-:-Pandas-and-Dataframes">Lab : Pandas and Dataframes<a class="anchor-link" href="#Lab-:-Pandas-and-Dataframes">¶</a></h1><p>Pandas is the bread and butter for a Data Analyst or data scientists. We use pandas to load and transform data. Typically pandas is used to perform all the the exploratory data analysis.</p>
+<p>In this lab we will be working on two datasets.</p>
+<p>Part I: We will use the Iris Dataset, in part 2 we will use the grad student dataset, in part 3 we will use the titanic dataset.</p>
+<p>Lets start with the Iris dataset.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># IRIS DATASET </span>
+<span class="n">iris_dataset</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
+<span class="n">target</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">iris_dataset</span><span class="o">.</span><span class="n">target</span><span class="p">)</span> 
+<span class="n">dataset</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">iris_dataset</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="n">target_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">iris_dataset</span><span class="o">.</span><span class="n">target_names</span><span class="p">)</span>
+<span class="n">feature_names</span> <span class="o">=</span> <span class="n">iris_dataset</span><span class="o">.</span><span class="n">feature_names</span>
+
+
+<span class="c1"># HEART DATASET </span>
+<span class="n">heart_loc</span> <span class="o">=</span> <span class="s2">"../../../data/heart.csv"</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Using the variable dataset make a dataframe. Remember when </span>
+<span class="c1"># when you have a list you need to do df = pd.DataFrame(data=list, columns=column_names)</span>
+<span class="c1"># where column_names is a list </span>
+<span class="n">iris_df</span> <span class="o">=</span> <span class="s2">"####"</span>
+
+<span class="c1"># Store the head of the iris_df, by deafualt the head stores 5 rows of data </span>
+<span class="n">iris_head</span> <span class="o">=</span> <span class="s2">"####"</span>
+
+<span class="c1"># You should get the exact values as show below </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The head of the iris dataset is </span><span class="se">\n</span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">iris_head</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The head of the iris dataset is 
+   sepal length (cm)  sepal width (cm)  petal length (cm)  petal width (cm)
+0                5.1               3.5                1.4               0.2
+1                4.9               3.0                1.4               0.2
+2                4.7               3.2                1.3               0.2
+3                4.6               3.1                1.5               0.2
+4                5.0               3.6                1.4               0.2
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The head of the iris dataset is <br>
+   sepal length (cm)  sepal width (cm)  petal length (cm)  petal width (cm) <br>
+0                5.1               3.5                1.4               0.2 <br>
+1                4.9               3.0                1.4               0.2 <br>
+2                4.7               3.2                1.3               0.2 <br>
+3                4.6               3.1                1.5               0.2 <br>
+4                5.0               3.6                1.4               0.2 <br></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Next create a dataframe for the variable target. This is similar to what you did above</span>
+<span class="n">target_df</span> <span class="o">=</span> <span class="s2">"####"</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Head of target dataframe is : </span><span class="se">\n</span><span class="s2"> </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">target_df</span><span class="o">.</span><span class="n">head</span><span class="p">()))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Head of target dataframe is : 
+    target
+0       0
+1       0
+2       0
+3       0
+4       0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Head of target dataframe is : <br>
+    target <br>
+0       0 <br>
+1       0 <br>
+2       0 <br>
+3       0 <br>
+4       0 <br></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Next we want to combine both the dataframes <code>iris_df</code> and <code>target_df</code>. There are multiple ways of doing this in pandas. We will use the concat function here. You can read about it <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html">here</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Use the concat function combine iris_df and target_df. Make sure you check </span>
+<span class="c1"># the axis along which you are combining the dataframes </span>
+<span class="n">iris_combined_df</span> <span class="o">=</span> <span class="s2">"####"</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Shape of the iris combine dataframe : </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">iris_combined_df</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Shape of the iris combine dataframe : (150, 5)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Shape of the iris combine dataframe : (150, 5)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Next print the values in the 3rd row of the iris_combined_df </span>
+<span class="n">third_row</span> <span class="o">=</span> <span class="n">iris_combined_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">,:]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Third row values : </span><span class="se">\n</span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">third_row</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Third row values : 
+sepal length (cm)    4.7
+sepal width (cm)     3.2
+petal length (cm)    1.3
+petal width (cm)     0.2
+target               0.0
+Name: 2, dtype: float64
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Third row values : <br>
+sepal length (cm)    4.7 <br>
+sepal width (cm)     3.2 <br>
+petal length (cm)    1.3 <br>
+petal width (cm)     0.2 <br>
+target               0.0 <br>
+Name: 2, dtype: float64 <br></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Suppose we want the third column in the dataset. Using iloc can you get the third column</span>
+<span class="n">third_column</span> <span class="o">=</span> <span class="s2">"####"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Print the head of the third column is : </span><span class="se">\n</span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">third_column</span><span class="o">.</span><span class="n">head</span><span class="p">()))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Print the head of the third column is : 
+0    1.4
+1    1.4
+2    1.3
+3    1.5
+4    1.4
+Name: petal length (cm), dtype: float64
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Print the head of the third column is : <br>
+0    1.4 <br>
+1    1.4 <br>
+2    1.3 <br>
+3    1.5 <br>
+4    1.4 <br>
+Name: petal length (cm), dtype: float64 <br></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now suppose you want to change a single value in the dataframe i.e the value in a single cell of the dataframe. How would you do that?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Change the value of target in the 3rd row in the iris_combined_df from 0 to setosa </span>
+<span class="s2">"####"</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Print the third row of iris dataset : </span><span class="se">\n</span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">iris_combined_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">,:]))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Print the third row of iris dataset : 
+sepal length (cm)       4.6
+sepal width (cm)        3.1
+petal length (cm)       1.5
+petal width (cm)        0.2
+target               setosa
+Name: 3, dtype: object
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Print the third row of iris dataset : <br>
+sepal length (cm)       4.6 <br>
+sepal width (cm)        3.1 <br>
+petal length (cm)       1.5 <br>
+petal width (cm)        0.2 <br>
+target               setosa <br>
+Name: 3, dtype: object <br></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Next up, let see how we can apply an operation the entire row or an entire column of a dataframe.  The next part is a bit on the challenging side since you will have to use a lambda function to modify the column. Our first task is that we have to convert all the values in the target column to names. All the values in target are either 0 1, or 2 save the third row which we changed to 'setosa'. Hence we now have a column which contains integer values 0,1,2 and string 'setosa'</p>
+<p>To get around this, we will use the apply function to the target column. Take a look at it (here)[<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html</a>]. Remember, we are applying this only to the target column not the rest of them. The argument of the apply function will be a lambda function like this:</p>
+<p>lambda x: use names_dict[x] if  string of x is a digit, if not return x</p>
+<p>Now, you will add this lambda function as an argument into apply. You can use isdigit() to check if the string is a number.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">names_dict</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="n">target_names</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">:</span><span class="n">target_names</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">2</span><span class="p">:</span> <span class="n">target_names</span><span class="p">[</span><span class="mi">2</span><span class="p">]}</span>
+
+<span class="c1"># Convert all the values in the target column to names.</span>
+<span class="c1"># you can use the names in target_names for this purpose</span>
+<span class="n">iris_combined_df</span><span class="p">[</span><span class="s1">'target'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"####"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Head of the target column : </span><span class="se">\n</span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">iris_combined_df</span><span class="p">[</span><span class="s1">'target'</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Head of the target column : 
+0    setosa
+1    setosa
+2    setosa
+3    setosa
+4    setosa
+Name: target, dtype: object
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Head of the target column : <br> 
+0    setosa  <br> 
+1    setosa  <br> 
+2    setosa  <br> 
+3    setosa  <br> 
+4    setosa  <br> 
+Name: target, dtype: object  <br></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The method above may not be the most elegant way of doing this. You may find other ways that are better or eaiser. Next lets looks at applying an operation to the entire row.</p>
+<p>Suppose we want to take the square of all the elements in the first row. How would you do it?</p>
 
 </div>
 </div>
@@ -13132,13 +13527,381 @@ div#notebook {
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import the library</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">iris_copy</span>  <span class="o">=</span> <span class="n">iris_combined_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
-<span class="n">grad_url</span> <span class="o">=</span> <span class="s2">"https://raw.githubusercontent.com/colaberry/538data/master/college-majors/grad-students.csv"</span>
-<span class="n">grad_students</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">grad_url</span><span class="p">)</span>
+<span class="c1"># Use iris copy and square the values of the first row</span>
+<span class="c1"># In order to do this you need to use iloc to select</span>
+<span class="c1"># the first row and 4 columns. To this you need to apply </span>
+<span class="c1"># a lambda function that will square the values</span>
+<span class="n">squared_values</span> <span class="o">=</span><span class="s2">"####"</span>
 
-<span class="c1">#Write your code here or in other code cells down</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Squared values of the first row are : </span><span class="se">\n</span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">squared_values</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Squared values of the first row are : 
+sepal length (cm)    26.01
+sepal width (cm)     12.25
+petal length (cm)     1.96
+petal width (cm)      0.04
+Name: 0, dtype: float64
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Squared values of the first row are : <br> 
+sepal length (cm)    26.01 <br>
+sepal width (cm)     12.25 <br>
+petal length (cm)     1.96 <br>
+petal width (cm)      0.04 <br>
+Name: 0, dtype: float64 <br></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Part-2">Part 2<a class="anchor-link" href="#Part-2">¶</a></h2><p>Next up we will be using the heart dataset. Details on the dataset can be found <a href="https://archive.ics.uci.edu/ml/datasets/heart+disease">here</a>. The goal of the dataset is to predict the if a person has heart disease or not, to this end there are 13 features that can be used for this purpose. These features are a mix of continuous and categorical. Here we will explore the data using pandas</p>
+<p>Lets first start by import the data</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import the heart dataset by reading the csv file. the variable heart_loc contains path to the file</span>
+<span class="n">heart_df</span> <span class="o">=</span><span class="s2">"####"</span>
+
+<span class="n">heart_head</span> <span class="o">=</span> <span class="n">heart_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Head of the heart dataset: </span><span class="se">\n</span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">heart_head</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Head of the heart dataset: 
+   Unnamed: 0  Age  Sex     ChestPain  RestBP  Chol  Fbs  RestECG  MaxHR  \
+0           1   63    1       typical     145   233    1        2    150   
+1           2   67    1  asymptomatic     160   286    0        2    108   
+2           3   67    1  asymptomatic     120   229    0        2    129   
+3           4   37    1    nonanginal     130   250    0        0    187   
+4           5   41    0    nontypical     130   204    0        2    172   
+
+   ExAng  Oldpeak  Slope   Ca        Thal  AHD  
+0      0      2.3      3  0.0       fixed   No  
+1      1      1.5      2  3.0      normal  Yes  
+2      1      2.6      2  2.0  reversable  Yes  
+3      0      3.5      3  0.0      normal   No  
+4      0      1.4      1  0.0      normal   No  
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Head of the heart dataset: <br>
+   Unnamed: 0  Age  Sex     ChestPain  RestBP  Chol  Fbs  RestECG  MaxHR  \ <br>
+0           1   63    1       typical     145   233    1        2    150   <br>
+1           2   67    1  asymptomatic     160   286    0        2    108   <br>
+2           3   67    1  asymptomatic     120   229    0        2    129   <br>
+3           4   37    1    nonanginal     130   250    0        0    187   <br>
+4           5   41    0    nontypical     130   204    0        2    172   <br></p>
+<p>ExAng  Oldpeak  Slope   Ca        Thal  AHD  <br>
+0      0      2.3      3  0.0       fixed   No  <br>
+1      1      1.5      2  3.0      normal  Yes  <br>
+2      1      2.6      2  2.0  reversable  Yes  <br>
+3      0      3.5      3  0.0      normal   No  <br>
+4      0      1.4      1  0.0      normal   No <br></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When you are dealing with a categorical variable it is a good idea to a count of how many rows of data you have for each category. You can easily do this by using the <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.value_counts.html"><code>value_counts</code></a>(click it to go to page) function in pandas. You apply value counts to a single column from the dataset.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Use the value counts to get the number of rows in checkPain column of the hearts dataset. </span>
+<span class="n">ChestPain_counts</span> <span class="o">=</span> <span class="s2">"####"</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Value counts of Chest Pain variable : </span><span class="se">\n</span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ChestPain_counts</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Value counts of Chest Pain variable : 
+asymptomatic    144
+nonanginal       86
+nontypical       50
+typical          23
+Name: ChestPain, dtype: int64
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Value counts of Chest Pain variable : <br>
+asymptomatic    144 <br>
+nonanginal       86 <br>
+nontypical       50 <br>
+typical          23 <br>
+Name: ChestPain, dtype: int64 <br></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Suppose we want just the different categories and not the values how can we extra them? </span>
+<span class="c1"># Hint: You can get the index of ChestPain_counts and convert it to a list</span>
+<span class="n">chestpain_categories</span> <span class="o">=</span> <span class="s2">"####"</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"List of categories in the Categorical variable ChestPain : </span><span class="se">\n</span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">chestpain_categories</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>List of categories in the Categorical variable ChestPain : 
+['asymptomatic', 'nonanginal', 'nontypical', 'typical']
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>List of categories in the Categorical variable ChestPain : 
+['asymptomatic', 'nonanginal', 'nontypical', 'typical']</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># There may be situations that you may want to convert the value counts to dict. </span>
+<span class="c1"># You can do that be attaching df.to_dict()</span>
+<span class="n">chestpain_dict</span> <span class="o">=</span> <span class="s2">"####"</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Dict of categories is : </span><span class="se">\n</span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">chestpain_dict</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Dict of categories is : 
+{'asymptomatic': 144, 'nonanginal': 86, 'nontypical': 50, 'typical': 23}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Dict of categories is : <br>
+{'asymptomatic': 144, 'nonanginal': 86, 'nontypical': 50, 'typical': 23}</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered celltag_grade">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Javascript</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Javascript</span><span class="p">(</span><span class="s2">"""var nb = IPython.notebook;</span>
+<span class="s2">var kernel = IPython.notebook.kernel;</span>
+<span class="s2">console.log(nb)</span>
+<span class="s2">var command = "nb_name = '" + nb.notebook_path  + "'";</span>
+<span class="s2">kernel.execute(command);</span>
+<span class="s2">var command2 = "user_id = '" +/user\/([^/]+)\//.exec(Jupyter.notebook.base_url)[1] + "'"; </span>
+
+<span class="s2">kernel.execute(command2);"""</span><span class="p">))</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">gmtime</span><span class="p">,</span> <span class="n">strftime</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">clear_output</span>
+
+<span class="n">user_ns</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">user_ns</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+<span class="n">user_id</span> <span class="o">=</span> <span class="s1">''</span>
+<span class="n">lab_name</span> <span class="o">=</span> <span class="s1">''</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">def</span> <span class="nf">display_result</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">res_code</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+    <span class="n">js</span> <span class="o">=</span> <span class="s2">"&lt;style&gt;p.res {background-color: lightblue;} p.pas {color: green;text-align: center;font-size: 150%;} p.fail {color: red;text-align: center;font-size: 150%;}  p.wait {color: blue;text-align: center;font-size: 150%;} p.center {text-align: center;font-size: 200%;}&lt;/style&gt;"</span>
+    <span class="k">if</span> <span class="n">res_code</span> <span class="o">==</span> <span class="s1">'PASS'</span><span class="p">:</span>
+        <span class="c1">#js = js + "&lt;script&gt;$('#notebook-container').after('&lt;p id=lastidp class=pas&gt;%s&lt;/p&gt;')&lt;/script&gt;"   % result</span>
+        <span class="n">js</span> <span class="o">=</span> <span class="n">js</span> <span class="o">+</span> <span class="s2">"&lt;script&gt;$('#lastidp').replaceWith('&lt;p id=lastidp class=pas&gt;</span><span class="si">%s</span><span class="s2">&lt;/p&gt;')&lt;/script&gt;)"</span>   <span class="o">%</span> <span class="n">result</span>
+    <span class="k">elif</span> <span class="n">res_code</span> <span class="o">==</span> <span class="s1">'FAIL'</span><span class="p">:</span>
+        <span class="n">js</span> <span class="o">=</span> <span class="n">js</span> <span class="o">+</span> <span class="s2">"&lt;script&gt;$('#lastidp').replaceWith('&lt;p id=lastidp class=fail&gt;</span><span class="si">%s</span><span class="s2">&lt;/p&gt;')&lt;/script&gt;"</span>   <span class="o">%</span> <span class="n">result</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">js</span> <span class="o">=</span> <span class="n">js</span> <span class="o">+</span> <span class="s2">"""&lt;script&gt;</span>
+<span class="s2">        if($('#lastidp').length){</span>
+<span class="s2">        $('#lastidp').replaceWith('&lt;p id=lastidp class=wait&gt;</span><span class="si">%s</span><span class="s2">&lt;/p&gt;')</span>
+<span class="s2">        }else{</span>
+<span class="s2">        $('#notebook-container').after('&lt;p id=lastidp class=wait&gt;</span><span class="si">%s</span><span class="s2">&lt;/p&gt;')</span>
+<span class="s2">        }</span>
+<span class="s2">        &lt;/script&gt;</span>
+<span class="s2">        """</span>   <span class="o">%</span> <span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="n">result</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">js</span><span class="p">))</span>
+
+<span class="n">display_result</span><span class="p">(</span><span class="s1">''</span><span class="p">,</span><span class="s1">'WAIT'</span><span class="p">)</span>
+    
+<span class="c1"># if value_type == int:</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">user_ns</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">'user_id'</span><span class="p">:</span>
+        <span class="n">user_id</span> <span class="o">=</span> <span class="n">value</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">'nb_name'</span><span class="p">:</span>
+        <span class="n">lab_name</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="n">lab_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">lab_name</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">input_content_file</span> <span class="o">=</span> <span class="n">lab_name</span> <span class="o">+</span> <span class="s1">'.ipynb'</span>
+
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1001</span><span class="p">,</span><span class="mi">3001</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'file'</span><span class="p">:</span> <span class="p">(</span> <span class="s1">'rnd'</span> <span class="o">+</span>  <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'_'</span> <span class="o">+</span> <span class="n">input_content_file</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="n">input_content_file</span><span class="p">,</span><span class="s1">'rb'</span><span class="p">))}</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'user'</span><span class="p">:</span> <span class="n">user_id</span><span class="p">}</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">'http://autograde.refactored.ai/uploader'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">d</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+<span class="c1">#r = requests.post('http://localhost:5000/uploader', data=d, files=f)</span>
+<span class="n">tm</span> <span class="o">=</span> <span class="n">strftime</span><span class="p">(</span><span class="s2">"%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S"</span><span class="p">,</span> <span class="n">gmtime</span><span class="p">())</span>
+<span class="n">msg</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">'result'</span><span class="p">][</span><span class="s1">'message'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">'result'</span><span class="p">][</span><span class="s1">'result'</span><span class="p">]</span>
+<span class="n">answerid</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">'answerid'</span><span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">tm</span> <span class="o">+</span> <span class="s1">' - '</span> <span class="o">+</span> <span class="n">msg</span> <span class="o">+</span> <span class="s1">'    Answerid is : '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">answerid</span><span class="p">)</span> 
+<span class="c1">#score = r.json()['result']['score']</span>
+<span class="c1">#result = tm + ' - ' + msg + '    Your result is : ' + res + '     And the score is : ' + str(score)</span>
+<span class="c1">#print(result)</span>
+<span class="n">display_result</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="s1">'WAIT'</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1">#r = requests.get('http://localhost:5000/get_result?answer_id=' + str(answerid))</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'http://autograde.refactored.ai/get_result?answer_id='</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">answerid</span><span class="p">))</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">'result'</span><span class="p">][</span><span class="s1">'result'</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">res</span> <span class="o">!=</span> <span class="s1">'WAIT'</span><span class="p">:</span>
+        <span class="n">tm</span> <span class="o">=</span> <span class="n">strftime</span><span class="p">(</span><span class="s2">"%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S"</span><span class="p">,</span> <span class="n">gmtime</span><span class="p">())</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">'result'</span><span class="p">][</span><span class="s1">'message'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">'result'</span><span class="p">][</span><span class="s1">'result'</span><span class="p">]</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">'result'</span><span class="p">][</span><span class="s1">'score'</span><span class="p">]</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">tm</span> <span class="o">+</span> <span class="s1">' - '</span> <span class="o">+</span> <span class="n">msg</span> <span class="o">+</span> <span class="s1">',    Your result is : '</span> <span class="o">+</span> <span class="n">res</span> <span class="o">+</span> <span class="s1">'    And your score is : '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">score</span><span class="p">)</span> 
+        <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">count</span> <span class="o">==</span><span class="mi">0</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">'Waiting for your score......'</span><span class="p">)</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">):</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="s1">'Error occurred during evaluation. Please resubmit.'</span>
+            <span class="k">break</span>
+
+<span class="n">display_result</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="n">res</span><span class="p">)</span>
 </pre></div>
 
     </div>

@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13115,25 +13076,25 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [52]:</div>
+<div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Math</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Math</span>
 
-<span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="k">import</span> <span class="n">show</span><span class="p">,</span> <span class="n">output_notebook</span>
-<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="k">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="k">import</span> <span class="n">norm</span> 
-<span class="kn">from</span> <span class="nn">bokeh</span> <span class="k">import</span> <span class="n">plotting</span> <span class="k">as</span> <span class="n">pl</span>
-<span class="kn">from</span> <span class="nn">bokeh.models</span> <span class="k">import</span> <span class="n">HoverTool</span><span class="p">,</span> <span class="n">Arrow</span><span class="p">,</span> <span class="n">OpenHead</span><span class="p">,</span> <span class="n">NormalHead</span><span class="p">,</span> <span class="n">VeeHead</span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="k">import</span> <span class="n">chi2_contingency</span>
+<span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="kn">import</span> <span class="n">show</span><span class="p">,</span> <span class="n">output_notebook</span>
+<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span> 
+<span class="kn">from</span> <span class="nn">bokeh</span> <span class="kn">import</span> <span class="n">plotting</span> <span class="k">as</span> <span class="n">pl</span>
+<span class="kn">from</span> <span class="nn">bokeh.models</span> <span class="kn">import</span> <span class="n">HoverTool</span><span class="p">,</span> <span class="n">Arrow</span><span class="p">,</span> <span class="n">OpenHead</span><span class="p">,</span> <span class="n">NormalHead</span><span class="p">,</span> <span class="n">VeeHead</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">chi2_contingency</span>
 
-<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="k">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">interact_manual</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">interact_manual</span>
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
 
-<span class="o">%</span><span class="k">matplotlib</span> notebook
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">notebook</span>
 <span class="n">output_notebook</span><span class="p">()</span>
 </pre></div>
 
@@ -13155,7 +13116,7 @@ div#notebook {
 
     <div class="bk-root">
         <a href="https://bokeh.pydata.org" target="_blank" class="bk-logo bk-logo-small bk-logo-notebook"></a>
-        <span id="3215">Loading BokehJS ...</span>
+        <span id="1001">Loading BokehJS ...</span>
     </div>
 </div>
 
@@ -13169,10 +13130,10 @@ div#notebook {
 
 
 
-<div id="8c25c379-4faa-4c2b-97c7-c2c48a517f61"></div>
+<div id="c7bb200e-238c-4a4f-874a-9e719236140c"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#8c25c379-4faa-4c2b-97c7-c2c48a517f61');
+var element = $('#c7bb200e-238c-4a4f-874a-9e719236140c');
 
 (function(root) {
   function now() {
@@ -13332,7 +13293,7 @@ var element = $('#8c25c379-4faa-4c2b-97c7-c2c48a517f61');
      "</div>"}};
 
   function display_loaded() {
-    var el = document.getElementById("3215");
+    var el = document.getElementById("1001");
     if (el != null) {
       el.textContent = "BokehJS is loading...";
     }
@@ -13408,9 +13369,9 @@ var element = $('#8c25c379-4faa-4c2b-97c7-c2c48a517f61');
       console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
       document.head.appendChild(element);
     }
-  };var element = document.getElementById("3215");
+  };var element = document.getElementById("1001");
   if (element == null) {
-    console.error("Bokeh: ERROR: autoload.js configured with elementid '3215' but no matching script tag was found. ")
+    console.error("Bokeh: ERROR: autoload.js configured with elementid '1001' but no matching script tag was found. ")
     return false;
   }
 
@@ -13447,7 +13408,7 @@ var element = $('#8c25c379-4faa-4c2b-97c7-c2c48a517f61');
       console.log("Bokeh: BokehJS failed to load within specified timeout.");
       root._bokeh_failed_load = true;
     } else if (force !== true) {
-      var cell = $(document.getElementById("3215")).parents('.cell').data().cell;
+      var cell = $(document.getElementById("1001")).parents('.cell').data().cell;
       cell.output_area.append_execute_result(NB_LOAD_WARNING)
     }
 
@@ -13475,150 +13436,47 @@ var element = $('#8c25c379-4faa-4c2b-97c7-c2c48a517f61');
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Part-1:-P-value">Part 1: P-value<a class="anchor-link" href="#Part-1:-P-value">¶</a></h3><p>Problem statement: We have a school full of students. The average height of the school students is 6 ft with a standard deviation of 0.5 ft. We take class of 100 students from the school. Assume the student heights are normally distributed.</p>
+<p>1) Calculate the z-score for the class of 100 students <br>
+2) Calculate the p-value of the sample mean</p>
+<p>If we set a significance level of 5%. Is the sample mean less than the significant level or not?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="PART-2:-Sampling-distribution">PART 2: Sampling distribution<a class="anchor-link" href="#PART-2:-Sampling-distribution">¶</a></h3><p>Suppose we decide to take 100 samples of 10 students each from the school, do the following- <br></p>
+<p>1) can you plot the sampling distribution of mean height?  A histogram of the sample means should be good<br>
+2) What would be the standard deviation of the sampling distribution? <br>
+3) Now take 1000 samples from the population distribution. What is the standard deviation? <br>
+4) Show that $\sigma_{s} = \dfrac{\sigma_{p}}{\sqrt{n}}$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Part-2:-A-simple-Chi-Square-test">Part 2: A simple Chi-Square test<a class="anchor-link" href="#Part-2:-A-simple-Chi-Square-test">¶</a></h3><p>you are given a contingency table generated from a data set. The data set represents men/women who like/dislike walking in the morning. You are asked, can you identify if these these categorical are related or not. How would you go about it?</p>
+<p>Contingency table = [[36, 67],[32,59]]</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [11]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">student_heights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">"../../../data/student_heights.csv"</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Lab-1">Lab 1<a class="anchor-link" href="#Lab-1">¶</a></h1><h2 id="Problem-statement">Problem statement<a class="anchor-link" href="#Problem-statement">¶</a></h2><p>Problem statement: Given a population of student heights. Generate a sampling distribution of means, where your sample size is 100 and you take 2000 samples. Hint: This means the sampling distribution will have 2000 points. Each point be the mean height of 100 students randomly pulled from the population.</p>
-<p>1) What is the mean and standard deviation of the population ?</p>
-<p>2) What is the mean and standard deviation of the sampling distribution?</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="lab-2---Hypothesis-testing-z-test">lab 2 - Hypothesis testing z test<a class="anchor-link" href="#lab-2---Hypothesis-testing-z-test">¶</a></h1><h2 id="problem-statement">problem statement<a class="anchor-link" href="#problem-statement">¶</a></h2><p>Problem statement: 
-    Given the data from lab 1. Suppose we come up with the hypothesis that after sampling 63 students, the height of all the students is 5.5 ft. For a significance level of 5% should we accept the null hypothesis (which is that the average height of students is 5.5 ft) ? You are going to need the population mean and the sampling population standard deviation to calculate the critical z value and put it into the calculator below to get the right values</p>
-<p>you are also going to need the calculator code below to check if the z test statistic value is in accept or reject region based on the significance level you set.</p>
-<div class="highlight"><pre><span></span><span class="c1"># Just run the below code</span>
-
-<span class="n">conf_int</span> <span class="o">=</span><span class="mi">0</span> 
-<span class="nb">xrange</span> <span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10000</span><span class="p">)</span>
-<span class="n">pdf</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="nb">xrange</span><span class="p">)</span>
-<span class="c1">#answer</span>
-<span class="n">tools_to_show</span><span class="o">=</span> <span class="s1">'box_zoom,pan,save,hover,reset,tap,wheel_zoom'</span>        
-
-
-<span class="k">def</span> <span class="nf">shade_reject_region</span><span class="p">(</span><span class="n">z_min</span><span class="p">,</span><span class="n">z_max</span> <span class="p">):</span> 
-    <span class="n">shade_x</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">z_min</span><span class="p">,</span><span class="n">z_max</span><span class="p">,</span><span class="mf">0.001</span><span class="p">)</span>
-    <span class="n">shade_region</span>  <span class="o">=</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">shade_x</span><span class="p">)</span>
-
-    <span class="n">shade_region</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> 
-    <span class="n">shade_region</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="k">return</span> <span class="n">shade_x</span><span class="p">,</span> <span class="n">shade_region</span>
-
-<span class="k">def</span> <span class="nf">get_sig_lvl</span><span class="p">(</span><span class="n">significance_level</span><span class="p">,</span> <span class="n">z_c</span><span class="p">):</span> 
-
-    <span class="n">fig</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">x_range</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> 
-                    <span class="n">plot_height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>
-                    <span class="n">tools</span> <span class="o">=</span> <span class="n">tools_to_show</span><span class="p">,</span>
-                    <span class="n">title</span><span class="o">=</span><span class="s2">"Enter significance level (in %) - Figure 3"</span><span class="p">,</span>
-                    <span class="n">x_axis_label</span><span class="o">=</span> <span class="s2">"z-values"</span><span class="p">,</span>
-                    <span class="n">y_axis_label</span> <span class="o">=</span><span class="s2">"Count"</span><span class="p">)</span>
-
-    <span class="n">fig</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nb">xrange</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span> <span class="n">pdf</span><span class="p">,</span> <span class="n">line_width</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span>
-
-    <span class="n">fig</span><span class="o">.</span><span class="n">xgrid</span><span class="o">.</span><span class="n">grid_line_color</span> <span class="o">=</span> <span class="bp">None</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">y_range</span><span class="o">.</span><span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="n">hover</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">HoverTool</span><span class="p">))</span>
-    <span class="n">hover</span><span class="o">.</span><span class="n">tooltips</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">"xvalue"</span><span class="p">,</span> <span class="s2">"@x"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"yvalue"</span><span class="p">,</span> <span class="s2">"@y"</span><span class="p">)]</span>
-
-    <span class="c1"># calculate right </span>
-    <span class="n">z_value</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">((</span><span class="n">significance_level</span><span class="p">)</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
-    <span class="n">right_shade</span><span class="p">,</span> <span class="n">right_region</span><span class="o">=</span> <span class="n">shade_reject_region</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="n">z_value</span><span class="p">)</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="n">right_shade</span><span class="p">,</span> <span class="n">right_region</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"red"</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
-
-    <span class="c1"># calculate pvalue </span>
-    <span class="n">p_value</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">z_c</span><span class="p">)</span>
-    <span class="n">left_shade</span><span class="p">,</span> <span class="n">left_region</span><span class="o">=</span> <span class="n">shade_reject_region</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="n">z_c</span><span class="p">,)</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="n">left_shade</span><span class="p">,</span> <span class="n">left_region</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"blue"</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
-
-    <span class="n">fig</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="o">=-</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="p">[</span><span class="s2">"Acceptance </span><span class="se">\n</span><span class="s2">region"</span><span class="p">],</span> <span class="p">)</span>
-
-<span class="c1">#     # right reject region title</span>
-
-    <span class="n">reject_text_x</span> <span class="o">=</span> <span class="o">-</span><span class="mf">4.15</span>
-    <span class="n">reject_text_y</span> <span class="o">=</span> <span class="mf">0.15</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span><span class="n">reject_text_x</span> <span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">reject_text_y</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="p">[</span><span class="s2">"Significance level "</span><span class="p">])</span>
-    <span class="n">arrow_y_end</span> <span class="o">=</span> <span class="n">right_region</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">right_region</span><span class="o">.</span><span class="n">size</span><span class="o">/</span><span class="mi">2</span><span class="p">)]</span><span class="o">+</span><span class="mf">0.05</span>
-    <span class="n">arrow_x_end</span> <span class="o">=</span> <span class="n">right_shade</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">right_shade</span><span class="o">.</span><span class="n">size</span><span class="o">*</span><span class="mf">0.99</span><span class="p">)]</span>
-
-
-    <span class="n">fig</span><span class="o">.</span><span class="n">add_layout</span><span class="p">(</span><span class="n">Arrow</span><span class="p">(</span><span class="n">end</span><span class="o">=</span><span class="n">NormalHead</span><span class="p">(</span><span class="n">fill_color</span><span class="o">=</span><span class="s2">"black"</span><span class="p">),</span>
-                   <span class="n">x_start</span><span class="o">=</span><span class="n">reject_text_x</span><span class="o">+</span><span class="mf">1.75</span><span class="p">,</span>
-                   <span class="n">y_start</span><span class="o">=</span><span class="n">reject_text_y</span><span class="o">-</span><span class="mf">0.001</span><span class="p">,</span>
-                   <span class="n">x_end</span><span class="o">=</span><span class="n">arrow_x_end</span><span class="p">,</span>
-                   <span class="n">y_end</span><span class="o">=</span><span class="n">arrow_y_end</span><span class="o">+</span><span class="mf">0.01</span><span class="p">))</span>
-
-    <span class="c1"># left reject region title </span>
-
-    <span class="n">reject_text_x</span> <span class="o">=</span> <span class="o">-</span><span class="mf">4.15</span>
-    <span class="n">reject_text_y</span> <span class="o">=</span> <span class="mf">0.1</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span><span class="n">reject_text_x</span> <span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">reject_text_y</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="p">[</span><span class="s2">"Area = P-value"</span><span class="p">])</span>
-    <span class="n">arrow_y_end</span> <span class="o">=</span> <span class="n">left_region</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">left_region</span><span class="o">.</span><span class="n">size</span><span class="o">/</span><span class="mi">2</span><span class="p">)]</span>
-    <span class="n">arrow_x_end</span> <span class="o">=</span> <span class="n">left_shade</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">left_shade</span><span class="o">.</span><span class="n">size</span><span class="o">*</span><span class="mf">0.8</span><span class="p">)]</span>
-
-
-    <span class="n">fig</span><span class="o">.</span><span class="n">add_layout</span><span class="p">(</span><span class="n">Arrow</span><span class="p">(</span><span class="n">end</span><span class="o">=</span><span class="n">NormalHead</span><span class="p">(</span><span class="n">fill_color</span><span class="o">=</span><span class="s2">"black"</span><span class="p">),</span>
-                   <span class="n">x_start</span><span class="o">=</span><span class="n">reject_text_x</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span>
-                   <span class="n">y_start</span><span class="o">=</span><span class="n">reject_text_y</span><span class="o">-</span><span class="mf">0.001</span><span class="p">,</span>
-                   <span class="n">x_end</span><span class="o">=</span><span class="n">arrow_x_end</span><span class="p">,</span>
-                   <span class="n">y_end</span><span class="o">=</span><span class="n">arrow_y_end</span><span class="o">+</span><span class="mf">0.01</span><span class="p">))</span>
-
-
-    <span class="n">show</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
-
-    <span class="k">print</span><span class="p">(</span><span class="s2">"z value for the given significance level: {} "</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">z_value</span><span class="p">))</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"p value  :  {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p_value</span><span class="p">))</span>
-    <span class="k">return</span> <span class="bp">None</span> 
-
-
-
-
-<span class="n">interact</span><span class="p">(</span><span class="n">get_sig_lvl</span><span class="p">,</span> 
-                 <span class="n">significance_level</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatText</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> 
-                                                        <span class="nb">min</span> <span class="o">=</span><span class="mi">50</span><span class="p">,</span>
-                                                        <span class="nb">max</span> <span class="o">=</span> <span class="mf">99.9</span><span class="p">,</span> 
-                                                        <span class="n">step</span> <span class="o">=</span><span class="mf">0.001</span><span class="p">),</span> 
-                   <span class="n">z_c</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatText</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> 
-                                                        <span class="nb">min</span> <span class="o">=-</span><span class="mi">5</span><span class="p">,</span>
-                                                        <span class="nb">max</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> 
-                                                        <span class="n">step</span> <span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
-                <span class="p">);</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Lab-3---chi-square-test">Lab 3 - chi square test<a class="anchor-link" href="#Lab-3---chi-square-test">¶</a></h1><h2 id="problem-statement">problem statement<a class="anchor-link" href="#problem-statement">¶</a></h2><p>you are given a contingency table generated from a data set. The data set represents men/women who like/dislike walking in the morning. You are asked, can you identify if these these categorical are related or not. How would you go about it?</p>
-<p>Contingency table = [[36, 67],[32,59]]</p>
-<p>Hint: You are going to have to import chi square contingency function from scipy.stats, refer to the notebook for this.</p>
-
-</div>
-</div>
 </div>
     </div>
   </div>

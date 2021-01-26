@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13128,7 +13089,7 @@ div#notebook {
 <h4 id="randint()-function">randint() function<a class="anchor-link" href="#randint()-function">¶</a></h4><p>The randint() function randomly selects integers from a given range of numbers. Since this selects only integers between the given range of numbers, it is called a 'discrete uniform distribution' as there is equal chance of any integer getting selected.</p>
 <p>Examples:</p>
 <div class="highlight"><pre><span></span><span class="c1"># Importing numpy library</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">array</span><span class="p">([</span> <span class="mf">0.93371582</span><span class="p">,</span>  <span class="mf">0.82386466</span><span class="p">,</span>  <span class="mf">0.34771991</span><span class="p">,</span>  <span class="mf">0.59338646</span><span class="p">,</span>  <span class="mf">0.41190981</span><span class="p">])</span>
@@ -13138,7 +13099,7 @@ div#notebook {
 </pre></div>
 <p>Another example:</p>
 <div class="highlight"><pre><span></span><span class="c1"># Importing numpy library</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">shape_shifter</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">array</span><span class="p">([</span> <span class="mf">0.906423</span>  <span class="p">,</span>  <span class="mf">0.55807204</span><span class="p">,</span>  <span class="mf">0.28928162</span><span class="p">,</span>  <span class="mf">0.47020116</span><span class="p">,</span>  <span class="mf">0.27403332</span><span class="p">,</span>
@@ -13187,13 +13148,13 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">rand_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">"Result from performing rand:"</span><span class="p">,</span> <span class="n">rand_a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Result from performing rand:"</span><span class="p">,</span> <span class="n">rand_a</span><span class="p">)</span>
 <span class="n">randn_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">"Result from performing randn:"</span><span class="p">,</span> <span class="n">randn_a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Result from performing randn:"</span><span class="p">,</span> <span class="n">randn_a</span><span class="p">)</span>
 <span class="n">randint_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">"Result from performing randint:"</span><span class="p">,</span> <span class="n">randint_a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Result from performing randint:"</span><span class="p">,</span> <span class="n">randint_a</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13230,7 +13191,7 @@ div#notebook {
 <span class="n">ints</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 
 <span class="n">mixed_array</span> <span class="o">=</span> <span class="n">ints</span> <span class="o">+</span> <span class="n">floats</span>
-<span class="k">print</span><span class="p">(</span><span class="n">mixed_array</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mixed_array</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13244,7 +13205,7 @@ The result of this distribuation is either a success or failure (i.e.) when a ne
 success or failure for the cure.</p>
 <p>The np.random.binomial function pulls the number of the samples specified by the user from the binomial distribution</p>
 <div class="highlight"><pre><span></span><span class="c1"># Importing numpy library</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Sampling data from a binomial distribution with 'n' (=1) trials and 'p' (=.3) as probability of success, 3 is number of samples</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
@@ -13256,10 +13217,10 @@ success or failure for the cure.</p>
 The chi square distribution is the distribution(df) of the sum of the squared standard normal deviates.</p>
 <p>The np.random.chisquare function pulls the number of samples from a chi-square distribution.</p>
 <div class="highlight"><pre><span></span><span class="c1"># General syntax to use chisquare function</span>
-<span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">chisquare</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">chisquare</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 <div class="highlight"><pre><span></span><span class="c1"># Importing numpy library</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Sampling data from a chisquare distribution with mean 3 and variance 2</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">chisquare</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
@@ -13271,7 +13232,7 @@ The chi square distribution is the distribution(df) of the sum of the squared st
 The exponential distribution is used to reproduce the result of the time interval between the events (i.e.) the start and the end of the event.</p>
 <p>The np.random.exponential function pulls the number of samples specified by the user from an exponential distribution.</p>
 <div class="highlight"><pre><span></span><span class="c1"># Importing numpy library</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Sampling data from exponential distribution where 1 is scale and 2 is number of samples to be drawn</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -13282,10 +13243,10 @@ The exponential distribution is used to reproduce the result of the time interva
 <h4 id="Geometric-function">Geometric function<a class="anchor-link" href="#Geometric-function">¶</a></h4><p>Bionomial distribution has one of two outcomes, either success or failure. but a geometric distribution is performed on number of experiments till the outcome results in success. So this distribution is supported by positives values.</p>
 <p>The np.random.geometric function pulls the number of samples specified by the user from a geometric distribution.</p>
 <div class="highlight"><pre><span></span><span class="c1"># Importing numpy </span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Sampling data from a geometric distribution with probability of success as 0.5 and total samples to be 10</span>
-<span class="n">geo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">geometric</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>  <span class="o">//</span> <span class="n">where</span> <span class="n">p</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">probabilty</span> <span class="n">of</span> <span class="n">success</span> <span class="ow">in</span> <span class="n">single</span> <span class="n">trial</span> <span class="ow">and</span> <span class="n">size</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span>                                                    <span class="n">samples</span> <span class="n">that</span> <span class="n">we</span> <span class="n">would</span> <span class="n">want</span> <span class="n">to</span> <span class="n">pull</span> <span class="kn">from</span> <span class="nn">the</span> <span class="nn">distribution</span>
+<span class="n">geo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">geometric</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>  <span class="o">//</span> <span class="n">where</span> <span class="n">p</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">probabilty</span> <span class="n">of</span> <span class="n">success</span> <span class="ow">in</span> <span class="n">single</span> <span class="n">trial</span> <span class="ow">and</span> <span class="n">size</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span>                                                    <span class="n">samples</span> <span class="n">that</span> <span class="n">we</span> <span class="n">would</span> <span class="n">want</span> <span class="n">to</span> <span class="n">pull</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">distribution</span>
 <span class="n">geo</span>
 
 <span class="c1"># OUTPUT:</span>
@@ -13294,7 +13255,7 @@ The exponential distribution is used to reproduce the result of the time interva
 <h4 id="Poisson-function">Poisson function<a class="anchor-link" href="#Poisson-function">¶</a></h4><p>Poisson Distribution is a discrete frequency distribution that plots the likelihood of number of times a given event may occur in a specific interval of time.</p>
 <p>np.random.poisson function draws samples from a Poisson distribution.</p>
 <div class="highlight"><pre><span></span><span class="c1"># Importing numpy library</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Sampling data from a poisson distribution with 3 as expected interval and 8 is the number of samples that we need.</span>
 <span class="n">pois</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
@@ -13306,7 +13267,7 @@ The exponential distribution is used to reproduce the result of the time interva
 <h4 id="Uniform-function">Uniform function<a class="anchor-link" href="#Uniform-function">¶</a></h4><p>Uniform distribution is a continuous distribution which has a constant value throughout. Uniform distribution is defined by the lower or higher chances of an event occuring.</p>
 <p>np.random.uniform function pulls the number of samples specified by the user from a Uniform distribution.</p>
 <div class="highlight"><pre><span></span><span class="c1"># Importing numpy library</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Sampling data from a uniform distribution with 1 as lower bound and 3 as upper bound of the data interval</span>
 <span class="n">uni_dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
@@ -13319,7 +13280,7 @@ The exponential distribution is used to reproduce the result of the time interva
 <h4 id="F-function">F function<a class="anchor-link" href="#F-function">¶</a></h4><p>F Distribution is a distribution which finds the ratio of two samples to check whether they have same variance (i.e.) the means between two sample values has notable difference in them. The values of F are only positive. This distribution is helpful in identifying which experiment is better than others by noting the difference they show.</p>
 <p>np.random.f function pulls the number of samples specified by the user from a Uniform distribution.</p>
 <div class="highlight"><pre><span></span><span class="c1"># Importing numpy library</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Sampling data from a f distribution where 1 is the degree of freedom in numerator and 4 is the degree of freedom in denominator</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -13334,7 +13295,7 @@ The exponential distribution is used to reproduce the result of the time interva
 <h4 id="Normal-function">Normal function<a class="anchor-link" href="#Normal-function">¶</a></h4><p>Normal distribution is a continuous probability distribution which is also called a bell curve with mean median and mode to be equal. The curve is symmetric and the area under the curve is 1. This distribution helps in finding the percentage of data that falls within the curve.</p>
 <p>The np.random.Normal function pulls the number of samples specified by the user from a Normal distribution.</p>
 <div class="highlight"><pre><span></span><span class="c1"># Importing numpy library</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Sampling data from normal distribution where 2 is mean, 0.2 is standard deviation and 3 is the size of the sample we want</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -13380,7 +13341,7 @@ The exponential distribution is used to reproduce the result of the time interva
 This function only shuffles the array along the first axis of a multi-dimensional array (i.e.) when we use this shuffle function, the contents along the first axis which is the first row of a multidimensional array will get shuffled but the contents of the array will not change.</p>
 <p>In the below program, a 3*3 array is passed and is passed through the shuffle function</p>
 <div class="highlight"><pre><span></span><span class="c1"># Importing numpy library</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Creating array</span>
 <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
@@ -13402,7 +13363,7 @@ This function only shuffles the array along the first axis of a multi-dimensiona
 <p>For permutation we will have a copy of the shuffled result whereas for the shuffle we get the shuffling with the element itself.</p>
 <p>In the below program, we passed an array to the variable 'arr' and permutation function is used.</p>
 <div class="highlight"><pre><span></span><span class="c1"># Importing numpy library</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Creating array</span>
 <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
@@ -13420,7 +13381,7 @@ This function only shuffles the array along the first axis of a multi-dimensiona
 <h4 id="Seed()-function">Seed() function<a class="anchor-link" href="#Seed()-function">¶</a></h4><p>np.random calls integers or floating point randomly and each time np.random is called, a new random number is generated every time. So, sometimes during testing or when we have a big code, we do not want different numbers being generated randomly which will create confusion as it provides different results based on different random numbers generated. To avoid that, seed function can be used.</p>
 <p>When we use seed() function, it starts with the same random number when called each time. See the code below:</p>
 <div class="highlight"><pre><span></span><span class="c1"># Importing numpy library</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Setting the seed. It can accept any integer</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -13433,7 +13394,7 @@ This function only shuffles the array along the first axis of a multi-dimensiona
 </pre></div>
 <p>When the np.random is called again, it generates the same set of values as the previous result.</p>
 <div class="highlight"><pre><span></span><span class="c1"># Importing numpy library</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
@@ -13443,7 +13404,7 @@ This function only shuffles the array along the first axis of a multi-dimensiona
 </pre></div>
 <p>In the below program we are not setting the seed, so when np.random is called, it generates a set of random value</p>
 <div class="highlight"><pre><span></span><span class="c1"># Importing numpy library</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 
@@ -13452,7 +13413,7 @@ This function only shuffles the array along the first axis of a multi-dimensiona
 </pre></div>
 <p>And when np.random is called again, it generates a different set of values.</p>
 <div class="highlight"><pre><span></span><span class="c1"># Importing numpy library</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 
@@ -13520,15 +13481,15 @@ C with seed:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="k">print</span> <span class="p">(</span><span class="s1">'A after shuffling is: '</span> <span class="p">,</span> <span class="n">a</span> <span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">'A after shuffling is: '</span> <span class="p">,</span> <span class="n">a</span> <span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">permutation</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">'A after permutation is:'</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'A after permutation is:'</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">'C with seed:'</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'C with seed:'</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
 </pre></div>
 
 </div>

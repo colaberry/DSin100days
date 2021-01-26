@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13113,7 +13074,7 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered celltag_s1 celltag_content celltag_l1"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Data-Modeling">Data Modeling<a class="anchor-link" href="#Data-Modeling">¶</a></h1><p>Data modeling is, providing a structure to the data in order to allow efficient storage, easy access and better comprehension of data. One of the fundamental concepts of data modeling is the entity-relationship model.</p>
@@ -13155,7 +13116,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered celltag_s1 celltag_ce celltag_l1">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
@@ -13189,7 +13150,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered celltag_s1 celltag_l1 celltag_ans"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># Create customer table</span>
@@ -13198,7 +13159,7 @@ div#notebook {
 <span class="s1">                   cust_name CHAR(50),</span>
 <span class="s1">                   cust_payment_mode CHAR(50))'''</span><span class="p">)</span>
 <span class="n">shopcustdf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'https://raw.githubusercontent.com/colaberry/data/master/SQL/customer.csv'</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s2">","</span><span class="p">)</span>
-<span class="n">shopcustdf</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'customer'</span><span class="p">,</span><span class="n">con</span><span class="o">=</span><span class="n">shopcon</span><span class="p">,</span><span class="n">if_exists</span><span class="o">=</span><span class="s1">'append'</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">shopcustdf</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'customer'</span><span class="p">,</span><span class="n">con</span><span class="o">=</span><span class="n">shopcon</span><span class="p">,</span><span class="n">if_exists</span><span class="o">=</span><span class="s1">'append'</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="c1"># Create product table</span>
 <span class="n">shopcur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">'''CREATE TABLE product(</span>
@@ -13206,7 +13167,7 @@ div#notebook {
 <span class="s1">                   prod_name CHAR(50),</span>
 <span class="s1">                   prod_price INT)'''</span><span class="p">)</span>
 <span class="n">shopproddf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'https://raw.githubusercontent.com/colaberry/data/master/SQL/product.csv'</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s2">","</span><span class="p">)</span>
-<span class="n">shopproddf</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'product'</span><span class="p">,</span><span class="n">con</span><span class="o">=</span><span class="n">shopcon</span><span class="p">,</span><span class="n">if_exists</span><span class="o">=</span><span class="s1">'append'</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">shopproddf</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'product'</span><span class="p">,</span><span class="n">con</span><span class="o">=</span><span class="n">shopcon</span><span class="p">,</span><span class="n">if_exists</span><span class="o">=</span><span class="s1">'append'</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="c1"># Create purchaseorder table</span>
 <span class="n">shopcur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">'''CREATE TABLE purchaseorder(</span>
@@ -13216,7 +13177,7 @@ div#notebook {
 <span class="s1">                   FOREIGN KEY (cust_id) REFERENCES customer(cust_id),</span>
 <span class="s1">                   FOREIGN KEY (prod_id) REFERENCES product(prod_id))'''</span><span class="p">)</span>
 <span class="n">shoporderdf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'https://raw.githubusercontent.com/colaberry/data/master/SQL/order.csv'</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s2">","</span><span class="p">)</span>
-<span class="n">shoporderdf</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'purchaseorder'</span><span class="p">,</span><span class="n">con</span><span class="o">=</span><span class="n">shopcon</span><span class="p">,</span><span class="n">if_exists</span><span class="o">=</span><span class="s1">'append'</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">shoporderdf</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'purchaseorder'</span><span class="p">,</span><span class="n">con</span><span class="o">=</span><span class="n">shopcon</span><span class="p">,</span><span class="n">if_exists</span><span class="o">=</span><span class="s1">'append'</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="c1"># Select query to view purchaseorder table</span>
 <span class="n">shopcur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"SELECT * FROM purchaseorder"</span><span class="p">)</span>
@@ -13226,7 +13187,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered celltag_l2 celltag_content celltag_s2"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>When a foreign key relationship is created among two tables, referential integrity can be forced. Referential Integrity ensures that no row in the table containing the foreign keys will contain a foreign key value which does not exist as a valid primary key value in the source table. i.e., In the current example purchaseorder table will not accept insertion of a row with a cust_id (or prod_id) value that does not exist in the customer table (or product table). Similar rules apply for deletion. No row in customer (or product) table can be deleted, if that row's cust_id (or prod_id) exists as a foreign key value in the purchaseorder table.</p>
@@ -13236,7 +13197,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered celltag_l2 celltag_ce celltag_s2">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
@@ -13275,7 +13236,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered celltag_l2 celltag_hid celltag_s2"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># Run above code</span>
@@ -13284,7 +13245,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered celltag_l3 celltag_s3 celltag_content"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Types-of-Data-Models">Types of Data Models<a class="anchor-link" href="#Types-of-Data-Models">¶</a></h2><p>There are three types of data models - Conceptual model, Logical model and Physical model</p>
@@ -13299,7 +13260,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered celltag_l3 celltag_s3 celltag_ce">
 <div class="input">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
@@ -13312,7 +13273,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered celltag_l3 celltag_s3 celltag_hint"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># No exercise</span>

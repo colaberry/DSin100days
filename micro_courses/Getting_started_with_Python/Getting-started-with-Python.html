@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13127,12 +13088,12 @@ Python is a simple, easy-to-learn, general purpose programming language. It is 
 <p></p><li>Python Standard Library </li>
 <br>
 <h2 id="Features-of-the-Python-language">Features of the Python language<a class="anchor-link" href="#Features-of-the-Python-language">¶</a></h2><h3 id="Python-is-easy">Python is easy<a class="anchor-link" href="#Python-is-easy">¶</a></h3><p>For example consider the code below:</p>
-<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s1">'Hello world'</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'Hello world'</span><span class="p">)</span>
 </pre></div>
 <p>The above code outputs what it reads. That is, it prints the text "Hello World".
 Indentation is built-in feature of python language. This makes it easy to read the code. For example:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sayHello</span><span class="p">():</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">'Hello world'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Hello world'</span><span class="p">)</span>
 <span class="c1"># Then we can call the function to see the result:</span>
 <span class="n">sayHello</span><span class="p">()</span>
 </pre></div>
@@ -13148,13 +13109,20 @@ Try to define a function "hiPython()", which can print out "Hi everyone, this is
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h3>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13167,7 +13135,7 @@ There may be a situation when you need to execute a block of code several number
 range(1,5) -- generates a list of numbers from 1 to 4.</p>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s2">"This is Python!"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s2">"This is Python!"</span><span class="p">)</span>
 <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">Python</span><span class="err">!</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">Python</span><span class="err">!</span>
@@ -13184,13 +13152,20 @@ range(1,5) -- generates a list of numbers from 1 to 4.</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h3>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13208,36 +13183,36 @@ range(1,5) -- generates a list of numbers from 1 to 4.</p>
 <div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s2">"I want to print </span><span class="si">%d</span><span class="s2"> and </span><span class="si">%d</span><span class="s2"> in the same sentence"</span><span class="o">%</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"I want to print </span><span class="si">%d</span><span class="s2"> and </span><span class="si">%d</span><span class="s2"> in the same sentence"</span><span class="o">%</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
 
 <span class="c1"># Output</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">I</span> <span class="n">want</span> <span class="n">to</span> <span class="k">print</span> <span class="mi">10</span> <span class="ow">and</span> <span class="mi">5</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">same</span> <span class="n">sentence</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">I</span> <span class="n">want</span> <span class="n">to</span> <span class="nb">print</span> <span class="mi">10</span> <span class="ow">and</span> <span class="mi">5</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">same</span> <span class="n">sentence</span>
 </pre></div>
 <p>Another example:</p>
 <div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">10.264725</span>
 <span class="n">b</span> <span class="o">=</span> <span class="s2">"a string type"</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s2">"I want to print </span><span class="si">%f</span><span class="s2"> and </span><span class="si">%s</span><span class="s2"> in the same sentence"</span><span class="o">%</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"I want to print </span><span class="si">%f</span><span class="s2"> and </span><span class="si">%s</span><span class="s2"> in the same sentence"</span><span class="o">%</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
 
 <span class="c1"># Output</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">I</span> <span class="n">want</span> <span class="n">to</span> <span class="k">print</span> <span class="mf">10.264725</span> <span class="ow">and</span> <span class="n">a</span> <span class="n">string</span> <span class="nb">type</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">same</span> <span class="n">sentence</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">I</span> <span class="n">want</span> <span class="n">to</span> <span class="nb">print</span> <span class="mf">10.264725</span> <span class="ow">and</span> <span class="n">a</span> <span class="n">string</span> <span class="nb">type</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">same</span> <span class="n">sentence</span>
 </pre></div>
 <p>Alternative to the '%' operator, we have the format() function which can also be used.</p>
 <div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s2">"I want to print {:d} and {:d} in the same sentence"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"I want to print </span><span class="si">{:d}</span><span class="s2"> and </span><span class="si">{:d}</span><span class="s2"> in the same sentence"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
 
 <span class="c1"># Output</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">I</span> <span class="n">want</span> <span class="n">to</span> <span class="k">print</span> <span class="mi">10</span> <span class="ow">and</span> <span class="mi">5</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">same</span> <span class="n">sentence</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">I</span> <span class="n">want</span> <span class="n">to</span> <span class="nb">print</span> <span class="mi">10</span> <span class="ow">and</span> <span class="mi">5</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">same</span> <span class="n">sentence</span>
 </pre></div>
 <div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">10.264725</span>
 <span class="n">b</span> <span class="o">=</span> <span class="s2">"a string type"</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s2">"I want to print {:f} and {:s} in the same sentence"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"I want to print </span><span class="si">{:f}</span><span class="s2"> and </span><span class="si">{:s}</span><span class="s2"> in the same sentence"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
 
 <span class="c1"># Output</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">I</span> <span class="n">want</span> <span class="n">to</span> <span class="k">print</span> <span class="mf">10.264725</span> <span class="ow">and</span> <span class="n">a</span> <span class="n">string</span> <span class="nb">type</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">same</span> <span class="n">sentence</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">I</span> <span class="n">want</span> <span class="n">to</span> <span class="nb">print</span> <span class="mf">10.264725</span> <span class="ow">and</span> <span class="n">a</span> <span class="n">string</span> <span class="nb">type</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">same</span> <span class="n">sentence</span>
 </pre></div>
 <h4 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">¶</a></h4><p>Print out the sentence "Hi everyone! I learned how to print 1 and 1.0." Use <strong>format specifier</strong> for the integer "1", the float "1.0", and the string "Hi everyone!".</p>
 
@@ -13249,13 +13224,20 @@ range(1,5) -- generates a list of numbers from 1 to 4.</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h3>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13272,14 +13254,14 @@ We can add preceeding zeroes and round off float values by specifying the type o
 <p>A few examples:</p>
 <div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">10.264725</span> 
 
-<span class="k">print</span><span class="p">(</span><span class="s1">'''Variations of a floating point:</span>
-<span class="s1">1. {:.2f}</span>
-<span class="s1">2. {:.3f}</span>
-<span class="s1">3. {:4.4f}</span>
-<span class="s1">4. {:04.4f}</span>
-<span class="s1">5. {:8.4f}</span>
-<span class="s1">6. {:08.4f}</span>
-<span class="s1">7. {:010.4f}'''</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'''Variations of a floating point:</span>
+<span class="s1">1. </span><span class="si">{:.2f}</span><span class="s1"></span>
+<span class="s1">2. </span><span class="si">{:.3f}</span><span class="s1"></span>
+<span class="s1">3. </span><span class="si">{:4.4f}</span><span class="s1"></span>
+<span class="s1">4. </span><span class="si">{:04.4f}</span><span class="s1"></span>
+<span class="s1">5. </span><span class="si">{:8.4f}</span><span class="s1"></span>
+<span class="s1">6. </span><span class="si">{:08.4f}</span><span class="s1"></span>
+<span class="s1">7. </span><span class="si">{:010.4f}</span><span class="s1">'''</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">))</span>
 
 <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">Variations</span> <span class="n">of</span> <span class="n">a</span> <span class="n">floating</span> <span class="n">point</span><span class="p">:</span>
@@ -13329,6 +13311,13 @@ Then the whole number is generated - the characteristic (digits before decimal) 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Well-Supported-and-Widely-Used">Well Supported and Widely Used<a class="anchor-link" href="#Well-Supported-and-Widely-Used">¶</a></h3><p>Python has been hugely popular and widely used for several types of applications. Python is available on all major Operating Systems and platforms. Many libraries are available in python including Statistics, Machine Learning libraries etc. Python has wrappers for various APIs and native components using C. Python is a versatile language.</p>
 <h3 id="General-Application-Programming">General Application Programming<a class="anchor-link" href="#General-Application-Programming">¶</a></h3><p>Python can be used to create both command-line, Web Apps and cross-platform GUI applications. There are GUI modules such as TkInter to develop GUI apps. You can deploy them as self-contained executables using packages such as cx_Freeze and PyInstaller.</p>
 <h3 id="Web-Application-Development">Web Application Development<a class="anchor-link" href="#Web-Application-Development">¶</a></h3><p>Python can be used to for developing enterprise web applications using Web App frames such as Flask and Django.</p>
@@ -13362,7 +13351,7 @@ Then the whole number is generated - the characteristic (digits before decimal) 
 The following example shows how string operations are different from numerical operations, as well as converting a lowercase string to uppercase:</p>
 <div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span>
 <span class="n">b</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 <span class="n">c</span> <span class="o">=</span> <span class="s1">'abc'</span>
 <span class="n">c</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 </pre></div>
@@ -13376,13 +13365,20 @@ The following example shows how string operations are different from numerical o
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h3>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13405,36 +13401,36 @@ We would open the terminal and type the command<br><br> <code>python --version</
 <img src="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAABy8AAAP9CAYAAAA0AiGWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAFjbSURBVHhe7N1bsCR3fSd4vWzsRuDW8/rNT36YGYcvHITU3K/CIKAtJBU3GVmYBgQI5MuRjB2MsQ3IeICGIyPraoG4WAZk17D0srIx41iE7G314WLAFwGedfgyjtmIsWP8/t/656msyqqTVZVVWefUr05+vhGfEN1Veal/ZhYR+e1/1iX/8A//kP7u7/4uff/730/f/e5309/8zd+kv/qrv0p/+Zd/mb7zne+kb3/72+lb3/pW+ou/+Iv0zW9+s/CNb3wDAAAAAAAAYCll35i7x9xB5i4y95J//dd/XXSVl+Ti8n//9b8EAAAAAAAA2KhL8ozLuhcAAAAAAAAAjtMlTzzxxOgPIiIiIiIiIiIiIiIiIiLHnVF5mZ8fq7wUERERERERERERERERkU1lVF7mH8BUXoqIiIiIiIiIiIiIiIjIpjIqL7/zne8oL0VERERERERERERERERkYxmVl9/+9reVlyIiIiIiIiIiIiIiIiKysYzKy29961vKSxERERERERERERERERHZWEbl5Te/+U3lpYiIiIiIiIiIiIiIiIhsLKPy8hvf+IbyUkREREREREREREREREQ2llF5+fWvf115KSIiIiIiIiIiIiIiIiIby6i8/NrXvqa8FBEREREREREREREREZGNRXkpIiIiIiIiIiIiIiIiIiEyKi/39/eVlyIiIiIiIiIiIiIiIiKysSgvRURERERERERERERERCRElJciIiIiIiIiIiIiIiIiEiJrKy//7d/+Lf3rv/5r+u///f9L//zP/1z4b//tQPnntsr1lfK28jb/5//8t+FeiIiIiIiIiIiIiIiIiMi2Zm3l5fe+9/307W9/J33lK19Nf/zHXyr80R/98cDB//7jP/6Twpe+NKn8+9nK5fP6ynUerPcrX3k0fetb3x5s+3vDvRARERERERERERERERGRbc3aysuvf/0b6c/+7M/T+fNfTJ/5zOfSpz/9UPrkJz899qlPp09NyX9Xfc8nPvGpKZ8sPPhg9on08Y9/In3s4w8Wf87r//zn/4/01a8+lr72ta8P90JEREREREREREREREREtjVrKy/397+W/vzP/5/0X/7Lnx4UmJ/93LigHJaUn/jkp0YezKVkUUwelJJFMfmxB9MDH/t44Xcf+NiB3/1Yuv/+B9J99/9uuu+++9O9995fvO+zn304ffGLj6RHH/1qunDh8eFeiIiIiIiIiIiIiIiIyHHkkksuWStZnDyZ8PnPf2H6H//jX4Z/s3zysnkdeV0Rs7by8sKFC8UsyPx41z/4w35RQN519z3pnnvvG8l/vvN37kofvfOu4r93Dv772799Z7rjjo+mvb3fTh8Z+PBH7hjYS+c+/JF07txH0oc+9OHCBz94Ln3gAx9K/+k/fbB4by4w//AP/3NRlj722J8N90JERERERERERERERESOI3UFZBuyOLl0/F/+1/8tPfmyy1YqMPMyedm8jryuiFlbefnYY3+evvQnX04P/f5nilLyve+9Pf3qu38tvfd9t6fbf/P9hfe8933pP/7qu9O73vWr6d3v/vXi9V/5lXeld77zV9Iv/dIvp9sGbr3tnQO/lHZvvS3t7t6WfvEXby38wi/spp//+V9Mt9zy8+nWW985WP9vpnvuua+Y5Zl/+1I2lSfSudP5S+VsOj/8GxEREREREREREREROflZV+movGyeavm4bIHZZtnjzNrKy6985atFkXj3Pfel33jP+4rCMReNt/3SOw8Kyl/+laKQfPs7fi69/e23pF8YFpJve9vb05vedFN64xvfnM6efVN6w8DPvuGN6Wd/9mx6/c++Ib3+9W9IN974s4UbbrgxXX/96wb/+w2Ddfxcuv3230qf+9wfpC9/+U+He9Es588OW/yz6rb2OY7y8nw6O/zimnb69Nl07vwTw/eJiIiIiIiIiIiIiMhxpbxX3zbrWk9XskoJuS3FZc7ayss//dP/u3iMa37E6223/XJRSr7lLW8rZkv+4u6t6ecG/7357e9Ib3rzW9Kbb3pr+rmf+4Wi3MyF5etuuDG99vrXpVe/5vr06ldfn171qtcOvCa98pWvLvR6r0rXDVxzzXXp5S+/Ol199bXp+utvKLbziU98Kj3yyB8N96JJqkWY2YLtc8zl5enT6XRpdBwHulpEP3E+nTs7GItzClwREREREREREREROd6U9+jbZl3r6VKWKSO3qbjMWVt5+aUvfTk99NBn0q/92m+km25622i25Jvf/JbBn99azKj8mcGfc1GZ/z7/XX7tZ37m9UVR+YpXXJtefubq9LKX/1R62ct+Kr30ZWfSS1/68nRVdtXL0kte8rL0op98SXre81+YXvjCnyxKzFyQ3nffA8WMz6Z54tzp4gLI5Vf+r8mXbXOc5WXNNp4YF5tdLPBG57PyUkRERERERERERESOOfn+dNY261pP19KklNy24jJnbeXlF/+vR9LHPv5gMdMyz5y85ppeuvbaXnpNnk05kGdN/tTV1xT/zbMp8+Nff/qnb0ivfe1Pp+uue2V68YuvKorJ5z3vhem5z3tB4TnPfX56znOen5797OelZz37uekZz3x2uuKKp6enP/1Z6corX5zOnn1zuuvue9PnP/+F4V4sSqVoe+Lcwcy90+cGfyurZ8PlZU6Hj6XyUkREREREREREREQ2FeXl5jOvnNzG4jJnbeXlF87/n+me++4vHgmbZ03mWZIvfslL0yuuuS5de+0ri5mSL33pmfSywWt5huXVV19TlJu5yMxFZy4vX/CCFxWzKp//givTs5/zvKKsfNrTnplOn35GuuL009NTLz+dnrxzWfHfXG7m37786J13pT/sf364FwtSllzFdMuydDud9D5tEqC8XPj6yY3yUkREREREREREREQ2FeVljNSVlNtaXOasrbz8z5//Qrrr7nuKx8Ne+aIXp2c+6znpuc99Qbr6FdcWv2P5yle+pigpr3rpmfSTP3lVIT8WNs/EzDMv8/te8YrrUq93UGa+6EUvKWZc5vIyz7a8/IqnpcueekVRXub/5lmZN/zM69Mdd3w0PfzwHw73Yn7Koqd8VOzi4meyFHvi/Ll0tijqhk6fTefOz1r2iXT+3Nl0uvr+S06ns+fOz5kd+MRgG4eXOX22bkZh/frze+t3qc1nGWT424rjbQ3GbTCQgz2eU16uMgZ1WVRO1uzDVFF9frTv0+tYcRyHszyL41VZ7mz1XMqPtJ0e40brnD42g/VO7Ux57tZRZIqIiIiIiIiIiIjIcaS8L90261pPlzNdVm5rcZmztvIyz37MsyBvfP0bike/Xn7504riMf9WZS4lcyH58jOvSPlxr88dvP6c574gPf/5Vxav51mZeTZmfqzsdde9Kl199bXF+571rOemPOsyryu77LIr0pOffFBe5sfI/vTrfiZ95CN3pM9+9uHhXsxLXck2WRodzrg0O1cWnafPprNnByrl0uHfzSy3ldd9+uD9Z0+PS67DCwwy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IiLrzcH96/WRxXn+81/YqnysFph5XRGzvvLyzrvS7be/P930lrel63qvTi97+dXpxS95WXrJwFVXvTxd9dIz6aUv+6nB32dXLyUvd9VLfyq9eLCOF111Jl115pp0be816Y1vfmv69fe8L31477eHezGZ+UXS4Rx+f4vC73y1eBqs8+xB2VVuo7ZTe+JgZmJ1uaIsPP/E4aJs1nvPna8t1dp8lpw8+7MsLKv7NXhlRiGXl1lhDGpzROVlzqrjeETlZT7S588dHrfp2ZgTmRrng+MiIiIiIiIiIiIiInK0Ke9Lr4sszte//o2idGwzazIvm9eR1xUxaysv77n33vShcx9Ou7e+M735prelN77pLensG29Kb3rzWwZ/fmtRar7lrTent7wte/vSbnrrO9Kbbv759MZbbk1vfMet6c1vuyX94q2/lD7wwQ+lu+66e7gXItuY+YWoiIiIiIiIiIiIiIhIV7K28vIL58+nzz38B+m++x9IH/3oXemjd96V7vydu9Pv3HVPuuvue9Pd99yb7rn3vgP33b+0u+97IN11/4Ppdz7+e+nOBz6VPnr3fcW2Pve5h9MXvtB4Pp5IwCgvRUREREREREREREREckbl5X333deqvPzHf/qn9Pd///fp+3/7t+m73/3ege99L33ve98/8P3vp++P/O3Svpf97X9N3/uvf5e++7f/72Ddg/UMtpW3+Y//+E/DvRDZxigvRUREREREREREREREckblZX6WcJvyUkRWjfJSREREREREREREREQkZ1Re/uAP/qDyUmQjUV6KiIiIiIiIiIiIiIjkjMrLtr95KSKrRnkpIiIiIiIiIiIiIiKSo7wUERERERERERERERERkRBRXoqIiIiIiIiIiIiIiIhIiCgvRURERERERERERERERCRElJciIiIiIiIiIiIiIiIiEiLKSxEREREREREREREREREJEeWliIiIiIiIiIiIiIiIiISI8lJEREREREREREREREREQkR5KSIiIiIiIiIiIiIiIiIhorwUERERERERERERERERkRBRXoqIiIiIiIiIiIiIiIhIiCgvRURERERERERERERERCRElJciIiIiIiIiIiIiIiIiEiLKSxEREREREREREREREREJkdry8gd+4AcAAAAAAACAjsj5l3/5l41TXgIAAAAAAEDHKS8BAAAAAACAEJSXAAAA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KC8BAAAAAACAEJSXAAAAAAAAQAjKSwAAAAAAACAE5SUAAAAAAAAQgvISAAAAAAAACEF5CQAAAAAAAISgvAQAAAAAAABCUF4CAAAAAAAAISgvAQAAAAAAgBCUlwAAAAAAAEAIyksAAAAAAAAgBOUlAAAAAAAAEILyEgAAAAAAAAhBeQkAAAAAAACEoLwEAAAAAAAAQlBeAgAAAAAAACEoLwEAAAAAAIAQlJcAAAAAAABACMpLAAAAAAAAIATlJQAAAAAAABCC8hIAAAAAAAAIQXkJAAAAAAAAhKC8BAAAAAAAAEIIV17u7+8rLwEAAAAAAKCDlJcAAAAAAABACMpLAAAAAAAAIATlJQAAAAAAABCC8hIAAAAAAAAIQXkJAAAAAAAAhKC8BAAAAAAAAEJQXgIAAAAAAAAhKC8BAAAAAACAEJSXAAAAAAAAQAjKSwAAAAAAACAE5SUAAAAAAAAQgvISAAAAAAAACEF5CQAAAAAAAISgvAQAAAAAAABCUF4CAAAAAAAAISgvAQAAAAAAgBCUlwAAAAAAAEAIyksAAAAAAAAgBOUlAAAAAAAAEILyEgAAAAAAAAhBeQkAAAAAAACEoLwEAAAAAAAAQlBeAgAAAAAAACEoLwEAAAAAAIAQlJcAAAAAAABACMpLAAAAAAAAIATlJQAAAAAAABCC8hIAAAAAAAAIQXkJAAAAAAAAhKC8BAAAAAAAAEJQXgIAAAAAAAAhKC8BAAAAAACAEJSXAAAAAAAAQAjKSwAAAAAAACAE5SUAAAAAAAAQgvISAAAAAAAACEF5CQAAAAAAAISgvAQAAAAAAABCUF4CAAAAAAAAISgvAQAAAAAAgBCUlwAAAAAAAEAIyksAAAAAAAAgBOUlAAAAAAAAEILyEgAAAAAAAAhBeQkAAAAAAACEoLwEAAAAAAAAQlBeAgAAAAAAACEoLwEAAAAAAIAQlJcAAAAAAABACMpLAAAAAAAAIATlJQAAAAAAABCC8hIAAAAAAAAIQXkJAAAAAAAAhKC8BAAAAAAAAEJQXgIAAAAAAAAhKC8BAAAAAACAEJSXAAAAAAAAQAjKSwAAAAAAACAE5SUAAAAAAAAQgvISAAAAAAAACEF5CQAAAAAAAISgvAQAAAAAAABCUF4CAAAAAAAAISgvAQAAAAAAgBCUlwAAAAAAAEAIyksAAAAAAAAgBOUlAAAA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" style="width:50vw"></p>
 <h3 id="Python-3-vs-Python-2">Python 3 vs Python 2<a class="anchor-link" href="#Python-3-vs-Python-2">¶</a></h3><p>There are many differences between Python 3 and Python 2, we would be looking at some mild differences in this section so that Data Scientists can get an idea how to practice analysis regardless of the version.</p>
 <h4 id="Print-Statements">Print Statements<a class="anchor-link" href="#Print-Statements">¶</a></h4><div class="highlight"><pre><span></span><span class="c1"># only in version 2</span>
-<span class="k">print</span> <span class="s1">'Data Science'</span>
+<span class="nb">print</span> <span class="s1">'Data Science'</span>
 
 <span class="c1"># version 2 and version 3</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">'Data Science'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Data Science'</span><span class="p">)</span>
 </pre></div>
 <p>We would like to establish a connection between the two versions.<br>
 For instance, if you have version 2 but you need to work with the version 3 syntax for work practices or other reasons
 We can simplify it in this way:</p>
 <div class="highlight"><pre><span></span><span class="c1"># version 2</span>
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">'Data Science'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Data Science'</span><span class="p">)</span>
 </pre></div>
 <p>Another Popular example would be the division.<br>
 In <b>version 2</b>, by default each division between two integers will be rounded to the nearest integer</p>
-<div class="highlight"><pre><span></span><span class="k">print</span> <span class="mi">5</span><span class="o">/</span><span class="mi">2</span>
+<div class="highlight"><pre><span></span><span class="nb">print</span> <span class="mi">5</span><span class="o">/</span><span class="mi">2</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span>
 </pre></div>
 <p>But in <b>version 3</b></p>
-<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mf">2.5</span>
 
-<span class="k">print</span><span class="p">(</span><span class="mi">5</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span>
 </pre></div>
 <p>For version 2 users if you need to have a version 3 programming practice<br>
 simply use it in this manner</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
-<span class="k">print</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mf">2.5</span>
-<span class="k">print</span><span class="p">(</span><span class="mi">5</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span>
 </pre></div>
 
@@ -13446,13 +13442,20 @@ simply use it in this manner</p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#No Exercise</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h3>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13471,13 +13474,20 @@ For a smooth learning experience, it is suggested that we use version 3 instead 
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#No Exercise</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h3>
+</div>
+</div>
 </div>
     </div>
   </div>

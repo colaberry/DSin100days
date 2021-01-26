@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13153,7 +13114,7 @@ div#notebook {
 <h3 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h3><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cube</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">cube</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cube</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -13167,18 +13128,18 @@ div#notebook {
 <p>Example usage of above functions is given below:</p>
 <div class="highlight"><pre><span></span><span class="n">test_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mf">2.53954</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s1">'''Maximum element is: {:d},</span>
-<span class="s1">Minimum element is: {:d},</span>
-<span class="s1">Length of list is: {:d},</span>
-<span class="s1">Type of test_list variable is: {},</span>
-<span class="s1">Sorted test_list is: {},</span>
-<span class="s1">Binary code of first element of test_list is: {},</span>
-<span class="s1">Sum of all elements of test_list is: {},</span>
-<span class="s1">Converting first element of test_list into string: {:s},</span>
-<span class="s1">Converting second element of test_list into integer: {:d},</span>
-<span class="s1">Converting first element of test_list into float: {:f},</span>
-<span class="s1">Rounding off decimals of second element of test_list up to 2 decimal places: {:f},</span>
-<span class="s1">Absolute value of -1 from test_list: {:d}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'''Maximum element is: </span><span class="si">{:d}</span><span class="s1">,</span>
+<span class="s1">Minimum element is: </span><span class="si">{:d}</span><span class="s1">,</span>
+<span class="s1">Length of list is: </span><span class="si">{:d}</span><span class="s1">,</span>
+<span class="s1">Type of test_list variable is: </span><span class="si">{}</span><span class="s1">,</span>
+<span class="s1">Sorted test_list is: </span><span class="si">{}</span><span class="s1">,</span>
+<span class="s1">Binary code of first element of test_list is: </span><span class="si">{}</span><span class="s1">,</span>
+<span class="s1">Sum of all elements of test_list is: </span><span class="si">{}</span><span class="s1">,</span>
+<span class="s1">Converting first element of test_list into string: </span><span class="si">{:s}</span><span class="s1">,</span>
+<span class="s1">Converting second element of test_list into integer: </span><span class="si">{:d}</span><span class="s1">,</span>
+<span class="s1">Converting first element of test_list into float: </span><span class="si">{:f}</span><span class="s1">,</span>
+<span class="s1">Rounding off decimals of second element of test_list up to 2 decimal places: </span><span class="si">{:f}</span><span class="s1">,</span>
+<span class="s1">Absolute value of -1 from test_list: </span><span class="si">{:d}</span><span class="s1"></span>
 <span class="s1">'''</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">test_list</span><span class="p">),</span>
            <span class="nb">min</span><span class="p">(</span><span class="n">test_list</span><span class="p">),</span>
            <span class="nb">len</span><span class="p">(</span><span class="n">test_list</span><span class="p">),</span>
@@ -13211,7 +13172,7 @@ div#notebook {
 <div class="highlight"><pre><span></span><span class="n">test_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mf">2.53954</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">number</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">test_list</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="n">number</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="n">number</span><span class="p">)</span>
 
 <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">0</span> <span class="mi">10</span>
@@ -13271,10 +13232,10 @@ div#notebook {
 <h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># Answers</span>
 
 <span class="c1"># finding last occurence of 6</span>
-<span class="k">print</span><span class="p">([</span><span class="n">index</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">number</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">recur</span><span class="p">)</span> <span class="k">if</span> <span class="n">number</span><span class="o">==</span><span class="mi">6</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">index</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">number</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">recur</span><span class="p">)</span> <span class="k">if</span> <span class="n">number</span><span class="o">==</span><span class="mi">6</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 
 <span class="c1"># finding the second occurrence of maximum value within the list</span>
-<span class="k">print</span><span class="p">([</span><span class="n">index</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">number</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">recur</span><span class="p">)</span> <span class="k">if</span> <span class="n">number</span><span class="o">==</span><span class="nb">max</span><span class="p">(</span><span class="n">recur</span><span class="p">)][</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">index</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">number</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">recur</span><span class="p">)</span> <span class="k">if</span> <span class="n">number</span><span class="o">==</span><span class="nb">max</span><span class="p">(</span><span class="n">recur</span><span class="p">)][</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -13398,10 +13359,10 @@ D.func()</code></pre>
 <h3 id="Aliasing-a-library-or-module">Aliasing a library or module<a class="anchor-link" href="#Aliasing-a-library-or-module">¶</a></h3><p>A library may consist of multiple modules and each module may contain many functions. In order to access a function within a specific module within a library, the format would be "libraryname.modulename.function". If we are using many functions from the same module or library it may become a tedious job to call the library and module name each time.</p>
 <p>Aliases are short forms that we can assign to libraries or modules within libraries so we may access functions within the module easily using the shortened notation.</p>
 <div class="highlight"><pre><span></span><span class="c1"># Alias for Pandas library</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Alias for Numpy library</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Alias for 'random' module from Numpy library</span>
 <span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">random</span> <span class="k">as</span> <span class="n">ranm</span>
@@ -13437,8 +13398,8 @@ D.func()</code></pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h3><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sklearn</span> <span class="kn">as</span> <span class="nn">skl</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span>
+<h3 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h3><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sklearn</span> <span class="k">as</span> <span class="nn">skl</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">arange</span> <span class="k">as</span> <span class="n">ara</span>
 <span class="kn">from</span> <span class="nn">seaborn</span> <span class="kn">import</span> <span class="n">heatmap</span> <span class="k">as</span> <span class="n">hmap</span>
 </pre></div>
@@ -13463,7 +13424,7 @@ D.func()</code></pre>
 </pre></div>
 <h4 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">¶</a></h4><p>Write a magic method to print wall time of the following code:</p>
 <div class="highlight"><pre><span></span><span class="c1"># magic method to make matplotlib charts to display inline</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="p">[]</span>
@@ -13471,7 +13432,7 @@ D.func()</code></pre>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
     <span class="n">b</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13495,7 +13456,7 @@ D.func()</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h3><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="p">[]</span>
@@ -13503,7 +13464,7 @@ D.func()</code></pre>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
     <span class="n">b</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13521,7 +13482,7 @@ D.func()</code></pre>
 <p>Consider the following code to define a function that adds two to a number:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">addTwo</span><span class="p">(</span><span class="n">e</span><span class="p">):</span> 
     <span class="k">return</span> <span class="n">e</span><span class="o">+</span><span class="mi">2</span>
-<span class="k">print</span><span class="p">(</span><span class="n">addTwo</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">addTwo</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
 
 <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">6</span>
@@ -13529,7 +13490,7 @@ D.func()</code></pre>
 <p>If this function is for one-time use, we could write it as below:</p>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="n">e</span><span class="o">+</span><span class="mi">2</span>
-<span class="k">print</span><span class="p">(</span><span class="n">v</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
 
 <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">6</span>
@@ -13540,7 +13501,7 @@ The result of this function is assigned to a variable v.</p>
 <p>We can be dynamic with lambda expressions such as below:</p>
 <div class="highlight"><pre><span></span><span class="n">product_of_3_ints</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">v1</span><span class="p">,</span><span class="n">v2</span><span class="p">,</span><span class="n">v3</span><span class="p">:</span><span class="n">v1</span><span class="o">*</span><span class="n">v2</span><span class="o">*</span><span class="n">v3</span>
 <span class="n">product</span> <span class="o">=</span> <span class="n">product_of_3_ints</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">product</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">product</span><span class="p">)</span>
 
 <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">20</span>
@@ -13615,10 +13576,10 @@ with 2 inputs.</p>
 <pre><code>reduce(lambda expression, input)</code></pre>
 <p>Example</p>
 <div class="highlight"><pre><span></span><span class="c1"># Importing the reduce function</span>
-<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
 
 <span class="c1"># Adding up all the values in the given array</span>
-<span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
 
 <span class="c1"># Output</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">6</span>
@@ -13672,16 +13633,16 @@ Print Out all the values
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution-code">Solution code<a class="anchor-link" href="#Solution-code">¶</a></h3><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'1'</span><span class="p">,</span><span class="s1">'-1'</span><span class="p">,</span><span class="s1">'-2'</span><span class="p">,</span><span class="s1">'2'</span><span class="p">]</span>
 <span class="n">v</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">element</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">element</span><span class="p">),</span> <span class="n">arr</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">'1: '</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'1: '</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
 
 <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'1'</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="s1">'-2'</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">v</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">element</span><span class="p">:</span> <span class="nb">type</span><span class="p">(</span><span class="n">element</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span><span class="p">,</span> <span class="n">arr</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">'2: '</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'2: '</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
 
 <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'1'</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="s1">'50'</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">43</span><span class="p">]</span>
 <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
-<span class="n">v</span> <span class="o">=</span> <span class="nb">reduce</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">element</span><span class="p">:</span> <span class="nb">type</span><span class="p">(</span><span class="n">element</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span><span class="p">,</span> <span class="n">arr</span><span class="p">)))</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">'3: '</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">element</span><span class="p">:</span> <span class="nb">type</span><span class="p">(</span><span class="n">element</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span><span class="p">,</span> <span class="n">arr</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'3: '</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13700,7 +13661,7 @@ Print Out all the values
       <span class="nb">sum</span> <span class="o">+=</span> <span class="n">i</span>
   <span class="k">return</span> <span class="nb">sum</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">add_values</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">add_values</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span>
 <span class="mi">50</span>
 </pre></div>
 <h4 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">¶</a></h4><p>Write a function which accepts variable number of arguments and:</p>
@@ -13751,7 +13712,7 @@ Print Out all the values
             <span class="n">total</span> <span class="o">+=</span> <span class="n">i</span>
     <span class="k">return</span> <span class="n">total</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">amoeboid</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">),</span><span class="n">amoeboid</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">25</span><span class="p">),</span><span class="n">amoeboid</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">amoeboid</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">),</span><span class="n">amoeboid</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">25</span><span class="p">),</span><span class="n">amoeboid</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -13764,12 +13725,12 @@ Print Out all the values
 <h3 id="Reassigning-Immutable-Object-Reference">Reassigning Immutable Object Reference<a class="anchor-link" href="#Reassigning-Immutable-Object-Reference">¶</a></h3><p>Consider the example below:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method_immutable</span><span class="p">(</span><span class="n">inner_string</span><span class="p">):</span>
     <span class="n">inner_string</span> <span class="o">=</span> <span class="s2">"New String"</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"Inner String:"</span><span class="p">,</span> <span class="n">inner_string</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Inner String:"</span><span class="p">,</span> <span class="n">inner_string</span><span class="p">)</span>
 
 <span class="n">outer_string</span> <span class="o">=</span> <span class="s2">"Old String"</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">"Outer String:"</span><span class="p">,</span> <span class="n">outer_string</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Outer String:"</span><span class="p">,</span> <span class="n">outer_string</span><span class="p">)</span>
 <span class="n">method_immutable</span><span class="p">(</span><span class="n">outer_string</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">"Outer After Method Call:"</span><span class="p">,</span><span class="n">outer_string</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Outer After Method Call:"</span><span class="p">,</span><span class="n">outer_string</span><span class="p">)</span>
 </pre></div>
 <p>Here the outer_string is a name (or reference) to the oject with value "Old String". Similarly, with in the function scope of method_immutable(), the reference inner_string is assigned the same object "Old String". Then in subsequent statements, the same name reference called inner_string is reassigned a newly created string object wth value "New String". This does not impact the old object "Old String" which has a reference outside the scope of the function.</p>
 <p>Hence the output of the above python code is as below:</p>
@@ -13786,7 +13747,7 @@ Outer After Method Call: Old String<br></p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span>
 </pre></div>
 
     </div>
@@ -13799,11 +13760,11 @@ Outer After Method Call: Old String<br></p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h2><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">change_string</span><span class="p">(</span><span class="n">inner_string</span><span class="p">):</span>
     <span class="n">inner_string</span> <span class="o">=</span> <span class="s2">"New String"</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"Inner String:"</span><span class="p">,</span> <span class="n">inner_string</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Inner String:"</span><span class="p">,</span> <span class="n">inner_string</span><span class="p">)</span>
 
 <span class="n">input_string</span> <span class="o">=</span> <span class="s2">"Old String"</span>
 <span class="n">change_string</span><span class="p">(</span><span class="n">input_string</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">"Outer After Method Call:"</span><span class="p">,</span><span class="n">input_string</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Outer After Method Call:"</span><span class="p">,</span><span class="n">input_string</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13815,13 +13776,13 @@ Outer After Method Call: Old String<br></p>
 <h3 id="Returning-Immutable-Object-Reference">Returning Immutable Object Reference<a class="anchor-link" href="#Returning-Immutable-Object-Reference">¶</a></h3><p>Suppose we need the changes done in the function to be used outside the function. Let us change the code slightly to accomodate a return value as below:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method_immutable_return</span><span class="p">(</span><span class="n">inner_string</span><span class="p">):</span>
     <span class="n">inner_string</span> <span class="o">=</span> <span class="s2">"New String"</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"Inner String:"</span><span class="p">,</span> <span class="n">inner_string</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Inner String:"</span><span class="p">,</span> <span class="n">inner_string</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">inner_string</span>
 
 <span class="n">outer_string</span> <span class="o">=</span> <span class="s2">"Old String"</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">"Outer String:"</span><span class="p">,</span> <span class="n">outer_string</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Outer String:"</span><span class="p">,</span> <span class="n">outer_string</span><span class="p">)</span>
 <span class="n">outer_string</span> <span class="o">=</span> <span class="n">method_immutable_return</span><span class="p">(</span><span class="n">outer_string</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">"Outer After Method Call:"</span><span class="p">,</span><span class="n">outer_string</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Outer After Method Call:"</span><span class="p">,</span><span class="n">outer_string</span><span class="p">)</span>
 </pre></div>
 <p>As you may know, python strings are immutable objects. This implies that a string object once created cannot be changed. This applies to both the code snippets above. In the second code snippet, we have returned a value from the function method_immutable_return(). In this case, when the function is called, the reference inner_string is reassigned to a newly created string object with value "New String". In addition this value is returned from the function.</p>
 <p>In the outer code, the reference outer_string is re-assigned to the same object created inside the function. Actually nothing happens to the original string object with value "Old String", but the reference to it is lost.</p>
@@ -13839,7 +13800,7 @@ Outer After Method Call: New String<br></p>
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span>
 </pre></div>
 
     </div>
@@ -13852,12 +13813,12 @@ Outer After Method Call: New String<br></p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h2><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">return_string</span><span class="p">(</span><span class="n">inner_string</span><span class="p">):</span>
     <span class="n">inner_string</span> <span class="o">=</span> <span class="s2">"New String"</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"Inner String:"</span><span class="p">,</span> <span class="n">inner_string</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Inner String:"</span><span class="p">,</span> <span class="n">inner_string</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">inner_string</span>
 
 <span class="n">input_string</span> <span class="o">=</span> <span class="s2">"Old String"</span>
 <span class="n">input_string</span> <span class="o">=</span> <span class="n">return_string</span><span class="p">(</span><span class="n">input_string</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">"Outer After Method Call:"</span><span class="p">,</span><span class="n">input_string</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Outer After Method Call:"</span><span class="p">,</span><span class="n">input_string</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13869,12 +13830,12 @@ Outer After Method Call: New String<br></p>
 <h3 id="Reassigning-Mutable-Object-Reference">Reassigning Mutable Object Reference<a class="anchor-link" href="#Reassigning-Mutable-Object-Reference">¶</a></h3><p>Suppose we need to pass a list of strings to the function. Let us change the code further to accomodate a list as the parameter as below:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method_immutable_list</span><span class="p">(</span><span class="n">inner_list</span><span class="p">):</span>
     <span class="n">inner_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"New String"</span><span class="p">]</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"Inner List:"</span><span class="p">,</span> <span class="n">inner_list</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Inner List:"</span><span class="p">,</span> <span class="n">inner_list</span><span class="p">)</span>
 
 <span class="n">outer_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Old String"</span><span class="p">]</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">"Outer List:"</span><span class="p">,</span> <span class="n">outer_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Outer List:"</span><span class="p">,</span> <span class="n">outer_list</span><span class="p">)</span>
 <span class="n">method_immutable_list</span><span class="p">(</span><span class="n">outer_list</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">"Outer After Method Call:"</span><span class="p">,</span><span class="n">outer_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Outer After Method Call:"</span><span class="p">,</span><span class="n">outer_list</span><span class="p">)</span>
 </pre></div>
 <p>This is very similar to the immutable string objects. Here the outer_list is a name (or reference) to the list with value ["Old String"]. Similarly, with in the function scope of method_immutable_list(), the reference inner_list is assigned the same list with values ["Old String"] created outside the function. Then in subsequent statements, the same name reference called inner_list is reassigned a newly created list with value ["New String"]. This does not impact the old list ["Old String"] which has a reference outside the scope of the method.</p>
 <p>The output of the method_immutable_list code will be as below:</p>
@@ -13907,13 +13868,13 @@ Outer After Method Call: ['Old String']<br></p>
     <span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">inner_fruits</span><span class="p">:</span>
         <span class="n">new_fruits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fruit</span><span class="p">)</span>
     <span class="n">new_fruits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"Oranges"</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"Inner Fruits:"</span><span class="p">,</span> <span class="n">inner_fruits</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"New Fruits:"</span><span class="p">,</span> <span class="n">new_fruits</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Inner Fruits:"</span><span class="p">,</span> <span class="n">inner_fruits</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"New Fruits:"</span><span class="p">,</span> <span class="n">new_fruits</span><span class="p">)</span>
 
 <span class="n">outer_fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Apples"</span><span class="p">]</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">"Outer Fruits:"</span><span class="p">,</span> <span class="n">outer_fruits</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Outer Fruits:"</span><span class="p">,</span> <span class="n">outer_fruits</span><span class="p">)</span>
 <span class="n">change_fruit</span><span class="p">(</span><span class="n">outer_fruits</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">"Outer After Method Call:"</span><span class="p">,</span><span class="n">outer_fruits</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Outer After Method Call:"</span><span class="p">,</span><span class="n">outer_fruits</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13925,12 +13886,12 @@ Outer After Method Call: ['Old String']<br></p>
 <h3 id="Modifying-Mutable-Object-Reference">Modifying Mutable Object Reference<a class="anchor-link" href="#Modifying-Mutable-Object-Reference">¶</a></h3><p>Suppose we need to add another value to the list passed as a parameter to the function. Let us change the code further to accomodate this as below:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method_mutable_list</span><span class="p">(</span><span class="n">inner_list</span><span class="p">):</span>
     <span class="n">inner_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"Second String"</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"Inner List:"</span><span class="p">,</span> <span class="n">inner_list</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Inner List:"</span><span class="p">,</span> <span class="n">inner_list</span><span class="p">)</span>
 
 <span class="n">outer_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Old String"</span><span class="p">]</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">"Outer List:"</span><span class="p">,</span> <span class="n">outer_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Outer List:"</span><span class="p">,</span> <span class="n">outer_list</span><span class="p">)</span>
 <span class="n">method_mutable_list</span><span class="p">(</span><span class="n">outer_list</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">"Outer After Method Call:"</span><span class="p">,</span><span class="n">outer_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Outer After Method Call:"</span><span class="p">,</span><span class="n">outer_list</span><span class="p">)</span>
 </pre></div>
 <p>In this case even though the inner_list is a name (or reference) bound to the value ["Old String"], since the List objects are mutable via append() (or other methods), the subsequent statement changes the state of the object referenced by inner_list. Since this object is the same object which has a reference outside the scope of the function via a name outer_list, the change is reflected outside the function call as well.</p>
 <p>Hence, the output of the method_mutable_list code with list.append() call will be as below:</p>
@@ -13962,12 +13923,12 @@ Outer After Method Call: ['Old String', 'Second String']<br></p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Solution">Solution<a class="anchor-link" href="#Solution">¶</a></h2><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_fruit</span><span class="p">(</span><span class="n">inner_fruits</span><span class="p">):</span>
     <span class="n">inner_fruits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"Oranges"</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"Inner Fruits:"</span><span class="p">,</span> <span class="n">inner_fruits</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Inner Fruits:"</span><span class="p">,</span> <span class="n">inner_fruits</span><span class="p">)</span>
 
 <span class="n">outer_fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Apples"</span><span class="p">]</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">"Outer Fruits:"</span><span class="p">,</span> <span class="n">outer_fruits</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Outer Fruits:"</span><span class="p">,</span> <span class="n">outer_fruits</span><span class="p">)</span>
 <span class="n">add_fruit</span><span class="p">(</span><span class="n">outer_fruits</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">"Outer After Method Call:"</span><span class="p">,</span><span class="n">outer_fruits</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Outer After Method Call:"</span><span class="p">,</span><span class="n">outer_fruits</span><span class="p">)</span>
 </pre></div>
 
 </div>
