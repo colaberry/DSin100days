@@ -7,6 +7,8 @@ steps:
 - name: build
   image: karrug/dsin100dayscicd:0.3
   commands:
+  - pwd
+  - df -h
   - /root/env/bin/python tools/buildhtmlpages.py
 
 trigger:
@@ -23,6 +25,8 @@ steps:
 - name: build
   image: karrug/dsin100dayscicd:0.3
   commands:
+  - pwd
+  - df -h
   - /root/env/bin/python tools/buildhtmlpages.py
 
 - name: deploy
