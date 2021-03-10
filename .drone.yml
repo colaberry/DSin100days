@@ -15,7 +15,7 @@ steps:
     SONAR_LOGIN:
       from_secret: sqrftoken
   commands:
-  - ./docker/scanner.sh $SONAR_LOGIN
+  - ./tools/scanner.sh $SONAR_LOGIN
 
 trigger:
   branch:
