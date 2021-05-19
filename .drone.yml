@@ -1,32 +1,5 @@
 ---
 kind: pipeline
-type: ssh
-name: scanner
-
-server:
-  host: sq.refactored.ai
-  user: sonarqube
-  password:
-    from_secret: sqpass
-
-steps:
-- name: scan
-  environment:
-    SONAR_LOGIN:
-      from_secret: sqrftoken
-  commands:
-  - ./docker/scanner.sh $SONAR_LOGIN
-
-trigger:
-  branch:
-  - develop
-  - master
-  event:
-  - pull_request
-
-
----
-kind: pipeline
 type: docker
 name: test
 
