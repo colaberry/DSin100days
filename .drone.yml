@@ -56,6 +56,9 @@ steps:
 - name: build
   image: karrug/dsin100dayscicd:0.3
   commands:
+  - ip addr
+  - whoami
+  - pwd
   - /root/env/bin/python tools/buildhtmlpages.py
 
 - name: deploy
