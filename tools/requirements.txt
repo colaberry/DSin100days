@@ -10,7 +10,7 @@ jsonschema==3.0.1
 jupyter-core==4.4.0
 lxml==4.3.3
 MarkupSafe==1.1.1
-mistune==0.8.4
+mistune==2.0.3
 nbconvert==5.5.0
 nbformat==4.4.0
 pandocfilters==1.4.2
